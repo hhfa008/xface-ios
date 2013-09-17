@@ -1,0 +1,3 @@
+[submodule "cordova-ios"]
+	path = cordova-ios
+	url = git@git.polyvi.com:cordova-ios.git
