@@ -18,16 +18,16 @@
  under the License.
 -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
-        id        = "io.cordova.helloCordova"
-        version   = "2.0.0">
-    <name>Hello Cordova</name>
+        id        = "polyvi.xFace.helloxFace"
+        version   = "3.2.0">
+    <name>Hello xFace</name>
 
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        A sample Polyvi xFace application that responds to the deviceready event.
     </description>
 
-    <author href="http://cordova.io" email="dev@cordova.apache.org">
-        Apache Cordova Team
+    <author href="http://http://polyvi.github.io/openxface/" email="opensource@polyvi.com">
+        Polyvi xFace Team
     </author>
 
     <access origin="*"/>
@@ -54,6 +54,14 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" /> <!-- page, column -->
     <preference name="PaginationMode" value="unpaginated" /> <!-- unpaginated, leftToRight, topToBottom, bottomToTop, rightToLeft -->
+
+    <preference name="UsePlayerMode" value="true" />
+    <preference name="EngineVersion" value="3.2.x" />
+    <preference name="EngineBuild" value="12345" />
+    <preference name="SplashScreenDelayDuration" value="2000" />
+    <preference name="CheckUpdate" value="false" />
+    <preference name="UpdateAddress" value="" />
+    <preference name="SecurityAddress" value="" />
 
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage"/>
