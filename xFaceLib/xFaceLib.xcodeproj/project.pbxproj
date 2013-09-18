@@ -10,6 +10,123 @@
 		C832C42017E97EA400D3A35A /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C93317E85A9D0009C73A /* libGoogleAnalytics.a */; };
 		C832C42117E97EB100D3A35A /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C94317E85A9D0009C73A /* libMobClickLibrary.a */; };
 		C832C42517E97F0F00D3A35A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C91A17E857390009C73A /* libCordova.a */; };
+		C832C44517E9960200D3A35A /* APAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C92017E85A9D0009C73A /* APAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C44617E9960200D3A35A /* APDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C92217E85A9D0009C73A /* APDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C44717E9960200D3A35A /* APElement.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C92417E85A9D0009C73A /* APElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C44817E9960200D3A35A /* APXML.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C92617E85A9D0009C73A /* APXML.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C44917E9962800D3A35A /* Credentials.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C92817E85A9D0009C73A /* Credentials.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C44A17E9962800D3A35A /* DES.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C92C17E85A9D0009C73A /* DES.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C44B17E9962800D3A35A /* GAI.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C92E17E85A9D0009C73A /* GAI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C44C17E9962800D3A35A /* GAITrackedViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C92F17E85A9D0009C73A /* GAITrackedViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C44D17E9962800D3A35A /* GAITracker.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C93017E85A9D0009C73A /* GAITracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C44E17E9962800D3A35A /* GAITransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C93117E85A9D0009C73A /* GAITransaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C44F17E9962800D3A35A /* GAITransactionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C93217E85A9D0009C73A /* GAITransactionItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45017E9962800D3A35A /* iToast.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C93717E85A9D0009C73A /* iToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45117E9962800D3A35A /* Rsa.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C93B17E85A9D0009C73A /* Rsa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45217E9962800D3A35A /* Rsa_nn.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C93D17E85A9D0009C73A /* Rsa_nn.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45317E9962800D3A35A /* RSAEncrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C93E17E85A9D0009C73A /* RSAEncrypt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45417E9962800D3A35A /* UPPUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C94117E85A9D0009C73A /* UPPUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45517E9967100D3A35A /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C95017E85A9D0009C73A /* ZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45617E996A300D3A35A /* XConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C97817E85A9D0009C73A /* XConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45717E996A300D3A35A /* XSystemConfigInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C97917E85A9D0009C73A /* XSystemConfigInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45817E996C300D3A35A /* APDocument+XAPDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9AE17E85A9D0009C73A /* APDocument+XAPDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45917E996C300D3A35A /* md5.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9AF17E85A9D0009C73A /* md5.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45A17E996C300D3A35A /* NSData+Encoding.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9B017E85A9D0009C73A /* NSData+Encoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45B17E996C300D3A35A /* NSMutableArray+XStackAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9B117E85A9D0009C73A /* NSMutableArray+XStackAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45C17E996C300D3A35A /* NSObject+JSONSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9B217E85A9D0009C73A /* NSObject+JSONSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45D17E996C300D3A35A /* NSString+XStartParams.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9B317E85A9D0009C73A /* NSString+XStartParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45E17E996C300D3A35A /* UIDevice+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9B717E85A9D0009C73A /* UIDevice+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C45F17E996C300D3A35A /* XAnalyzer.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9B817E85A9D0009C73A /* XAnalyzer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46017E996C300D3A35A /* XAPElement.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9B917E85A9D0009C73A /* XAPElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46117E996C300D3A35A /* XApplicationPersistence.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9BA17E85A9D0009C73A /* XApplicationPersistence.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46217E996C300D3A35A /* XApplicationPersistence_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9BB17E85A9D0009C73A /* XApplicationPersistence_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46317E996C300D3A35A /* XCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9BD17E85A9D0009C73A /* XCipher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46417E996C300D3A35A /* XConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9BE17E85A9D0009C73A /* XConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46517E996C300D3A35A /* XDeviceProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9BF17E85A9D0009C73A /* XDeviceProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46617E996C300D3A35A /* XExtendedDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9C017E85A9D0009C73A /* XExtendedDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46717E996C300D3A35A /* XFileOperator.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9C117E85A9D0009C73A /* XFileOperator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46817E996C300D3A35A /* XFileOperatorFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9C217E85A9D0009C73A /* XFileOperatorFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46917E996C300D3A35A /* XFileUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9C317E85A9D0009C73A /* XFileUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46A17E996C300D3A35A /* XHexData.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9C417E85A9D0009C73A /* XHexData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46B17E996C300D3A35A /* XILog.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9C517E85A9D0009C73A /* XILog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46C17E996C300D3A35A /* XLog.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9C617E85A9D0009C73A /* XLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46D17E996C300D3A35A /* XLogRedirect.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9C717E85A9D0009C73A /* XLogRedirect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46E17E996C300D3A35A /* XPlainFileOperator.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9C817E85A9D0009C73A /* XPlainFileOperator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C46F17E996C300D3A35A /* XSecurityFileOperator.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9CB17E85A9D0009C73A /* XSecurityFileOperator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47017E996C300D3A35A /* XStoreProductPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9CC17E85A9D0009C73A /* XStoreProductPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47117E996C300D3A35A /* XUtils+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9CD17E85A9D0009C73A /* XUtils+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47217E996C300D3A35A /* XUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9CE17E85A9D0009C73A /* XUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47317E996C300D3A35A /* XZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9CF17E85A9D0009C73A /* XZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47417E9975400D3A35A /* CDVPlugin+XPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C98517E85A9D0009C73A /* CDVPlugin+XPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47517E9975400D3A35A /* CDVURLProtocol+XURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C98617E85A9D0009C73A /* CDVURLProtocol+XURLProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47617E9975400D3A35A /* XAppInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99317E85A9D0009C73A /* XAppInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47717E9975400D3A35A /* XApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99417E85A9D0009C73A /* XApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47817E9975400D3A35A /* XApplicationFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99517E85A9D0009C73A /* XApplicationFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47917E9975400D3A35A /* XAppList.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99617E85A9D0009C73A /* XAppList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47A17E9975400D3A35A /* XAppUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99717E85A9D0009C73A /* XAppUpdater.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47B17E9975400D3A35A /* XAppView.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99817E85A9D0009C73A /* XAppView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47C17E9975400D3A35A /* XAppWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99917E85A9D0009C73A /* XAppWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47D17E9975400D3A35A /* XCommandQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99A17E85A9D0009C73A /* XCommandQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47E17E9975400D3A35A /* XHTTPURLResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99B17E85A9D0009C73A /* XHTTPURLResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C47F17E9975400D3A35A /* XJavaScriptEvaluator.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99C17E85A9D0009C73A /* XJavaScriptEvaluator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48017E9975400D3A35A /* XLightweightSystemBootstrap.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99D17E85A9D0009C73A /* XLightweightSystemBootstrap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48117E9975400D3A35A /* XNativeApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99E17E85A9D0009C73A /* XNativeApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48217E9975400D3A35A /* XPlayerSystemBootstrap.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99F17E85A9D0009C73A /* XPlayerSystemBootstrap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48317E9975400D3A35A /* XResourceURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9A017E85A9D0009C73A /* XResourceURLProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48417E9975400D3A35A /* XSync.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9A217E85A9D0009C73A /* XSync.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48517E9975400D3A35A /* XSystemBootstrapFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9A417E85A9D0009C73A /* XSystemBootstrapFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48617E9975400D3A35A /* XSystemWorkspaceFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9A517E85A9D0009C73A /* XSystemWorkspaceFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48717E9975400D3A35A /* XUIApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9A617E85A9D0009C73A /* XUIApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48817E9975400D3A35A /* XVersionLableFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9A717E85A9D0009C73A /* XVersionLableFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48917E9975400D3A35A /* XWebApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9A917E85A9D0009C73A /* XWebApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48A17E9975400D3A35A /* XCredentialManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9AB17E85A9D0009C73A /* XCredentialManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48B17E9975400D3A35A /* XHTTPSURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9AC17E85A9D0009C73A /* XHTTPSURLProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48C17E9975400D3A35A /* XLogRedirct_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9B517E85A9D0009C73A /* XLogRedirct_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48D17E9975400D3A35A /* XUtils_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9B617E85A9D0009C73A /* XUtils_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48E17E9977300D3A35A /* XAppRunningMode.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C95717E85A9D0009C73A /* XAppRunningMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C48F17E9977300D3A35A /* XDefaultSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C95817E85A9D0009C73A /* XDefaultSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49017E9977300D3A35A /* XDefaultSecurityResourceFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C95917E85A9D0009C73A /* XDefaultSecurityResourceFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49117E9977300D3A35A /* XLocalMode.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C95A17E85A9D0009C73A /* XLocalMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49217E9977300D3A35A /* XLocalResourceIterator.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C95B17E85A9D0009C73A /* XLocalResourceIterator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49317E9977300D3A35A /* XOnlineMode.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C95C17E85A9D0009C73A /* XOnlineMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49417E9977300D3A35A /* XOnlineResourceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C95D17E85A9D0009C73A /* XOnlineResourceInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49517E9977300D3A35A /* XOnlineResourceIterator.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C95E17E85A9D0009C73A /* XOnlineResourceIterator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49617E9977300D3A35A /* XResourceIterator.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C95F17E85A9D0009C73A /* XResourceIterator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49717E9977300D3A35A /* XSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96017E85A9D0009C73A /* XSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49817E9977300D3A35A /* XSecurityPolicyFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96117E85A9D0009C73A /* XSecurityPolicyFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49917E9977300D3A35A /* XSecurityResourceFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96217E85A9D0009C73A /* XSecurityResourceFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49A17E9977300D3A35A /* XSecurityResourceFilterFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96317E85A9D0009C73A /* XSecurityResourceFilterFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49B17E997A100D3A35A /* XAmsConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96B17E85A9D0009C73A /* XAmsConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49C17E997A100D3A35A /* XAppInstaller.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96C17E85A9D0009C73A /* XAppInstaller.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49D17E997A100D3A35A /* XAppInstallerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96D17E85A9D0009C73A /* XAppInstallerProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49E17E997A100D3A35A /* XAppInstallListener.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96E17E85A9D0009C73A /* XAppInstallListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C49F17E997A100D3A35A /* XAppManagement.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96F17E85A9D0009C73A /* XAppManagement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4A017E997A100D3A35A /* XAppPreinstallListener.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C97017E85A9D0009C73A /* XAppPreinstallListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4A117E997A100D3A35A /* XAppXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C97117E85A9D0009C73A /* XAppXMLParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4A217E997A100D3A35A /* XAppXMLParser_Legacy.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C97217E85A9D0009C73A /* XAppXMLParser_Legacy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4A317E997A100D3A35A /* XAppXMLParserFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C97317E85A9D0009C73A /* XAppXMLParserFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4A417E997A100D3A35A /* XAppXMLTagDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C97417E85A9D0009C73A /* XAppXMLTagDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4A517E997A100D3A35A /* XInstallListener.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C97517E85A9D0009C73A /* XInstallListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4A617E997A100D3A35A /* XLightweightAppInstaller.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C97617E85A9D0009C73A /* XLightweightAppInstaller.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4A717E997CE00D3A35A /* XOnlineMode_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C95617E85A9D0009C73A /* XOnlineMode_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4A817E997CE00D3A35A /* XAppInstaller_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96517E85A9D0009C73A /* XAppInstaller_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4A917E997CE00D3A35A /* XAppManagement_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96617E85A9D0009C73A /* XAppManagement_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4AA17E997CE00D3A35A /* XAppPreinstallListener_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96717E85A9D0009C73A /* XAppPreinstallListener_Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4AB17E997CE00D3A35A /* XAppXMLParser_Legacy_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96817E85A9D0009C73A /* XAppXMLParser_Legacy_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4AC17E997CE00D3A35A /* XAppXMLParserFactory_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96917E85A9D0009C73A /* XAppXMLParserFactory_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4AD17E997CE00D3A35A /* XLightweightAppInstaller_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C96A17E85A9D0009C73A /* XLightweightAppInstaller_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4AE17E997CE00D3A35A /* XSystemEventHandler_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C97C17E85A9D0009C73A /* XSystemEventHandler_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4AF17E997CE00D3A35A /* XSystemEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C97D17E85A9D0009C73A /* XSystemEventHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4B017E997CE00D3A35A /* XAppUpdater_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C98817E85A9D0009C73A /* XAppUpdater_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4B117E997CE00D3A35A /* XConfiguration_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C98917E85A9D0009C73A /* XConfiguration_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4B217E997CE00D3A35A /* XExtensionResult_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C98A17E85A9D0009C73A /* XExtensionResult_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4B317E997CE00D3A35A /* XJavaScriptEvaluator_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C98B17E85A9D0009C73A /* XJavaScriptEvaluator_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4B417E997CE00D3A35A /* XLightweightSystemBootstrap_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C98C17E85A9D0009C73A /* XLightweightSystemBootstrap_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4B517E997CE00D3A35A /* XNativeApplication_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C98D17E85A9D0009C73A /* XNativeApplication_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4B617E997CE00D3A35A /* XPlayerSystemBootstrap_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C98E17E85A9D0009C73A /* XPlayerSystemBootstrap_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4B717E997CE00D3A35A /* XRuntime_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C98F17E85A9D0009C73A /* XRuntime_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4B817E997CE00D3A35A /* XWebApplication_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99017E85A9D0009C73A /* XWebApplication_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C832C4B917E997CE00D3A35A /* XWhitelist_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99117E85A9D0009C73A /* XWhitelist_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8944C2D17E949E30070A849 /* XAmsDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99217E85A9D0009C73A /* XAmsDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8944C2E17E949E30070A849 /* XRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9A117E85A9D0009C73A /* XRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8944C2F17E949E30070A849 /* XSystemBootstrap.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9A317E85A9D0009C73A /* XSystemBootstrap.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -895,13 +1012,13 @@
 		C8A2C9AD17E85A9D0009C73A /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				C8A2C9B417E85A9D0009C73A /* private */,
 				C8A2C9AE17E85A9D0009C73A /* APDocument+XAPDocument.h */,
 				C8A2C9AF17E85A9D0009C73A /* md5.h */,
 				C8A2C9B017E85A9D0009C73A /* NSData+Encoding.h */,
 				C8A2C9B117E85A9D0009C73A /* NSMutableArray+XStackAdditions.h */,
 				C8A2C9B217E85A9D0009C73A /* NSObject+JSONSerialization.h */,
 				C8A2C9B317E85A9D0009C73A /* NSString+XStartParams.h */,
-				C8A2C9B417E85A9D0009C73A /* private */,
 				C8A2C9B717E85A9D0009C73A /* UIDevice+Additions.h */,
 				C8A2C9B817E85A9D0009C73A /* XAnalyzer.h */,
 				C8A2C9B917E85A9D0009C73A /* XAPElement.h */,
@@ -1087,10 +1204,127 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C832C44517E9960200D3A35A /* APAttribute.h in Headers */,
+				C832C44617E9960200D3A35A /* APDocument.h in Headers */,
+				C832C44717E9960200D3A35A /* APElement.h in Headers */,
+				C832C44817E9960200D3A35A /* APXML.h in Headers */,
 				C8944C2D17E949E30070A849 /* XAmsDelegate.h in Headers */,
 				C8944C2E17E949E30070A849 /* XRuntime.h in Headers */,
 				C8944C2F17E949E30070A849 /* XSystemBootstrap.h in Headers */,
 				C8944C3017E949E30070A849 /* XViewController.h in Headers */,
+				C832C44917E9962800D3A35A /* Credentials.h in Headers */,
+				C832C44A17E9962800D3A35A /* DES.h in Headers */,
+				C832C44B17E9962800D3A35A /* GAI.h in Headers */,
+				C832C44C17E9962800D3A35A /* GAITrackedViewController.h in Headers */,
+				C832C44D17E9962800D3A35A /* GAITracker.h in Headers */,
+				C832C44E17E9962800D3A35A /* GAITransaction.h in Headers */,
+				C832C44F17E9962800D3A35A /* GAITransactionItem.h in Headers */,
+				C832C45017E9962800D3A35A /* iToast.h in Headers */,
+				C832C45117E9962800D3A35A /* Rsa.h in Headers */,
+				C832C45217E9962800D3A35A /* Rsa_nn.h in Headers */,
+				C832C45317E9962800D3A35A /* RSAEncrypt.h in Headers */,
+				C832C45517E9967100D3A35A /* ZipArchive.h in Headers */,
+				C832C45417E9962800D3A35A /* UPPUtil.h in Headers */,
+				C832C45817E996C300D3A35A /* APDocument+XAPDocument.h in Headers */,
+				C832C45917E996C300D3A35A /* md5.h in Headers */,
+				C832C45A17E996C300D3A35A /* NSData+Encoding.h in Headers */,
+				C832C45B17E996C300D3A35A /* NSMutableArray+XStackAdditions.h in Headers */,
+				C832C45C17E996C300D3A35A /* NSObject+JSONSerialization.h in Headers */,
+				C832C45D17E996C300D3A35A /* NSString+XStartParams.h in Headers */,
+				C832C45E17E996C300D3A35A /* UIDevice+Additions.h in Headers */,
+				C832C45F17E996C300D3A35A /* XAnalyzer.h in Headers */,
+				C832C46017E996C300D3A35A /* XAPElement.h in Headers */,
+				C832C46117E996C300D3A35A /* XApplicationPersistence.h in Headers */,
+				C832C46217E996C300D3A35A /* XApplicationPersistence_Privates.h in Headers */,
+				C832C46317E996C300D3A35A /* XCipher.h in Headers */,
+				C832C46417E996C300D3A35A /* XConstants.h in Headers */,
+				C832C46517E996C300D3A35A /* XDeviceProperties.h in Headers */,
+				C832C46617E996C300D3A35A /* XExtendedDictionary.h in Headers */,
+				C832C46717E996C300D3A35A /* XFileOperator.h in Headers */,
+				C832C46817E996C300D3A35A /* XFileOperatorFactory.h in Headers */,
+				C832C46917E996C300D3A35A /* XFileUtils.h in Headers */,
+				C832C46A17E996C300D3A35A /* XHexData.h in Headers */,
+				C832C46B17E996C300D3A35A /* XILog.h in Headers */,
+				C832C46C17E996C300D3A35A /* XLog.h in Headers */,
+				C832C46D17E996C300D3A35A /* XLogRedirect.h in Headers */,
+				C832C46E17E996C300D3A35A /* XPlainFileOperator.h in Headers */,
+				C832C46F17E996C300D3A35A /* XSecurityFileOperator.h in Headers */,
+				C832C47017E996C300D3A35A /* XStoreProductPresenter.h in Headers */,
+				C832C47117E996C300D3A35A /* XUtils+Additions.h in Headers */,
+				C832C47217E996C300D3A35A /* XUtils.h in Headers */,
+				C832C47317E996C300D3A35A /* XZipArchive.h in Headers */,
+				C832C45617E996A300D3A35A /* XConfiguration.h in Headers */,
+				C832C45717E996A300D3A35A /* XSystemConfigInfo.h in Headers */,
+				C832C47417E9975400D3A35A /* CDVPlugin+XPlugin.h in Headers */,
+				C832C47517E9975400D3A35A /* CDVURLProtocol+XURLProtocol.h in Headers */,
+				C832C47617E9975400D3A35A /* XAppInfo.h in Headers */,
+				C832C47717E9975400D3A35A /* XApplication.h in Headers */,
+				C832C47817E9975400D3A35A /* XApplicationFactory.h in Headers */,
+				C832C47917E9975400D3A35A /* XAppList.h in Headers */,
+				C832C47A17E9975400D3A35A /* XAppUpdater.h in Headers */,
+				C832C47B17E9975400D3A35A /* XAppView.h in Headers */,
+				C832C47C17E9975400D3A35A /* XAppWebView.h in Headers */,
+				C832C47D17E9975400D3A35A /* XCommandQueue.h in Headers */,
+				C832C47E17E9975400D3A35A /* XHTTPURLResponse.h in Headers */,
+				C832C47F17E9975400D3A35A /* XJavaScriptEvaluator.h in Headers */,
+				C832C48017E9975400D3A35A /* XLightweightSystemBootstrap.h in Headers */,
+				C832C48117E9975400D3A35A /* XNativeApplication.h in Headers */,
+				C832C48217E9975400D3A35A /* XPlayerSystemBootstrap.h in Headers */,
+				C832C48317E9975400D3A35A /* XResourceURLProtocol.h in Headers */,
+				C832C48417E9975400D3A35A /* XSync.h in Headers */,
+				C832C48517E9975400D3A35A /* XSystemBootstrapFactory.h in Headers */,
+				C832C48617E9975400D3A35A /* XSystemWorkspaceFactory.h in Headers */,
+				C832C48717E9975400D3A35A /* XUIApplication.h in Headers */,
+				C832C48817E9975400D3A35A /* XVersionLableFactory.h in Headers */,
+				C832C48917E9975400D3A35A /* XWebApplication.h in Headers */,
+				C832C48A17E9975400D3A35A /* XCredentialManager.h in Headers */,
+				C832C48B17E9975400D3A35A /* XHTTPSURLProtocol.h in Headers */,
+				C832C48C17E9975400D3A35A /* XLogRedirct_Privates.h in Headers */,
+				C832C48D17E9975400D3A35A /* XUtils_Privates.h in Headers */,
+				C832C4A717E997CE00D3A35A /* XOnlineMode_Privates.h in Headers */,
+				C832C4A817E997CE00D3A35A /* XAppInstaller_Privates.h in Headers */,
+				C832C4A917E997CE00D3A35A /* XAppManagement_Privates.h in Headers */,
+				C832C4AA17E997CE00D3A35A /* XAppPreinstallListener_Private.h in Headers */,
+				C832C4AB17E997CE00D3A35A /* XAppXMLParser_Legacy_Privates.h in Headers */,
+				C832C4AC17E997CE00D3A35A /* XAppXMLParserFactory_Privates.h in Headers */,
+				C832C4AD17E997CE00D3A35A /* XLightweightAppInstaller_Privates.h in Headers */,
+				C832C4AE17E997CE00D3A35A /* XSystemEventHandler_Privates.h in Headers */,
+				C832C4AF17E997CE00D3A35A /* XSystemEventHandler.h in Headers */,
+				C832C4B017E997CE00D3A35A /* XAppUpdater_Privates.h in Headers */,
+				C832C4B117E997CE00D3A35A /* XConfiguration_Privates.h in Headers */,
+				C832C4B217E997CE00D3A35A /* XExtensionResult_Privates.h in Headers */,
+				C832C4B317E997CE00D3A35A /* XJavaScriptEvaluator_Privates.h in Headers */,
+				C832C4B417E997CE00D3A35A /* XLightweightSystemBootstrap_Privates.h in Headers */,
+				C832C4B517E997CE00D3A35A /* XNativeApplication_Privates.h in Headers */,
+				C832C4B617E997CE00D3A35A /* XPlayerSystemBootstrap_Privates.h in Headers */,
+				C832C4B717E997CE00D3A35A /* XRuntime_Privates.h in Headers */,
+				C832C4B817E997CE00D3A35A /* XWebApplication_Privates.h in Headers */,
+				C832C4B917E997CE00D3A35A /* XWhitelist_Privates.h in Headers */,
+				C832C49B17E997A100D3A35A /* XAmsConstants.h in Headers */,
+				C832C49C17E997A100D3A35A /* XAppInstaller.h in Headers */,
+				C832C49D17E997A100D3A35A /* XAppInstallerProtocol.h in Headers */,
+				C832C49E17E997A100D3A35A /* XAppInstallListener.h in Headers */,
+				C832C49F17E997A100D3A35A /* XAppManagement.h in Headers */,
+				C832C4A017E997A100D3A35A /* XAppPreinstallListener.h in Headers */,
+				C832C4A117E997A100D3A35A /* XAppXMLParser.h in Headers */,
+				C832C4A217E997A100D3A35A /* XAppXMLParser_Legacy.h in Headers */,
+				C832C4A317E997A100D3A35A /* XAppXMLParserFactory.h in Headers */,
+				C832C4A417E997A100D3A35A /* XAppXMLTagDefine.h in Headers */,
+				C832C4A517E997A100D3A35A /* XInstallListener.h in Headers */,
+				C832C4A617E997A100D3A35A /* XLightweightAppInstaller.h in Headers */,
+				C832C48E17E9977300D3A35A /* XAppRunningMode.h in Headers */,
+				C832C48F17E9977300D3A35A /* XDefaultSecurityPolicy.h in Headers */,
+				C832C49017E9977300D3A35A /* XDefaultSecurityResourceFilter.h in Headers */,
+				C832C49117E9977300D3A35A /* XLocalMode.h in Headers */,
+				C832C49217E9977300D3A35A /* XLocalResourceIterator.h in Headers */,
+				C832C49317E9977300D3A35A /* XOnlineMode.h in Headers */,
+				C832C49417E9977300D3A35A /* XOnlineResourceInfo.h in Headers */,
+				C832C49517E9977300D3A35A /* XOnlineResourceIterator.h in Headers */,
+				C832C49617E9977300D3A35A /* XResourceIterator.h in Headers */,
+				C832C49717E9977300D3A35A /* XSecurityPolicy.h in Headers */,
+				C832C49817E9977300D3A35A /* XSecurityPolicyFactory.h in Headers */,
+				C832C49917E9977300D3A35A /* XSecurityResourceFilter.h in Headers */,
+				C832C49A17E9977300D3A35A /* XSecurityResourceFilterFactory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
