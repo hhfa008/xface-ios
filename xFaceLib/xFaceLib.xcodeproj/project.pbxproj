@@ -167,8 +167,6 @@
 		C8A2CAB717E85A9D0009C73A /* XAPElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1017E85A9D0009C73A /* XAPElement.m */; };
 		C8A2CAB817E85A9D0009C73A /* XApplicationPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1117E85A9D0009C73A /* XApplicationPersistence.m */; };
 		C8A2CAB917E85A9D0009C73A /* XApplicationPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1117E85A9D0009C73A /* XApplicationPersistence.m */; };
-		C8A2CABA17E85A9D0009C73A /* XBase64Data.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1217E85A9D0009C73A /* XBase64Data.m */; };
-		C8A2CABB17E85A9D0009C73A /* XBase64Data.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1217E85A9D0009C73A /* XBase64Data.m */; };
 		C8A2CABC17E85A9D0009C73A /* XCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1317E85A9D0009C73A /* XCipher.m */; };
 		C8A2CABD17E85A9D0009C73A /* XCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1317E85A9D0009C73A /* XCipher.m */; };
 		C8A2CABE17E85A9D0009C73A /* XDeviceProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1417E85A9D0009C73A /* XDeviceProperties.m */; };
@@ -187,10 +185,6 @@
 		C8A2CACB17E85A9D0009C73A /* XLogRedirect.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1A17E85A9D0009C73A /* XLogRedirect.m */; };
 		C8A2CACC17E85A9D0009C73A /* XPlainFileOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1B17E85A9D0009C73A /* XPlainFileOperator.m */; };
 		C8A2CACD17E85A9D0009C73A /* XPlainFileOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1B17E85A9D0009C73A /* XPlainFileOperator.m */; };
-		C8A2CACE17E85A9D0009C73A /* XRSACipher.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1C17E85A9D0009C73A /* XRSACipher.m */; };
-		C8A2CACF17E85A9D0009C73A /* XRSACipher.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1C17E85A9D0009C73A /* XRSACipher.m */; };
-		C8A2CAD017E85A9D0009C73A /* XSecKeyWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1D17E85A9D0009C73A /* XSecKeyWrapper.m */; };
-		C8A2CAD117E85A9D0009C73A /* XSecKeyWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1D17E85A9D0009C73A /* XSecKeyWrapper.m */; };
 		C8A2CAD217E85A9D0009C73A /* XSecurityFileOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1E17E85A9D0009C73A /* XSecurityFileOperator.m */; };
 		C8A2CAD317E85A9D0009C73A /* XSecurityFileOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1E17E85A9D0009C73A /* XSecurityFileOperator.m */; };
 		C8A2CAD417E85A9D0009C73A /* XStoreProductPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2CA1F17E85A9D0009C73A /* XStoreProductPresenter.m */; };
@@ -392,7 +386,6 @@
 		C8A2C9B917E85A9D0009C73A /* XAPElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAPElement.h; sourceTree = "<group>"; };
 		C8A2C9BA17E85A9D0009C73A /* XApplicationPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XApplicationPersistence.h; sourceTree = "<group>"; };
 		C8A2C9BB17E85A9D0009C73A /* XApplicationPersistence_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XApplicationPersistence_Privates.h; sourceTree = "<group>"; };
-		C8A2C9BC17E85A9D0009C73A /* XBase64Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBase64Data.h; sourceTree = "<group>"; };
 		C8A2C9BD17E85A9D0009C73A /* XCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCipher.h; sourceTree = "<group>"; };
 		C8A2C9BE17E85A9D0009C73A /* XConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XConstants.h; sourceTree = "<group>"; };
 		C8A2C9BF17E85A9D0009C73A /* XDeviceProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDeviceProperties.h; sourceTree = "<group>"; };
@@ -405,8 +398,6 @@
 		C8A2C9C617E85A9D0009C73A /* XLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLog.h; sourceTree = "<group>"; };
 		C8A2C9C717E85A9D0009C73A /* XLogRedirect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLogRedirect.h; sourceTree = "<group>"; };
 		C8A2C9C817E85A9D0009C73A /* XPlainFileOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPlainFileOperator.h; sourceTree = "<group>"; };
-		C8A2C9C917E85A9D0009C73A /* XRSACipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRSACipher.h; sourceTree = "<group>"; };
-		C8A2C9CA17E85A9D0009C73A /* XSecKeyWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSecKeyWrapper.h; sourceTree = "<group>"; };
 		C8A2C9CB17E85A9D0009C73A /* XSecurityFileOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSecurityFileOperator.h; sourceTree = "<group>"; };
 		C8A2C9CC17E85A9D0009C73A /* XStoreProductPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStoreProductPresenter.h; sourceTree = "<group>"; };
 		C8A2C9CD17E85A9D0009C73A /* XUtils+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XUtils+Additions.h"; sourceTree = "<group>"; };
@@ -469,7 +460,6 @@
 		C8A2CA0F17E85A9D0009C73A /* XAnalyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAnalyzer.m; sourceTree = "<group>"; };
 		C8A2CA1017E85A9D0009C73A /* XAPElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAPElement.m; sourceTree = "<group>"; };
 		C8A2CA1117E85A9D0009C73A /* XApplicationPersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XApplicationPersistence.m; sourceTree = "<group>"; };
-		C8A2CA1217E85A9D0009C73A /* XBase64Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBase64Data.m; sourceTree = "<group>"; };
 		C8A2CA1317E85A9D0009C73A /* XCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCipher.m; sourceTree = "<group>"; };
 		C8A2CA1417E85A9D0009C73A /* XDeviceProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDeviceProperties.m; sourceTree = "<group>"; };
 		C8A2CA1517E85A9D0009C73A /* XExtendedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XExtendedDictionary.m; sourceTree = "<group>"; };
@@ -479,8 +469,6 @@
 		C8A2CA1917E85A9D0009C73A /* XLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLog.m; sourceTree = "<group>"; };
 		C8A2CA1A17E85A9D0009C73A /* XLogRedirect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLogRedirect.m; sourceTree = "<group>"; };
 		C8A2CA1B17E85A9D0009C73A /* XPlainFileOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPlainFileOperator.m; sourceTree = "<group>"; };
-		C8A2CA1C17E85A9D0009C73A /* XRSACipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRSACipher.m; sourceTree = "<group>"; };
-		C8A2CA1D17E85A9D0009C73A /* XSecKeyWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSecKeyWrapper.m; sourceTree = "<group>"; };
 		C8A2CA1E17E85A9D0009C73A /* XSecurityFileOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSecurityFileOperator.m; sourceTree = "<group>"; };
 		C8A2CA1F17E85A9D0009C73A /* XStoreProductPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStoreProductPresenter.m; sourceTree = "<group>"; };
 		C8A2CA2017E85A9D0009C73A /* XUtils+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XUtils+Additions.m"; sourceTree = "<group>"; };
@@ -919,7 +907,6 @@
 				C8A2C9B917E85A9D0009C73A /* XAPElement.h */,
 				C8A2C9BA17E85A9D0009C73A /* XApplicationPersistence.h */,
 				C8A2C9BB17E85A9D0009C73A /* XApplicationPersistence_Privates.h */,
-				C8A2C9BC17E85A9D0009C73A /* XBase64Data.h */,
 				C8A2C9BD17E85A9D0009C73A /* XCipher.h */,
 				C8A2C9BE17E85A9D0009C73A /* XConstants.h */,
 				C8A2C9BF17E85A9D0009C73A /* XDeviceProperties.h */,
@@ -932,8 +919,6 @@
 				C8A2C9C617E85A9D0009C73A /* XLog.h */,
 				C8A2C9C717E85A9D0009C73A /* XLogRedirect.h */,
 				C8A2C9C817E85A9D0009C73A /* XPlainFileOperator.h */,
-				C8A2C9C917E85A9D0009C73A /* XRSACipher.h */,
-				C8A2C9CA17E85A9D0009C73A /* XSecKeyWrapper.h */,
 				C8A2C9CB17E85A9D0009C73A /* XSecurityFileOperator.h */,
 				C8A2C9CC17E85A9D0009C73A /* XStoreProductPresenter.h */,
 				C8A2C9CD17E85A9D0009C73A /* XUtils+Additions.h */,
@@ -1077,7 +1062,6 @@
 				C8A2CA0F17E85A9D0009C73A /* XAnalyzer.m */,
 				C8A2CA1017E85A9D0009C73A /* XAPElement.m */,
 				C8A2CA1117E85A9D0009C73A /* XApplicationPersistence.m */,
-				C8A2CA1217E85A9D0009C73A /* XBase64Data.m */,
 				C8A2CA1317E85A9D0009C73A /* XCipher.m */,
 				C8A2CA1417E85A9D0009C73A /* XDeviceProperties.m */,
 				C8A2CA1517E85A9D0009C73A /* XExtendedDictionary.m */,
@@ -1087,8 +1071,6 @@
 				C8A2CA1917E85A9D0009C73A /* XLog.m */,
 				C8A2CA1A17E85A9D0009C73A /* XLogRedirect.m */,
 				C8A2CA1B17E85A9D0009C73A /* XPlainFileOperator.m */,
-				C8A2CA1C17E85A9D0009C73A /* XRSACipher.m */,
-				C8A2CA1D17E85A9D0009C73A /* XSecKeyWrapper.m */,
 				C8A2CA1E17E85A9D0009C73A /* XSecurityFileOperator.m */,
 				C8A2CA1F17E85A9D0009C73A /* XStoreProductPresenter.m */,
 				C8A2CA2017E85A9D0009C73A /* XUtils+Additions.m */,
@@ -1301,7 +1283,6 @@
 				C8A2CAB417E85A9D0009C73A /* XAnalyzer.m in Sources */,
 				C8A2CAB617E85A9D0009C73A /* XAPElement.m in Sources */,
 				C8A2CAB817E85A9D0009C73A /* XApplicationPersistence.m in Sources */,
-				C8A2CABA17E85A9D0009C73A /* XBase64Data.m in Sources */,
 				C8A2CABC17E85A9D0009C73A /* XCipher.m in Sources */,
 				C8A2CABE17E85A9D0009C73A /* XDeviceProperties.m in Sources */,
 				C8A2CAC017E85A9D0009C73A /* XExtendedDictionary.m in Sources */,
@@ -1311,8 +1292,6 @@
 				C8A2CAC817E85A9D0009C73A /* XLog.m in Sources */,
 				C8A2CACA17E85A9D0009C73A /* XLogRedirect.m in Sources */,
 				C8A2CACC17E85A9D0009C73A /* XPlainFileOperator.m in Sources */,
-				C8A2CACE17E85A9D0009C73A /* XRSACipher.m in Sources */,
-				C8A2CAD017E85A9D0009C73A /* XSecKeyWrapper.m in Sources */,
 				C8A2CAD217E85A9D0009C73A /* XSecurityFileOperator.m in Sources */,
 				C8A2CAD417E85A9D0009C73A /* XStoreProductPresenter.m in Sources */,
 				C8A2CAD617E85A9D0009C73A /* XUtils+Additions.m in Sources */,
@@ -1398,7 +1377,6 @@
 				C8A2CAB517E85A9D0009C73A /* XAnalyzer.m in Sources */,
 				C8A2CAB717E85A9D0009C73A /* XAPElement.m in Sources */,
 				C8A2CAB917E85A9D0009C73A /* XApplicationPersistence.m in Sources */,
-				C8A2CABB17E85A9D0009C73A /* XBase64Data.m in Sources */,
 				C8A2CABD17E85A9D0009C73A /* XCipher.m in Sources */,
 				C8A2CABF17E85A9D0009C73A /* XDeviceProperties.m in Sources */,
 				C8A2CAC117E85A9D0009C73A /* XExtendedDictionary.m in Sources */,
@@ -1408,8 +1386,6 @@
 				C8A2CAC917E85A9D0009C73A /* XLog.m in Sources */,
 				C8A2CACB17E85A9D0009C73A /* XLogRedirect.m in Sources */,
 				C8A2CACD17E85A9D0009C73A /* XPlainFileOperator.m in Sources */,
-				C8A2CACF17E85A9D0009C73A /* XRSACipher.m in Sources */,
-				C8A2CAD117E85A9D0009C73A /* XSecKeyWrapper.m in Sources */,
 				C8A2CAD317E85A9D0009C73A /* XSecurityFileOperator.m in Sources */,
 				C8A2CAD517E85A9D0009C73A /* XStoreProductPresenter.m in Sources */,
 				C8A2CAD717E85A9D0009C73A /* XUtils+Additions.m in Sources */,

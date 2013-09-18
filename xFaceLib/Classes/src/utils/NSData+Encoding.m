@@ -25,8 +25,9 @@
 //
 //
 
+#import <Cordova/NSData+Base64.h>
+
 #import "NSData+Encoding.h"
-#import "XBase64Data.h"
 #import "XHexData.h"
 
 @implementation NSData (Encoding)
