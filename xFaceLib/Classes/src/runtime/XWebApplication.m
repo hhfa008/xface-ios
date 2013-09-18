@@ -26,7 +26,7 @@
 //
 //
 
-#import <cordova/CDV.h>
+#import <Cordova/CDV.h>
 #import "XWebApplication.h"
 #import "XConfiguration.h"
 #import "XConstants.h"

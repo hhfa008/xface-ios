@@ -25,7 +25,7 @@
 //
 //
 
-#import <cordova/CDVURLProtocol.h>
+#import <Cordova/CDVURLProtocol.h>
 
 @class XViewController;
 

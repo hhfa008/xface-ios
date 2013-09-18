@@ -25,7 +25,7 @@
 //
 //
 
-#import <cordova/CDV.h>
+#import <Cordova/CDV.h>
 #import "XViewController.h"
 #import "XApplication.h"
 #import "XJavaScriptEvaluator.h"

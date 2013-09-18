@@ -25,7 +25,7 @@
 //
 //
 
-#import <cordova/CDVPlugin.h>
+#import <Cordova/CDVPlugin.h>
 
 @protocol XApplication;
 
