@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C8A2C8EE17E856550009C73A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C8ED17E856550009C73A /* Foundation.framework */; };
 		C8A2C8FD17E856560009C73A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C8FC17E856560009C73A /* SenTestingKit.framework */; };
-		C8A2C8FF17E856560009C73A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C8FE17E856560009C73A /* UIKit.framework */; };
 		C8A2C90017E856560009C73A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C8ED17E856550009C73A /* Foundation.framework */; };
 		C8A2C90317E856560009C73A /* libxFaceLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C8EA17E856550009C73A /* libxFaceLib.a */; };
 		C8A2C90917E856560009C73A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8A2C90717E856560009C73A /* InfoPlist.strings */; };
@@ -24,7 +22,6 @@
 		C8A2CA2A17E85A9D0009C73A /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2C92917E85A9D0009C73A /* Credentials.m */; };
 		C8A2CA2B17E85A9D0009C73A /* DES.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C8A2C92B17E85A9D0009C73A /* DES.cpp */; };
 		C8A2CA2C17E85A9D0009C73A /* DES.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C8A2C92B17E85A9D0009C73A /* DES.cpp */; };
-		C8A2CA2D17E85A9D0009C73A /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C93317E85A9D0009C73A /* libGoogleAnalytics.a */; };
 		C8A2CA2E17E85A9D0009C73A /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C93317E85A9D0009C73A /* libGoogleAnalytics.a */; };
 		C8A2CA3017E85A9D0009C73A /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C93417E85A9D0009C73A /* libGoogleAnalytics_debug.a */; };
 		C8A2CA3117E85A9D0009C73A /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = C8A2C93517E85A9D0009C73A /* Readme.txt */; };
@@ -38,7 +35,6 @@
 		C8A2CA3917E85A9D0009C73A /* RSAEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A2C93F17E85A9D0009C73A /* RSAEncrypt.m */; };
 		C8A2CA3A17E85A9D0009C73A /* UPPUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = C8A2C94017E85A9D0009C73A /* UPPUtil.c */; };
 		C8A2CA3B17E85A9D0009C73A /* UPPUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = C8A2C94017E85A9D0009C73A /* UPPUtil.c */; };
-		C8A2CA3C17E85A9D0009C73A /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C94317E85A9D0009C73A /* libMobClickLibrary.a */; };
 		C8A2CA3D17E85A9D0009C73A /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C94317E85A9D0009C73A /* libMobClickLibrary.a */; };
 		C8A2CA3E17E85A9D0009C73A /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = C8A2C94817E85A9D0009C73A /* ioapi.c */; };
 		C8A2CA3F17E85A9D0009C73A /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = C8A2C94817E85A9D0009C73A /* ioapi.c */; };
@@ -237,12 +233,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C8944C1217E946DA0070A849 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C8944C1417E9472B0070A849 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C8944C1617E947310070A849 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C8944C1817E947380070A849 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		C8944C1A17E9473D0070A849 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C8944C1C17E947440070A849 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		C8944C1E17E9474B0070A849 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		C8944C2017E947510070A849 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		C8944C2217E9475B0070A849 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		C8944C2417E947600070A849 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C8A2C8EA17E856550009C73A /* libxFaceLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libxFaceLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A2C8ED17E856550009C73A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C8A2C8F117E856550009C73A /* xFaceLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "xFaceLib-Prefix.pch"; sourceTree = "<group>"; };
 		C8A2C8FB17E856560009C73A /* xFaceLibTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xFaceLibTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A2C8FC17E856560009C73A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		C8A2C8FE17E856560009C73A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C8A2C90617E856560009C73A /* xFaceLibTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "xFaceLibTests-Info.plist"; sourceTree = "<group>"; };
 		C8A2C90817E856560009C73A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C8A2C90A17E856560009C73A /* xFaceLibTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xFaceLibTests.h; sourceTree = "<group>"; };
@@ -482,9 +487,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8A2C8EE17E856550009C73A /* Foundation.framework in Frameworks */,
-				C8A2CA2D17E85A9D0009C73A /* libGoogleAnalytics.a in Frameworks */,
-				C8A2CA3C17E85A9D0009C73A /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,7 +495,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8A2C8FD17E856560009C73A /* SenTestingKit.framework in Frameworks */,
-				C8A2C8FF17E856560009C73A /* UIKit.framework in Frameworks */,
 				C8A2C90017E856560009C73A /* Foundation.framework in Frameworks */,
 				C8A2C90317E856560009C73A /* libxFaceLib.a in Frameworks */,
 				C8A2CA2E17E85A9D0009C73A /* libGoogleAnalytics.a in Frameworks */,
@@ -528,9 +529,18 @@
 		C8A2C8EC17E856550009C73A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C8944C2417E947600070A849 /* Security.framework */,
+				C8944C2217E9475B0070A849 /* CoreMotion.framework */,
+				C8944C2017E947510070A849 /* libsqlite3.dylib */,
+				C8944C1E17E9474B0070A849 /* MediaPlayer.framework */,
+				C8944C1C17E947440070A849 /* libz.1.2.5.dylib */,
+				C8944C1A17E9473D0070A849 /* CoreData.framework */,
+				C8944C1817E947380070A849 /* StoreKit.framework */,
+				C8944C1617E947310070A849 /* CFNetwork.framework */,
+				C8944C1417E9472B0070A849 /* SystemConfiguration.framework */,
+				C8944C1217E946DA0070A849 /* UIKit.framework */,
 				C8A2C8ED17E856550009C73A /* Foundation.framework */,
 				C8A2C8FC17E856560009C73A /* SenTestingKit.framework */,
-				C8A2C8FE17E856560009C73A /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
