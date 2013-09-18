@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C8944C2D17E949E30070A849 /* XAmsDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99217E85A9D0009C73A /* XAmsDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C8944C2E17E949E30070A849 /* XRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9A117E85A9D0009C73A /* XRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C8944C2F17E949E30070A849 /* XSystemBootstrap.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9A317E85A9D0009C73A /* XSystemBootstrap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C8944C3017E949E30070A849 /* XViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9A817E85A9D0009C73A /* XViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8A2C8FD17E856560009C73A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C8FC17E856560009C73A /* SenTestingKit.framework */; };
 		C8A2C90017E856560009C73A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C8ED17E856550009C73A /* Foundation.framework */; };
 		C8A2C90317E856560009C73A /* libxFaceLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C8EA17E856550009C73A /* libxFaceLib.a */; };
@@ -1092,11 +1096,26 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		C8944C2C17E949CA0070A849 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8944C2D17E949E30070A849 /* XAmsDelegate.h in Headers */,
+				C8944C2E17E949E30070A849 /* XRuntime.h in Headers */,
+				C8944C2F17E949E30070A849 /* XSystemBootstrap.h in Headers */,
+				C8944C3017E949E30070A849 /* XViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		C8A2C8E917E856550009C73A /* xFaceLib */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8A2C90F17E856560009C73A /* Build configuration list for PBXNativeTarget "xFaceLib" */;
 			buildPhases = (
+				C8944C2C17E949CA0070A849 /* Headers */,
 				C8A2C8E617E856550009C73A /* Sources */,
 				C8A2C8E717E856550009C73A /* Frameworks */,
 				C8A2C8E817E856550009C73A /* CopyFiles */,
@@ -1488,6 +1507,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/xFace;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1505,6 +1525,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/xFace;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

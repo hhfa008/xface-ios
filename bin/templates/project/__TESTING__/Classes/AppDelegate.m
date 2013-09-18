@@ -30,8 +30,8 @@
 
 #import <Cordova/CDVPlugin.h>
 
-#import "XRuntime.h"
-#import "XViewController.h"
+#import <xFace/XRuntime.h>
+#import <xFace/XViewController.h>
 
 @implementation AppDelegate
 
