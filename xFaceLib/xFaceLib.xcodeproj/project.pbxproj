@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C832C42017E97EA400D3A35A /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C93317E85A9D0009C73A /* libGoogleAnalytics.a */; };
+		C832C42117E97EB100D3A35A /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C94317E85A9D0009C73A /* libMobClickLibrary.a */; };
+		C832C42517E97F0F00D3A35A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C91A17E857390009C73A /* libCordova.a */; };
 		C8944C2D17E949E30070A849 /* XAmsDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C99217E85A9D0009C73A /* XAmsDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8944C2E17E949E30070A849 /* XRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9A117E85A9D0009C73A /* XRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8944C2F17E949E30070A849 /* XSystemBootstrap.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2C9A317E85A9D0009C73A /* XSystemBootstrap.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -239,7 +242,6 @@
 /* Begin PBXFileReference section */
 		C8944C1217E946DA0070A849 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C8944C1417E9472B0070A849 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		C8944C1617E947310070A849 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C8944C1817E947380070A849 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C8944C1A17E9473D0070A849 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C8944C1C17E947440070A849 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
@@ -491,6 +493,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C832C42517E97F0F00D3A35A /* libCordova.a in Frameworks */,
+				C832C42117E97EB100D3A35A /* libMobClickLibrary.a in Frameworks */,
+				C832C42017E97EA400D3A35A /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,7 +545,6 @@
 				C8944C1C17E947440070A849 /* libz.1.2.5.dylib */,
 				C8944C1A17E9473D0070A849 /* CoreData.framework */,
 				C8944C1817E947380070A849 /* StoreKit.framework */,
-				C8944C1617E947310070A849 /* CFNetwork.framework */,
 				C8944C1417E9472B0070A849 /* SystemConfiguration.framework */,
 				C8944C1217E946DA0070A849 /* UIKit.framework */,
 				C8A2C8ED17E856550009C73A /* Foundation.framework */,
