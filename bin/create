@@ -141,18 +141,18 @@ if [[ $USE_SHARED = 1 ]]; then
     "$BINDIR/update_cordova_subproject" "$R.xcodeproj/project.pbxproj" > /dev/null
 else
     # Copy in the CordovaLib directory.
-    mkdir -p "$PROJECT_PATH/CordovaLib/CordovaLib.xcodeproj"
+    mkdir -p "$PROJECT_PATH/cordova-ios/CordovaLib/CordovaLib.xcodeproj"
     cp "$R/.gitignore" "$PROJECT_PATH/"
-    cp -r "$BINDIR/../CordovaLib/Classes" "$PROJECT_PATH/CordovaLib"
-    cp "$BINDIR/../CordovaLib/VERSION" "$PROJECT_PATH/CordovaLib"
-    cp "$BINDIR/../CordovaLib/cordova.js" "$PROJECT_PATH/CordovaLib"
-    cp "$BINDIR/../CordovaLib/CordovaLib_Prefix.pch" "$PROJECT_PATH/CordovaLib"
-    cp "$BINDIR/../CordovaLib/CordovaLib.xcodeproj/project.pbxproj" "$PROJECT_PATH/CordovaLib/CordovaLib.xcodeproj"
+    cp -r "$BINDIR/../cordova-ios/CordovaLib/Classes" "$PROJECT_PATH/cordova-ios/CordovaLib"
+    cp "$BINDIR/../cordova-ios/CordovaLib/VERSION" "$PROJECT_PATH/cordova-ios/CordovaLib"
+    cp "$BINDIR/../cordova-ios/CordovaLib/cordova.js" "$PROJECT_PATH/cordova-ios/CordovaLib"
+    cp "$BINDIR/../cordova-ios/CordovaLib/CordovaLib_Prefix.pch" "$PROJECT_PATH/cordova-ios/CordovaLib"
+    cp "$BINDIR/../cordova-ios/CordovaLib/CordovaLib.xcodeproj/project.pbxproj" "$PROJECT_PATH/cordova-ios/CordovaLib/CordovaLib.xcodeproj"
 
     # Copy in the xFaceLib directory
     mkdir -p "$PROJECT_PATH/xFaceLib/xFaceLib.xcodeproj"
     cp -r "$BINDIR/../xFaceLib/xFaceLib" "$PROJECT_PATH/xFaceLib"
-    cp -r "$BINDIR/../xFaceLib/Plugins" "$PROJECT_PATH/xFaceLib"
+    cp -r "$BINDIR/../xFaceLib/Classes" "$PROJECT_PATH/xFaceLib"
     cp -r "$BINDIR/../xFaceLib/xFaceLibTests" "$PROJECT_PATH/xFaceLib"
     cp "$BINDIR/../xFaceLib/xFaceLib.xcodeproj/project.pbxproj" "$PROJECT_PATH/xFaceLib/xFaceLib.xcodeproj"
     # Make the sub-project reference to Cordova have the correct path.
