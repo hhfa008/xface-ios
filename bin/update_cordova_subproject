@@ -87,7 +87,7 @@ def main(argv):
   file_handle = fileinput.input(os.path.join(project_path, 'project.pbxproj'), inplace=1)
   found = False
   for line in file_handle:
-    if 'CordovaLib.xcodeproj' in line:
+    if 'xFaceLib.xcodeproj' in line:
       m = REGEX.match(line)
       if m:
         found = True
