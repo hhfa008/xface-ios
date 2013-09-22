@@ -152,7 +152,6 @@ else
     # Copy in the xFaceLib directory
     mkdir -p "$PROJECT_PATH/xFaceLib/xFaceLib.xcodeproj"
     cp -r "$BINDIR/../xFaceLib/xFaceLib" "$PROJECT_PATH/xFaceLib"
-    cp -r "$BINDIR/../xFaceLib/Classes" "$PROJECT_PATH/xFaceLib"
     cp -r "$BINDIR/../xFaceLib/xFaceLibTests" "$PROJECT_PATH/xFaceLib"
     cp "$BINDIR/../xFaceLib/xFaceLib.xcodeproj/project.pbxproj" "$PROJECT_PATH/xFaceLib/xFaceLib.xcodeproj"
     # Make the sub-project reference to Cordova have the correct path.
