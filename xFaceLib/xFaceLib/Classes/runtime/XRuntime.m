@@ -42,8 +42,6 @@
 #import "XConfiguration.h"
 #import "XViewController.h"
 #import "NSMutableArray+XStackAdditions.h"
-#import "XAmsImpl.h"
-#import "XAmsExt.h"
 #import "XAppWebView.h"
 
 // TODO:日后需要增加本地化操作
@@ -165,15 +163,7 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
 {
     // Initialize components
     self.appManagement = [[XAppManagement alloc] initWithAmsDelegate:self];
-
-    // 创建ams扩展,并交给扩展管理器进行管理
-    XAmsImpl *amsImpl = [[XAmsImpl alloc] init:appManagement];
-    XAmsExt *amsExt = [[XAmsExt alloc] init:amsImpl];
-    [amsExt setWebView:[self.viewController webView]];
-    [self.viewController registerPlugin:amsExt withClassName:NSStringFromClass([XAmsExt class])];
-
     self.sysEventHandler = [[XSystemEventHandler alloc] initWithAppManagement:[self appManagement]];
-
     [self.systemBootstrap boot:self.appManagement];
 }
 

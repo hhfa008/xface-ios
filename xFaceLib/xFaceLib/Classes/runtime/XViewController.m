@@ -33,7 +33,6 @@
 #import "XUtils.h"
 #import "XCommandQueue.h"
 #import "XAppWebView.h"
-#import "XAmsExt.h"
 
 #define EXTENSION_MAP_INITIAL_CAPACITY                 4
 

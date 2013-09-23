@@ -43,12 +43,7 @@
 @property (assign, nonatomic) id <XPushHandler> pushDelegate;
 
 /**
- 所有正在运行的应用对应的controller
- */
-@property (strong) NSMutableArray *activeViewControllers;
-
-/**
- 应用视图控制器.
+    与default app关联的应用视图控制器
  */
 @property (strong, nonatomic) XViewController *viewController;
 

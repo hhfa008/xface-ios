@@ -39,6 +39,11 @@
 @interface XRuntime ()
 
 /**
+    所有与正在运行的应用关联的view controller
+ */
+@property (strong) NSMutableArray *activeViewControllers;
+
+/**
 	应用管理器.
  */
 @property (strong, nonatomic) XAppManagement *appManagement;
