@@ -588,7 +588,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C8A15F3517EEA50600FB3E68 /* ExtLibs */ = {
+		C8A15F3517EEA50600FB3E68 /* extlibs */ = {
 			isa = PBXGroup;
 			children = (
 				C8A15F3617EEA50600FB3E68 /* APXML */,
@@ -598,7 +598,8 @@
 				C8A15F4C17EEA50600FB3E68 /* UMAnalytics_Sdk_2.2.0.OpenUDID */,
 				C8A15F4F17EEA50600FB3E68 /* ZipArchive */,
 			);
-			path = ExtLibs;
+			name = extlibs;
+			path = extlibs;
 			sourceTree = "<group>";
 		};
 		C8A15F3617EEA50600FB3E68 /* APXML */ = {
@@ -723,7 +724,7 @@
 		C8A2C8EF17E856550009C73A /* xFaceLib */ = {
 			isa = PBXGroup;
 			children = (
-				C8A15F3517EEA50600FB3E68 /* ExtLibs */,
+				C8A15F3517EEA50600FB3E68 /* extlibs */,
 				C8DF680C17EE9FCB008B0CAF /* Classes */,
 				C8A2C8F017E856550009C73A /* Supporting Files */,
 			);
@@ -1547,8 +1548,8 @@
 				GCC_PREFIX_HEADER = "xFaceLib/xFaceLib-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/xFaceLib/ExtLibs/GoogleAnalytics\"",
-					"\"$(SRCROOT)/xFaceLib/ExtLibs/UMAnalytics_Sdk_2.2.0.OpenUDID\"",
+					"\"$(SRCROOT)/xFaceLib/extlibs/GoogleAnalytics\"",
+					"\"$(SRCROOT)/xFaceLib/extlibs/UMAnalytics_Sdk_2.2.0.OpenUDID\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1565,8 +1566,8 @@
 				GCC_PREFIX_HEADER = "xFaceLib/xFaceLib-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/xFaceLib/ExtLibs/GoogleAnalytics\"",
-					"\"$(SRCROOT)/xFaceLib/ExtLibs/UMAnalytics_Sdk_2.2.0.OpenUDID\"",
+					"\"$(SRCROOT)/xFaceLib/extlibs/GoogleAnalytics\"",
+					"\"$(SRCROOT)/xFaceLib/extlibs/UMAnalytics_Sdk_2.2.0.OpenUDID\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1587,8 +1588,8 @@
 				INFOPLIST_FILE = "xFaceLibTests/xFaceLibTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/xFaceLib/ExtLibs/GoogleAnalytics\"",
-					"\"$(SRCROOT)/xFaceLib/ExtLibs/UMAnalytics_Sdk_2.2.0.OpenUDID\"",
+					"\"$(SRCROOT)/xFaceLib/extlibs/GoogleAnalytics\"",
+					"\"$(SRCROOT)/xFaceLib/extlibs/UMAnalytics_Sdk_2.2.0.OpenUDID\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
@@ -1607,8 +1608,8 @@
 				INFOPLIST_FILE = "xFaceLibTests/xFaceLibTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/xFaceLib/ExtLibs/GoogleAnalytics\"",
-					"\"$(SRCROOT)/xFaceLib/ExtLibs/UMAnalytics_Sdk_2.2.0.OpenUDID\"",
+					"\"$(SRCROOT)/xFaceLib/extlibs/GoogleAnalytics\"",
+					"\"$(SRCROOT)/xFaceLib/extlibs/UMAnalytics_Sdk_2.2.0.OpenUDID\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
