@@ -44,6 +44,7 @@
 
 - (void)startLoading
 {
+    //TODO:确定xface.js的处理方式
     //NSString *srcJsPath = [[NSBundle bundleForClass:[self class]] pathForResource:XFACE_JS_FILE_NAME ofType:nil];
     NSString *srcJsPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"cordova.js" ofType:nil inDirectory:APPLICATION_PREPACKED_PACKAGE_FOLDER];
     NSData* data = [NSData dataWithContentsOfFile:srcJsPath];
