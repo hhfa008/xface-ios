@@ -63,9 +63,9 @@ SCRIPT="$0"
 while [ -h "$SCRIPT" ] ; do
    SCRIPT=`readlink "$SCRIPT"`
 done
-
 BINDIR=$( cd "$( dirname "$SCRIPT" )" && pwd )
-CORDOVALIB_DIR="$BINDIR/../xFaceLib"
+CORDOVALIB_DIR="$BINDIR/../cordova-ios/CordovaLib"
+XFACELIB_DIR="$BINDIR/../xFaceLib/xFaceLib"
 # todo: don't know meaning for version file
 #CDV_VER=$(cat "$CORDOVALIB_DIR/VERSION")
 
@@ -94,8 +94,8 @@ fi
 # copy the files in; then modify them
 cp -r "$PROJECT_TEMPLATE_DIR/" "$PROJECT_PATH"
 
-# todo: Copy in the JS.
-#cp "$CORDOVALIB_DIR/cordova.js" "$PROJECT_PATH/www/cordova.js"
+# Copy in the JS.
+cp "$XFACELIB_DIR/xface.js" "$PROJECT_PATH/www/xface.js"
 
 # I've tried to be thorough in my documentation of the manual actions below...
 # on first brush it would seem that the right solution would be to brute force
