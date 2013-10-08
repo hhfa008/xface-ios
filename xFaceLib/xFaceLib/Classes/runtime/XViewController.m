@@ -25,7 +25,7 @@
 //
 //
 
-#import <Cordova/CDV.h>
+#import <cordova/CDV.h>
 #import "XViewController.h"
 #import "XApplication.h"
 #import "XJavaScriptEvaluator.h"
@@ -76,6 +76,14 @@
 {
     XAppWebView *appView = [[XAppWebView alloc] initWithFrame:bounds];
     return appView;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    //避免加载错误页面："ERROR: Start Page at 'www/index.html' was not found."
+    [self.webView stopLoading];
 }
 
 #pragma mark UIWebViewDelegate
