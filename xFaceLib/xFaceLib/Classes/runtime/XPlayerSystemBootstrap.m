@@ -115,10 +115,7 @@
     }
     else
     {
-        //NSString *bundlePath = [NSString stringWithFormat:@"%@%@%@%@%@", APPLICATION_PREPACKED_PACKAGE_FOLDER, FILE_SEPARATOR, XFACE_WORKSPACE_NAME_UNDER_APP, FILE_SEPARATOR, APPLICATION_INSTALLATION_FOLDER];
-        //NSString *srcAppFolderPath = [mainBundle pathForResource:DEFAULT_APP_ID_FOR_PLAYER ofType:nil inDirectory:bundlePath];
-
-        NSString *srcAppFolderPath = [mainBundle pathForResource:APPLICATION_PREPACKED_PACKAGE_FOLDER ofType:nil inDirectory:nil];
+        NSString *srcAppFolderPath = [mainBundle pathForResource:DEFAULT_APP_ID_FOR_PLAYER ofType:nil inDirectory:XFACE_WORKSPACE_NAME_UNDER_APP];
 
         NSAssert(srcAppFolderPath, @"Start app using player mode, but the default app files don't exist!");
 

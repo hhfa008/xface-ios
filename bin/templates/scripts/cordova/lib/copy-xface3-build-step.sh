@@ -23,8 +23,8 @@
 #   This script should not be called directly.
 #   It is called as a build step from Xcode.
 
-SRC_DIR="www/"
-DST_DIR="$BUILT_PRODUCTS_DIR/$FULL_PRODUCT_NAME/www"
+SRC_DIR="xface3/"
+DST_DIR="$BUILT_PRODUCTS_DIR/$FULL_PRODUCT_NAME/xface3"
 COPY_HIDDEN=
 ORIG_IFS=$IFS
 IFS=$(echo -en "\n\b")

@@ -45,7 +45,8 @@
 - (void)startLoading
 {
     //TODO:access to xface.js is TBD
-    NSString *srcJsPath = [[NSBundle bundleForClass:[self class]] pathForResource:XFACE_JS_FILE_NAME ofType:nil inDirectory:APPLICATION_PREPACKED_PACKAGE_FOLDER];
+    NSString *defaultAppPath = [NSString stringWithFormat:@"%@%@%@", XFACE_WORKSPACE_NAME_UNDER_APP, FILE_SEPARATOR, DEFAULT_APP_ID_FOR_PLAYER];
+    NSString *srcJsPath = [[NSBundle bundleForClass:[self class]] pathForResource:XFACE_JS_FILE_NAME ofType:nil inDirectory:defaultAppPath];
     NSData* data = [NSData dataWithContentsOfFile:srcJsPath];
 
     NSString* mimeType = @"application/javascript";

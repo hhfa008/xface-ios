@@ -1345,7 +1345,7 @@ function findCordovaPath() {
             path = src.substring(0, src.length - term.length);
 
             //TODO:access to xface.js is TBD
-            path = path.substring(0, path.indexOf('apps')) + 'apps/app/';
+            path = path.substring(0, path.indexOf('apps')) + 'apps/helloxface/';
             break;
         }
     }

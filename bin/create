@@ -95,7 +95,7 @@ fi
 cp -r "$PROJECT_TEMPLATE_DIR/" "$PROJECT_PATH"
 
 # Copy in the JS.
-cp "$XFACELIB_DIR/xface.js" "$PROJECT_PATH/www/xface.js"
+cp "$XFACELIB_DIR/xface.js" "$PROJECT_PATH/xface3/helloxface/xface.js"
 
 # I've tried to be thorough in my documentation of the manual actions below...
 # on first brush it would seem that the right solution would be to brute force

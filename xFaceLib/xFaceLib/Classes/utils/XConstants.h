@@ -35,7 +35,7 @@
 #define APPLICATION_CONFIG_FILE_NAME             @"app.xml"
 #define PRE_SET_DIR_NAME                         @"pre_set"
 #define ENCRYPT_CODE_DIR_NAME                    @"encrypt_code"
-#define DEFAULT_APP_ID_FOR_PLAYER                @"app"
+#define DEFAULT_APP_ID_FOR_PLAYER                @"helloxface"
 #define DEFAULT_APP_START_PAGE                   @"index.html"
 #define XFACE_JS_FILE_NAME                       @"xface.js"
 #define XFACE_DATA_PLIST_NAME                    @"data.plist"
@@ -63,7 +63,7 @@
 
 // xFacePlayer.app下相关目录命名
 // TODO:常量命名不准确，需要进一步调整
-#define XFACE_WORKSPACE_NAME_UNDER_APP           @"xface"
+#define XFACE_WORKSPACE_NAME_UNDER_APP           @"xface3"
 #define APPLICATION_PREPACKED_PACKAGE_FOLDER     @"www"
 
 // userApps.xml
