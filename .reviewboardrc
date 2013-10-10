@@ -1,5 +1,6 @@
-REPOSITORY = 'git@git.polyvi.com:xface-ios-lib.git'
+REPOSITORY = 'git@git.polyvi.com:xface-ios.git'
 REVIEWBOARD_URL = 'http://review.polyvi.com/reviews/'
 GUESS_FIELDS = 'true'
+TRACKING_BRANCH = 'origin/dev'
 TARGET_GROUPS = 'xFaceApolloCCGroup'
 OPEN_BROWSER = 'true'
