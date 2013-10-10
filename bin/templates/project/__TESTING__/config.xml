@@ -33,7 +33,7 @@
     <access origin="*"/>
 
     <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
-    <content src="index.html" />
+    <content src="helloxface/index.html" />
 
     <pre_install_packages>
         <app_package id="helloxface">helloxface</app_package>
