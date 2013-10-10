@@ -33,7 +33,7 @@
 
 /**
     拷贝应用配置文件，便于appList的初始化过程统一
-    源目录：<Application_Home>/xFace.app/www/preinstalledApps/appSrcDirName/app.xml
+    源目录：<Application_Home>/xFace.app/xface3/appId/app.xml
     目的目录：<Applilcation_Home>/Documents/xface3/app_icons/appId/app.xml
     @param appInfo 用于确定源目录以及目的目录
     @returns 拷贝成功返回YES,否则返回NO
@@ -42,7 +42,7 @@
 
 /**
     拷贝应用图标，便于默认应用访问
-    源目录：<Application_Home>/xFace.app/www/preinstalledApps/appSrcDirName/
+    源目录：<Application_Home>/xFace.app/xface3/appId/
     目的目录：<Applilcation_Home>/Documents/xface3/app_icons/appId/
     @param appInfo 用于确定源目录以及目的目录
     @returns 拷贝成功返回YES,否则返回NO
@@ -51,7 +51,7 @@
 
 /**
     解压内置数据包workspace.zip
-    源目录：<Application_Home>/xFace.app/www/preinstalledApps/appSrcDirName/workspace/workspace.zip
+    源目录：<Application_Home>/xFace.app/xface3/appId/workspace/workspace.zip
     目的目录：<Applilcation_Home>/Documents/xface3/app_icons/appId/workspace
     @param appInfo 用于确定源目录以及目的目录
     @returns 拷贝成功返回YES,否则返回NO

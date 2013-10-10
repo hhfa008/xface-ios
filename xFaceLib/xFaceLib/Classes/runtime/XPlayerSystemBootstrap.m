@@ -41,6 +41,7 @@
 #import "XSync.h"
 #import "XApplicationFactory.h"
 #import "XApplication.h"
+#import "iToast.h"
 
 @implementation XPlayerSystemBootstrap
 
@@ -106,6 +107,13 @@
     NSString *packagePath = [documentDirectory stringByAppendingFormat:@"%@%@", FILE_SEPARATOR, XFACE_PLAYER_PACKAGE_NAME];
     NSString *destPath = [[config appInstallationDir] stringByAppendingPathComponent:DEFAULT_APP_ID_FOR_PLAYER];
 
+    ret = [XUtils copyJsCore];
+    if (!ret)
+    {
+        [[[[iToast makeText:@"Failed to copy js core files!"] setGravity:iToastGravityCenter] setDuration:iToastDurationLong] show];
+        return ret;
+    }
+
     NSFileManager *fileManager = [NSFileManager defaultManager];
     BOOL isPackageExisted = [fileManager fileExistsAtPath:packagePath];
     if (isPackageExisted)
@@ -115,7 +123,7 @@
     }
     else
     {
-        NSString *srcAppFolderPath = [mainBundle pathForResource:DEFAULT_APP_ID_FOR_PLAYER ofType:nil inDirectory:XFACE_WORKSPACE_NAME_UNDER_APP];
+        NSString *srcAppFolderPath = [mainBundle pathForResource:DEFAULT_APP_ID_FOR_PLAYER ofType:nil inDirectory:XFACE_BUNDLE_FOLDER];
 
         NSAssert(srcAppFolderPath, @"Start app using player mode, but the default app files don't exist!");
 

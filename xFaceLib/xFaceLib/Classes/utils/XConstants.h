@@ -27,7 +27,8 @@
 
 // 本文件仅定义xFace全局常量
 #define FILE_SEPARATOR                           @"/"
-#define XFACE_WORKSPACE_FOLDER                   @"xface3"
+#define XFACE_WORKSPACE_FOLDER                   @"xface3" // under <Applilcation_Home>/Documents/
+#define XFACE_BUNDLE_FOLDER                      @"xface3" // under <Application_Home>/xFace.app/
 #define XFACE_PLAYER_WORKSPACE                   @"xface_player"
 #define XFACE_PLAYER_PACKAGE_NAME                @"xface_player.zip"
 #define APPLICATION_INSTALLATION_FOLDER          @"apps"
@@ -42,6 +43,7 @@
 #define APPLICATION_KEY                          @"app"
 #define JS_CALLBACK_KEY                          @"callback"
 #define APP_WORKSPACE_FOLDER                     @"workspace"
+#define JS_CORE_FOLDER                           @"js_core"
 #define SPLASH_FILE_NAME                         @"xface_logo"
 #define APP_DATA_DIR_FOLDER                      @"data"
 #define APP_TYPE_XAPP                            @"xapp"
@@ -53,18 +55,10 @@
 #define APP_DATA_KEY_FOR_START_PARAMS            @"start_params"  //启动参数在xapp通讯数据中的key
 #define NATIVE_APP_CUSTOM_URL_PARAMS_SEPERATOR   @"://"           //custom url中scheme与params之间的分隔符
 
-#define EXTENSION_AMS_NAME                       @"AMS"
 #define EXTENSION_LOCAL_STORAGE_NAME             @"LocalStorage"
 
 // xFace.app下相关目录及资源命名
-#define PREINSTALLED_APPLICATIONS_FLODER         @"preinstalledApps"
-#define APPLICATION_WWW_FOLDER                   @"www"
 #define APP_DATA_PACKAGE_NAME_UNDER_WORKSPACE    @"workspace.zip"
-
-// xFacePlayer.app下相关目录命名
-// TODO:常量命名不准确，需要进一步调整
-#define XFACE_WORKSPACE_NAME_UNDER_APP           @"xface3"
-#define APPLICATION_PREPACKED_PACKAGE_FOLDER     @"www"
 
 // userApps.xml
 #define USER_APPS_FILE_NAME                      @"userApps.xml"

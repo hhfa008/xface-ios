@@ -175,7 +175,7 @@
 
 - (BOOL) copyAppConfigFileWithAppInfo:(XAppInfo *)appInfo
 {
-    // 将应用配置文件从<Application_Home>/xFace.app/www/preinstalledApps/appSrcDirName/app.xml拷贝到<Applilcation_Home>/Documents/xface3/app_icons/appId/app.xml，便于appList的初始化过程统一
+    // 将应用配置文件从<Application_Home>/xFace.app/xface3/appId/app.xml拷贝到<Applilcation_Home>/Documents/xface3/app_icons/appId/app.xml，便于appList的初始化过程统一
     NSString *appConfigFilePath = [[appInfo srcPath] stringByAppendingPathComponent:APPLICATION_CONFIG_FILE_NAME];
     NSString *destAppConfigFilePath = [[[XConfiguration getInstance] appInstallationDir] stringByAppendingFormat:@"%@%@%@", [appInfo appId], FILE_SEPARATOR, APPLICATION_CONFIG_FILE_NAME];
 
@@ -195,14 +195,14 @@
         return;
     }
 
-    // 将应用图标从<Application_Home>/xFace.app/www/preinstalledApps/appSrcDirName/拷贝到<Applilcation_Home>/Documents/xface3/app_icons/appId/，便于默认应用访问
+    // 将应用图标从<Application_Home>/xFace.app/xface3/appId/拷贝到<Applilcation_Home>/Documents/xface3/app_icons/appId/，便于默认应用访问
     [XFileUtils copyItemAtPath:iconSrcPath toPath:iconDstPath error:nil];
     return;
 }
 
 - (BOOL) unpackAppDataWithAppInfo:(XAppInfo *)appInfo
 {
-    //将内置数据<Application_Home>/xFace.app/www/preinstalledApps/appSrcDirName/workspace/workspace.zip解压到<Applilcation_Home>/Documents/xface3/app_icons/appId/workspace下
+    //将内置数据<Application_Home>/xFace.app/xface3/appId/workspace/workspace.zip解压到<Applilcation_Home>/Documents/xface3/app_icons/appId/workspace下
     NSString *dataPkgSrcPath = [[appInfo srcPath] stringByAppendingFormat:@"%@%@%@", APP_WORKSPACE_FOLDER, FILE_SEPARATOR, APP_DATA_PACKAGE_NAME_UNDER_WORKSPACE];
 
     NSFileManager *fileMgr = [NSFileManager defaultManager];

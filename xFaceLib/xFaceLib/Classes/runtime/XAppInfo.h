@@ -133,7 +133,7 @@
 
 /**
     app源码所在绝对路径
-    预装应用源码所在根目录路径形如：  <Application_Home>/xFace.app/www/preinstalledApps/appSrcDirName/
+    预装应用源码所在根目录路径形如：  <Application_Home>/xFace.app/xface3/appId/
     非预装应用源码所在根目录路径形如：<Application_Home>/Documents/xface3/apps/appId/
  */
 @property (strong, nonatomic, readonly) NSString *srcPath;

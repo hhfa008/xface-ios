@@ -8,9 +8,9 @@
  to you under the Apache License, Version 2.0 (the
  "License"); you may not use this file except in compliance
  with the License.  You may obtain a copy of the License at
- 
+
      http://www.apache.org/licenses/LICENSE-2.0
- 
+
  Unless required by applicable law or agreed to in writing,
  software distributed under the License is distributed on an
  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -1344,8 +1344,18 @@ function findCordovaPath() {
         if (src.indexOf(term) == (src.length - term.length)) {
             path = src.substring(0, src.length - term.length);
 
-            //TODO:access to xface.js is TBD
-            path = path.substring(0, path.indexOf('apps')) + 'apps/helloxface/';
+            if('ios' === require('cordova/platform').id){
+                //TODO:查找更合适的方法？
+                var index = path.indexOf('.app');
+                if(-1 != index){
+                    index = path.lastIndexOf('/', index);
+                    path = path.substring(0, index) + '/Documents/xface3/js_core/';
+                }else if(-1 != path.indexOf('xface_player')){
+                    path = path.substring(0, path.indexOf('xface_player')) + 'xface_player/js_core/';
+                }else if(-1 != path.indexOf('Documents')){
+                    path = path.substring(0, path.indexOf('Documents')) + 'Documents/xface3/js_core/';
+                }
+            }
             break;
         }
     }
@@ -1397,11 +1407,11 @@ privateModule.prototype.getAppId = function() {
 privateModule.prototype.appData = function() {
     return appData;
 };
-       
+
 privateModule.prototype.currentAppWorkspace = function() {
     return currentAppWorkspace;
 };
-       
+
 privateModule.prototype.updateFileSystemRoot = function(type, fs){
     if (type != 1 || !module.exports.enableChecksWorkspace) {
         return;
@@ -1412,11 +1422,11 @@ privateModule.prototype.updateFileSystemRoot = function(type, fs){
 privateModule.prototype.strStartsWith = function(str, prefix) {
     return str.indexOf(prefix) === 0;
 };
-       
+
 privateModule.prototype.strEndsWith = function(str, suffix) {
     return str.match(suffix+"$")==suffix;
 };
-       
+
 privateModule.prototype.resolve = function(path) {
     var parts = path.split('/');
     var i = 1;
@@ -1437,7 +1447,7 @@ privateModule.prototype.resolve = function(path) {
         return parts.join('/');
     }
 };
-       
+
 privateModule.prototype.checkPath = function(functionName, basePath, relativePath) {
     if (!module.exports.enableChecksWorkspace) {
         return true;
@@ -1446,7 +1456,7 @@ privateModule.prototype.checkPath = function(functionName, basePath, relativePat
     if (this.strStartsWith(relativePath, basePath)){
         return true;
     }
-       
+
     var result = null;
     if(this.strStartsWith(relativePath, '/')){
         result = basePath + relativePath;
@@ -1454,7 +1464,7 @@ privateModule.prototype.checkPath = function(functionName, basePath, relativePat
         result = basePath + '/' + relativePath;
     }
     result = this.resolve(result);
-              
+
     if (this.strStartsWith(result, basePath)){
         return true;
     }else{

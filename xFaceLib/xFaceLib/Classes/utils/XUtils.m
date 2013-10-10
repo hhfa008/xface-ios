@@ -38,6 +38,7 @@
 #import "XSystemConfigInfo.h"
 #import "XAppInfo.h"
 #import "iToast.h"
+#import "XFileUtils.h"
 
 #define APP_VERSION_FOUR_SEQUENCE (4)
 #define BACKSLASH       @"\\"
@@ -361,14 +362,14 @@ static XUtils* sSelPerformer = nil;
 
 + (NSString *) buildPreinstalledAppSrcPath:(NSString *)appId
 {
-    // 构造预装应用源码所在绝对路径，路径形如：<Application_Home>/xFace.app/www/preinstalledApps/appSrcDirName/
+    // 构造预装应用源码所在绝对路径，路径形如：<Application_Home>/xFace.app/xface3/appId/
     NSBundle *mainBundle = [NSBundle bundleForClass:[self class]];
-    NSString *preinstalledAppsPath = [mainBundle pathForResource:PREINSTALLED_APPLICATIONS_FLODER ofType:nil inDirectory:APPLICATION_WWW_FOLDER];
+    NSString *preinstalledAppsPath = [mainBundle pathForResource:XFACE_BUNDLE_FOLDER ofType:nil inDirectory:nil];
     if (![preinstalledAppsPath length])
     {
         return nil;
     }
-    
+
     NSAssert([appId length], nil);
     NSString *appSrcPath = [preinstalledAppsPath stringByAppendingFormat:@"%@%@%@", FILE_SEPARATOR, appId, FILE_SEPARATOR];
     return appSrcPath;
@@ -377,11 +378,40 @@ static XUtils* sSelPerformer = nil;
 + (NSString *)buildWorkspaceAppSrcPath:(NSString *)appId
 {
     NSString *appSrcPath = [[XConfiguration getInstance] appInstallationDir];
-    
+
     // 工作空间下应用安装路径形如：<Application_Home>/Documents/xface3/apps/appId/
     NSAssert([appId length], nil);
     appSrcPath = [appSrcPath stringByAppendingFormat:@"%@%@", appId, FILE_SEPARATOR];
     return appSrcPath;
+}
+
++ (BOOL)copyJsCore
+{
+    //TODO:如果支持将扩展js代码合并到xface.js，则此方法可以移除
+    BOOL ret = YES;
+    NSString *systemWorkspace = [[XConfiguration getInstance] systemWorkspace];
+    NSString *defaultAppId = [XUtils isPlayer] ? DEFAULT_APP_ID_FOR_PLAYER : [[XConfiguration getInstance] preinstallApps][0];
+
+    NSBundle *mainBundle = [NSBundle bundleForClass:[self class]];
+    NSString *preinstalledAppsPath = [mainBundle pathForResource:XFACE_BUNDLE_FOLDER ofType:nil inDirectory:nil];
+
+    //TODO:如果cli调整了文件命名，这里需要做相应地修改
+    NSArray *jsCoreNames = [[NSArray alloc] initWithObjects:XFACE_JS_FILE_NAME,
+                          @"cordova_plugins.js",
+                          @"plugins",
+                          nil];
+    for (NSString *name in jsCoreNames)
+    {
+        NSString *src = [preinstalledAppsPath stringByAppendingFormat:@"%@%@%@%@", FILE_SEPARATOR, defaultAppId, FILE_SEPARATOR, name];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:src])
+        {
+            NSString *dest = [systemWorkspace stringByAppendingFormat:@"%@%@%@", JS_CORE_FOLDER, FILE_SEPARATOR, name];
+
+            ret &= [XFileUtils copyItemAtPath:src toPath:dest error:nil];
+        }
+    }
+
+    return ret;
 }
 
 @end

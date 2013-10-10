@@ -27,6 +27,7 @@
 
 #import "XResourceURLProtocol.h"
 #import "XConstants.h"
+#import "XConfiguration.h"
 
 @implementation XResourceURLProtocol
 
@@ -44,9 +45,10 @@
 
 - (void)startLoading
 {
-    //TODO:access to xface.js is TBD
-    NSString *defaultAppPath = [NSString stringWithFormat:@"%@%@%@", XFACE_WORKSPACE_NAME_UNDER_APP, FILE_SEPARATOR, DEFAULT_APP_ID_FOR_PLAYER];
-    NSString *srcJsPath = [[NSBundle bundleForClass:[self class]] pathForResource:XFACE_JS_FILE_NAME ofType:nil inDirectory:defaultAppPath];
+    //xface.js路径为：<Applilcation_Home>/Documents/xface3（xface_player）/js_core/xface.js
+    //TODO:如果支持将扩展js代码合并到xface.js，则此处返回的是工程中内置的xface.js资源
+    NSString *systemWorkspace = [[XConfiguration getInstance] systemWorkspace];
+    NSString *srcJsPath = [systemWorkspace stringByAppendingFormat:@"%@%@%@", JS_CORE_FOLDER, FILE_SEPARATOR, XFACE_JS_FILE_NAME];
     NSData* data = [NSData dataWithContentsOfFile:srcJsPath];
 
     NSString* mimeType = @"application/javascript";

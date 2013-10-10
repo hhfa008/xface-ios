@@ -122,6 +122,13 @@
 
 - (void) preinstall:(XAppManagement *)appManagement
 {
+    BOOL ret = [XUtils copyJsCore];
+    if (!ret)
+    {
+        [[[[iToast makeText:@"Failed to copy js core files!"] setGravity:iToastGravityCenter] setDuration:iToastDurationLong] show];
+        return;
+    }
+
     id<XInstallListener> listener = [[XAppPreinstallListener alloc] init:appManagement];
 
     NSString *defaultAppId = nil;

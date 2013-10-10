@@ -132,11 +132,11 @@
 {
     /* 调整前文件内容形如：
          <applications>
-             <app id="appId" source_dir="<Application_Home>/Documents/xface3/apps/appId/" />
+             <app id="appId" srcRoot="workspace" />
          </applications>
        调整后文件内容形如：
          <applications>
-             <app id="appId" source_dir="<Application_Home>/xFace.app/www/preinstalledApps/appSrcDirName/" />
+             <app id="appId" srcRoot="preinstalled" />
          </applications>
      */
     NSString *appId = [app getAppId];

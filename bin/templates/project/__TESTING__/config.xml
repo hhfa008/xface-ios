@@ -35,6 +35,10 @@
     <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
     <content src="index.html" />
 
+    <pre_install_packages>
+        <app_package id="helloxface">helloxface</app_package>
+    </pre_install_packages>
+
     <!-- Preferences for iOS -->
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="AutoHideSplashScreen" value="true" />
