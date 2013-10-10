@@ -130,9 +130,6 @@ static XUtils* sSelPerformer = nil;
     if (appXMLParser)
     {
         XAppInfo *appInfo = [appXMLParser parseAppXML];
-        if (appInfo.entry <= 0) {
-            appInfo.entry = @"index.html";
-        }
         if ([appInfo.appId length] <= 0 || appInfo.entry <= 0) {
              [[[[iToast makeText:@"Failed to get app config from app.xml, please set app id and content properly!"]
                 setGravity:iToastGravityCenter] setDuration:iToastDurationLong] show];
