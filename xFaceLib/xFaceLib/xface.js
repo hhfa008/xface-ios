@@ -1,5 +1,5 @@
 // Platform: ios
-// 3.2.0-dev-29a9dd1
+// 3.2.0-dev-01ea617
 /*
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements.  See the NOTICE file
@@ -19,7 +19,7 @@
  under the License.
 */
 ;(function() {
-var CORDOVA_JS_BUILD_LABEL = '3.2.0-dev-29a9dd1';
+var CORDOVA_JS_BUILD_LABEL = '3.2.0-dev-01ea617';
 // file: lib/scripts/require.js
 
 /*jshint -W079 */
@@ -776,6 +776,9 @@ channel.createSticky('onPluginsReady');
 // Event to indicate that Cordova is ready
 channel.createSticky('onDeviceReady');
 
+// Event to indicate that xFace private data is ready
+channel.createSticky('onPrivateDataReady');
+
 // Event to indicate a resume lifecycle event
 channel.create('onResume');
 
@@ -788,6 +791,7 @@ channel.createSticky('onDestroy');
 // Channels that must fire before "deviceready" is fired.
 channel.waitForInitialization('onCordovaReady');
 channel.waitForInitialization('onDOMContentLoaded');
+channel.waitForInitialization('onPrivateDataReady');
 
 module.exports = channel;
 
@@ -1382,12 +1386,12 @@ define("xFace/privateModule", function(require, exports, module) {
 
 /**
  * 该模块是私有模块，用于获取当前应用程序的ID等
- * TODO:此模块需要重构，迁移path等方法到utils中
  */
-//该变量用于保存当前应用的ID
-var currentAppId = null;
-var appData = null;
-var currentAppWorkspace = null;
+var channel = require('cordova/channel');
+var currentAppId = null;        //当前应用ID
+var currentAppWorkspace = null; //当前应用工作空间
+var appData = null;             //传递给应用的启动参数
+
 var privateModule = function() {
 };
 
@@ -1398,83 +1402,23 @@ privateModule.prototype.initPrivateData = function(initData) {
     currentAppId = initData[0];
     currentAppWorkspace = initData[1];
     appData = initData[2];
+    channel.onPrivateDataReady.fire();
 };
 
-privateModule.prototype.getAppId = function() {
+privateModule.prototype.appId = function() {
     return currentAppId;
+};
+
+privateModule.prototype.appWorkspace = function() {
+    return currentAppWorkspace;
 };
 
 privateModule.prototype.appData = function() {
     return appData;
 };
 
-privateModule.prototype.currentAppWorkspace = function() {
-    return currentAppWorkspace;
-};
-
-privateModule.prototype.updateFileSystemRoot = function(type, fs){
-    if (type != 1 || !module.exports.enableChecksWorkspace) {
-        return;
-    }
-    fs.root.fullPath = currentAppWorkspace;
-};
-
-privateModule.prototype.strStartsWith = function(str, prefix) {
-    return str.indexOf(prefix) === 0;
-};
-
-privateModule.prototype.strEndsWith = function(str, suffix) {
-    return str.match(suffix+"$")==suffix;
-};
-
-privateModule.prototype.resolve = function(path) {
-    var parts = path.split('/');
-    var i = 1;
-    while (i < parts.length) {
-        if(i === 0){
-            i++;
-        }
-        // if current part is `..` and previous part is different, remove both of them
-        if (parts[i] === '..' && parts[i-1] !== '..') {
-            parts.splice(i-1, 2);
-            i -= 2;
-        }
-        i++;
-    }
-    if(path.split('/').length > 1 && parts.length == 1){
-        return parts[0] + '/';
-    }else{
-        return parts.join('/');
-    }
-};
-
-privateModule.prototype.checkPath = function(functionName, basePath, relativePath) {
-    if (!module.exports.enableChecksWorkspace) {
-        return true;
-    }
-    relativePath = relativePath.replace(/\\/g,'/');
-    if (this.strStartsWith(relativePath, basePath)){
-        return true;
-    }
-
-    var result = null;
-    if(this.strStartsWith(relativePath, '/')){
-        result = basePath + relativePath;
-    }else{
-        result = basePath + '/' + relativePath;
-    }
-    result = this.resolve(result);
-
-    if (this.strStartsWith(result, basePath)){
-        return true;
-    }else{
-        console.error(functionName + "check path failed:" + result);
-        return false;
-    }
-};
-
 module.exports = new privateModule();
-module.exports.enableChecksWorkspace = true;
+
 });
 
 // file: lib/common/urlutil.js
@@ -1661,6 +1605,111 @@ function UUIDcreatePart(length) {
     return uuidpart;
 }
 
+
+});
+
+// file: lib/common/workspace.js
+define("xFace/workspace", function(require, exports, module) {
+
+/**
+ * 该模块用于处理web app workspace相关的逻辑
+ */
+var privateModule = require('xFace/privateModule'),
+    urlUtil = require("cordova/urlutil");
+
+var Workspace= function() {
+};
+
+Workspace.prototype.updateFileSystemRoot = function(type, fs){
+    if (type != 1 || !module.exports.enableWorkspaceCheck) {
+        return;
+    }
+    fs.root.fullPath = privateModule.appWorkspace();
+};
+
+//TODO:迁移strStartsWith类似方法到独立的js模块
+Workspace.prototype.strStartsWith = function(str, prefix) {
+    return str.indexOf(prefix) === 0;
+};
+
+Workspace.prototype.strEndsWith = function(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+};
+
+Workspace.prototype.toURL = function(path) {
+    return "file://localhost" + path;
+};
+
+Workspace.prototype.toPath = function(url) {
+    // path为"file://localhost/user/..", 不同的平台执行urlUtil.makeAbsolute(path)后,返回的url可能有以下形式：
+    // 1）file://localhost/user/..
+    // 2）file:///user/..
+    if(this.strStartsWith(url, 'file://localhost')) {
+        return url.replace('file://localhost', '');
+    } else if(-1 != url.indexOf("://")) {
+        //remove scheme(e.g., file://)
+        return url.substring(url.indexOf("://") + 3, url.length);
+    } else {
+        // Don't log when running unit tests.
+        if (typeof jasmine == 'undefined') {
+            console.log(url + ' is not an url!');
+        }
+        return url;
+    }
+};
+
+Workspace.prototype.isAbsolutePath = function(path){
+    // FIXME:Confirm this is right on all platforms
+    // Absolute path starts with a slash
+    return this.strStartsWith(path, '/');
+};
+
+Workspace.prototype.resolvePath = function(path){
+    var result = this.toURL(path);
+    result = urlUtil.makeAbsolute(result);
+    result = decodeURI(result);
+    result = this.toPath(result);
+
+    return result;
+};
+
+Workspace.prototype.checkWorkspace = function(basePath, relativePath, functionName) {
+    if (!module.exports.enableWorkspaceCheck) {
+        return true;
+    }
+
+    var result = null;
+    result = relativePath.replace(/\\/g,'/');
+
+    var isAbs = this.isAbsolutePath(result);
+    if (isAbs){
+        // relativePath为绝对路径且包含'..'时，对其进行resolve
+        if(-1 != result.indexOf('..')){
+            result = this.resolvePath(result);
+        }
+    }else{
+        // relativePath为相对路径时，对其进行resolve
+        if(this.strStartsWith(relativePath, '/')){
+            result = basePath + relativePath;
+        }else{
+            result = basePath + '/' + relativePath;
+        }
+        result = this.resolvePath(result);
+    }
+
+    if (this.strStartsWith(result, basePath)){
+        return true;
+    }else{
+        // Don't log when running unit tests.
+        if (typeof jasmine == 'undefined') {
+            console.error(functionName + " check workspace failed:" + result);
+        }
+        return false;
+    }
+};
+
+module.exports = new Workspace();
+module.exports.enableWorkspaceCheck = true;
 
 });
 
