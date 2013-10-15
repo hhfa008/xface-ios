@@ -95,7 +95,7 @@
 {
     /* 调整后的文件内容形如：
         <applications>
-            <app id="appId" source_dir="<Application_Home>/Documents/xface3/apps/appId/" />
+            <app id="appId" srcRoot="workspace" />
         </applications>
      */
     NSString *appId = [app getAppId];
