@@ -21,13 +21,6 @@
 		C8A15F6617EEA50600FB3E68 /* Credentials.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A15F3F17EEA50600FB3E68 /* Credentials.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8A15F6717EEA50600FB3E68 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F4017EEA50600FB3E68 /* Credentials.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C8A15F6817EEA50600FB3E68 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F4017EEA50600FB3E68 /* Credentials.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C8A15F6917EEA50600FB3E68 /* GAI.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A15F4217EEA50600FB3E68 /* GAI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8A15F6A17EEA50600FB3E68 /* GAITrackedViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A15F4317EEA50600FB3E68 /* GAITrackedViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8A15F6B17EEA50600FB3E68 /* GAITracker.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A15F4417EEA50600FB3E68 /* GAITracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8A15F6C17EEA50600FB3E68 /* GAITransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A15F4517EEA50600FB3E68 /* GAITransaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8A15F6D17EEA50600FB3E68 /* GAITransactionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A15F4617EEA50600FB3E68 /* GAITransactionItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8A15F6F17EEA50600FB3E68 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A15F4717EEA50600FB3E68 /* libGoogleAnalytics.a */; };
-		C8A15F7017EEA50600FB3E68 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = C8A15F4817EEA50600FB3E68 /* Readme.txt */; };
 		C8A15F7117EEA50600FB3E68 /* iToast.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A15F4A17EEA50600FB3E68 /* iToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8A15F7217EEA50600FB3E68 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F4B17EEA50600FB3E68 /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C8A15F7317EEA50600FB3E68 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F4B17EEA50600FB3E68 /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -49,7 +42,6 @@
 		C8A15F8417EEA50600FB3E68 /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A15F5A17EEA50600FB3E68 /* ZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8A15F8517EEA50600FB3E68 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F5B17EEA50600FB3E68 /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C8A15F8617EEA50600FB3E68 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F5B17EEA50600FB3E68 /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C8A15F8B17EEB71E00FB3E68 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A15F4717EEA50600FB3E68 /* libGoogleAnalytics.a */; };
 		C8A15F8C17EEB73100FB3E68 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A15F4D17EEA50600FB3E68 /* libMobClickLibrary.a */; };
 		C8A2C8FD17E856560009C73A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C8FC17E856560009C73A /* SenTestingKit.framework */; };
 		C8A2C90017E856560009C73A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C8ED17E856550009C73A /* Foundation.framework */; };
@@ -62,7 +54,6 @@
 		C8AA619217F046C200A0C3A5 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8944C1E17E9474B0070A849 /* MediaPlayer.framework */; };
 		C8AA619317F046C800A0C3A5 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C8944C1C17E947440070A849 /* libz.1.2.5.dylib */; };
 		C8AA619417F046F200A0C3A5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8944C1417E9472B0070A849 /* SystemConfiguration.framework */; };
-		C8AA619517F046FC00A0C3A5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8944C1A17E9473D0070A849 /* CoreData.framework */; };
 		C8AA619717F0472600A0C3A5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8944C1817E947380070A849 /* StoreKit.framework */; };
 		C8AA619817F0476B00A0C3A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8944C1217E946DA0070A849 /* UIKit.framework */; };
 		C8AA619C17F0482900A0C3A5 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8AA619B17F0482900A0C3A5 /* AssetsLibrary.framework */; };
@@ -353,7 +344,6 @@
 		C8944C1217E946DA0070A849 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C8944C1417E9472B0070A849 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C8944C1817E947380070A849 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		C8944C1A17E9473D0070A849 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C8944C1C17E947440070A849 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		C8944C1E17E9474B0070A849 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		C8944C2017E947510070A849 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -368,13 +358,6 @@
 		C8A15F3D17EEA50600FB3E68 /* APXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APXML.h; sourceTree = "<group>"; };
 		C8A15F3F17EEA50600FB3E68 /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		C8A15F4017EEA50600FB3E68 /* Credentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
-		C8A15F4217EEA50600FB3E68 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
-		C8A15F4317EEA50600FB3E68 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
-		C8A15F4417EEA50600FB3E68 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
-		C8A15F4517EEA50600FB3E68 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransaction.h; sourceTree = "<group>"; };
-		C8A15F4617EEA50600FB3E68 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
-		C8A15F4717EEA50600FB3E68 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
-		C8A15F4817EEA50600FB3E68 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
 		C8A15F4A17EEA50600FB3E68 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
 		C8A15F4B17EEA50600FB3E68 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
 		C8A15F4D17EEA50600FB3E68 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
@@ -585,7 +568,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8A15F8C17EEB73100FB3E68 /* libMobClickLibrary.a in Frameworks */,
-				C8A15F8B17EEB71E00FB3E68 /* libGoogleAnalytics.a in Frameworks */,
 				C832C42517E97F0F00D3A35A /* libCordova.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,7 +582,6 @@
 				C8AA619C17F0482900A0C3A5 /* AssetsLibrary.framework in Frameworks */,
 				C8AA619817F0476B00A0C3A5 /* UIKit.framework in Frameworks */,
 				C8AA619717F0472600A0C3A5 /* StoreKit.framework in Frameworks */,
-				C8AA619517F046FC00A0C3A5 /* CoreData.framework in Frameworks */,
 				C8AA619417F046F200A0C3A5 /* SystemConfiguration.framework in Frameworks */,
 				C8AA619317F046C800A0C3A5 /* libz.1.2.5.dylib in Frameworks */,
 				C8AA619217F046C200A0C3A5 /* MediaPlayer.framework in Frameworks */,
@@ -610,7 +591,6 @@
 				C8A2C8FD17E856560009C73A /* SenTestingKit.framework in Frameworks */,
 				C8A2C90017E856560009C73A /* Foundation.framework in Frameworks */,
 				C8A2C90317E856560009C73A /* libxFaceLib.a in Frameworks */,
-				C8A15F6F17EEA50600FB3E68 /* libGoogleAnalytics.a in Frameworks */,
 				C8A15F7517EEA50600FB3E68 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,7 +603,6 @@
 			children = (
 				C8A15F3617EEA50600FB3E68 /* APXML */,
 				C8A15F3E17EEA50600FB3E68 /* Credential */,
-				C8A15F4117EEA50600FB3E68 /* GoogleAnalytics */,
 				C8A15F4917EEA50600FB3E68 /* iToast */,
 				C8A15F4C17EEA50600FB3E68 /* UMAnalytics_Sdk_2.2.0.OpenUDID */,
 				C8A15F4F17EEA50600FB3E68 /* ZipArchive */,
@@ -652,20 +631,6 @@
 				C8A15F4017EEA50600FB3E68 /* Credentials.m */,
 			);
 			path = Credential;
-			sourceTree = "<group>";
-		};
-		C8A15F4117EEA50600FB3E68 /* GoogleAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				C8A15F4217EEA50600FB3E68 /* GAI.h */,
-				C8A15F4317EEA50600FB3E68 /* GAITrackedViewController.h */,
-				C8A15F4417EEA50600FB3E68 /* GAITracker.h */,
-				C8A15F4517EEA50600FB3E68 /* GAITransaction.h */,
-				C8A15F4617EEA50600FB3E68 /* GAITransactionItem.h */,
-				C8A15F4717EEA50600FB3E68 /* libGoogleAnalytics.a */,
-				C8A15F4817EEA50600FB3E68 /* Readme.txt */,
-			);
-			path = GoogleAnalytics;
 			sourceTree = "<group>";
 		};
 		C8A15F4917EEA50600FB3E68 /* iToast */ = {
@@ -744,7 +709,6 @@
 				C8944C2017E947510070A849 /* libsqlite3.dylib */,
 				C8944C1E17E9474B0070A849 /* MediaPlayer.framework */,
 				C8944C1C17E947440070A849 /* libz.1.2.5.dylib */,
-				C8944C1A17E9473D0070A849 /* CoreData.framework */,
 				C8944C1817E947380070A849 /* StoreKit.framework */,
 				C8944C1417E9472B0070A849 /* SystemConfiguration.framework */,
 				C8944C1217E946DA0070A849 /* UIKit.framework */,
@@ -1086,7 +1050,6 @@
 				C8DF691517EE9FCB008B0CAF /* XSystemConfigInfo.h in Headers */,
 				C8DF697D17EE9FCB008B0CAF /* md5.h in Headers */,
 				C8DF692C17EE9FCB008B0CAF /* XExtensionResult_Privates.h in Headers */,
-				C8A15F6A17EEA50600FB3E68 /* GAITrackedViewController.h in Headers */,
 				C8A15F5F17EEA50600FB3E68 /* APDocument.h in Headers */,
 				C8DF698E17EE9FCB008B0CAF /* UIDevice+Additions.h in Headers */,
 				C8DF693117EE9FCB008B0CAF /* XRuntime_Privates.h in Headers */,
@@ -1127,7 +1090,6 @@
 				C8DF697417EE9FCB008B0CAF /* XCredentialManager.h in Headers */,
 				C8DF699717EE9FCB008B0CAF /* XApplicationPersistence.h in Headers */,
 				C8A15F7117EEA50600FB3E68 /* iToast.h in Headers */,
-				C8A15F6B17EEA50600FB3E68 /* GAITracker.h in Headers */,
 				C8A15F7A17EEA50600FB3E68 /* ioapi.h in Headers */,
 				C8DF696817EE9FCB008B0CAF /* XUIApplication.h in Headers */,
 				C8DF696517EE9FCB008B0CAF /* XSystemWorkspaceFactory.h in Headers */,
@@ -1144,7 +1106,6 @@
 				C8A15F8417EEA50600FB3E68 /* ZipArchive.h in Headers */,
 				C8DF690117EE9FCB008B0CAF /* XAppPreinstallListener.h in Headers */,
 				C8DF68DE17EE9FCB008B0CAF /* XOnlineMode.h in Headers */,
-				C8A15F6917EEA50600FB3E68 /* GAI.h in Headers */,
 				C8DF699F17EE9FCB008B0CAF /* XDeviceProperties.h in Headers */,
 				C8DF690E17EE9FCB008B0CAF /* XInstallListener.h in Headers */,
 				C8DF693217EE9FCB008B0CAF /* XWebApplication_Privates.h in Headers */,
@@ -1158,12 +1119,10 @@
 				C8DF696E17EE9FCB008B0CAF /* XViewController.h in Headers */,
 				C8DF68E817EE9FCB008B0CAF /* XSecurityPolicy.h in Headers */,
 				C8DF69BF17EE9FCB008B0CAF /* XUtils+Additions.h in Headers */,
-				C8A15F6D17EEA50600FB3E68 /* GAITransactionItem.h in Headers */,
 				C8DF694917EE9FCB008B0CAF /* XHTTPURLResponse.h in Headers */,
 				C8DF695217EE9FCB008B0CAF /* XNativeApplication.h in Headers */,
 				C8DF69A617EE9FCB008B0CAF /* XFileOperatorFactory.h in Headers */,
 				C8DF692717EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.h in Headers */,
-				C8A15F6C17EEA50600FB3E68 /* GAITransaction.h in Headers */,
 				C8DF692A17EE9FCB008B0CAF /* XAppUpdater_Privates.h in Headers */,
 				C8DF699417EE9FCB008B0CAF /* XAPElement.h in Headers */,
 				C8DF694217EE9FCB008B0CAF /* XAppView.h in Headers */,
@@ -1296,7 +1255,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8A15F7017EEA50600FB3E68 /* Readme.txt in Resources */,
 				C8A2C90917E856560009C73A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

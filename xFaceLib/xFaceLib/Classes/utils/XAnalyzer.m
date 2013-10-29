@@ -26,12 +26,10 @@
 //
 
 #import "XAnalyzer.h"
-#import "GAI.h"
 #import "MobClick.h"
 
 // TODO:从配置文件获取，因为不同的项目应有不同的trackingId(appKey)
-static NSString *const kGATrackingId = @"UA-41120538-1";
-static NSString *const kUMAppKey     = @"519d7d5356240bad2b0028e0";
+static NSString *const kUMAppKey     = @"526f500356240bdc2d06fb7a";
 
 @implementation XAnalyzer
 
@@ -40,7 +38,6 @@ static NSString *const kUMAppKey     = @"519d7d5356240bad2b0028e0";
     self = [super init];
     if (self)
     {
-        [self initializeGA];
         [self initializeUMA];
 
         // TODO:监听event实现event,screen统计功能
@@ -49,17 +46,6 @@ static NSString *const kUMAppKey     = @"519d7d5356240bad2b0028e0";
 }
 
 #pragma mark Privates
-
-- (void)initializeGA
-{
-    // Initialize Google Analytics with a 120-second dispatch interval. There is a
-    // tradeoff between battery usage and timely dispatch.
-    [GAI sharedInstance].dispatchInterval = 120;
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
-    [[GAI sharedInstance] trackerWithTrackingId:kGATrackingId];
-
-    // We can use optOut flag to implement an opt-out setting in the app to allows users to opt out of Google Analytics tracking.
-}
 
 - (void)initializeUMA
 {
