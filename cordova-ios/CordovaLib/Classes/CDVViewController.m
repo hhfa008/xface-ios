@@ -111,47 +111,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
-    NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
-    [nc addObserver:self
-           selector:@selector(keyboardWillShowOrHide:)
-               name:UIKeyboardWillShowNotification
-             object:nil];
-    [nc addObserver:self
-           selector:@selector(keyboardWillShowOrHide:)
-               name:UIKeyboardWillHideNotification
-             object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-
-    NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
-    [nc removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-    [nc removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-}
-
-- (void)keyboardWillShowOrHide:(NSNotification*)notif
-{
-    if (![@"true" isEqualToString :[self settingForKey:@"KeyboardShrinksView"]]) {
-        return;
-    }
-    BOOL showEvent = [notif.name isEqualToString:UIKeyboardWillShowNotification];
-
-    CGRect keyboardFrame = [notif.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    keyboardFrame = [self.view convertRect:keyboardFrame fromView:nil];
-
-    CGRect newFrame = self.view.bounds;
-    if (showEvent) {
-        newFrame.size.height -= keyboardFrame.size.height;
-        if (!(IsAtLeastiOSVersion(@"7.0"))) {
-            self.webView.scrollView.contentInset = UIEdgeInsetsMake(0, 0, -keyboardFrame.size.height, 0);
-        }
-    } else {
-        self.webView.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    }
-    self.webView.frame = newFrame;
 }
 
 - (void)printDeprecationNotice
@@ -284,27 +248,8 @@
     if ([self settingForKey:@"MediaPlaybackRequiresUserAction"]) {
         mediaPlaybackRequiresUserAction = [(NSNumber*)[self settingForKey:@"MediaPlaybackRequiresUserAction"] boolValue];
     }
-    BOOL hideKeyboardFormAccessoryBar = NO;  // default value
-    if ([self settingForKey:@"HideKeyboardFormAccessoryBar"]) {
-        hideKeyboardFormAccessoryBar = [(NSNumber*)[self settingForKey:@"HideKeyboardFormAccessoryBar"] boolValue];
-    }
 
     self.webView.scalesPageToFit = [enableViewportScale boolValue];
-
-    /*
-     * Fire up the GPS Service right away as it takes a moment for data to come back.
-     */
-
-    if (hideKeyboardFormAccessoryBar) {
-        __weak CDVViewController* weakSelf = self;
-        [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification
-                                                          object:nil
-                                                           queue:[NSOperationQueue mainQueue]
-                                                      usingBlock:^(NSNotification* notification) {
-            // we can't hide it here because the accessory bar hasn't been created yet, so we delay on the queue
-            [weakSelf performSelector:@selector(hideKeyboardFormAccessoryBar) withObject:nil afterDelay:0];
-        }];
-    }
 
     /*
      * Fire up CDVLocalStorage to work-around WebKit storage limitations: on all iOS 5.1+ versions for local-only backups, but only needed on iOS 5.1 for cloud backup.
@@ -488,39 +433,6 @@
 - (void)setSetting:(id)setting forKey:(NSString*)key
 {
     [[self settings] setObject:setting forKey:[key lowercaseString]];
-}
-
-- (void)hideKeyboardFormAccessoryBar
-{
-    NSArray* windows = [[UIApplication sharedApplication] windows];
-
-    for (UIWindow* window in windows) {
-        for (UIView* view in window.subviews) {
-            if ([[view description] hasPrefix:@"<UIPeripheralHostView"]) {
-                for (UIView* peripheralView in view.subviews) {
-                    // hides the backdrop (iOS 7)
-                    if ([[peripheralView description] hasPrefix:@"<UIKBInputBackdropView"]) {
-                        [[peripheralView layer] setOpacity:0.0];
-                    }
-
-                    // hides the accessory bar
-                    if ([[peripheralView description] hasPrefix:@"<UIWebFormAccessory"]) {
-                        // remove the extra scroll space for the form accessory bar
-                        CGRect newFrame = self.webView.scrollView.frame;
-                        newFrame.size.height += peripheralView.frame.size.height;
-                        self.webView.scrollView.frame = newFrame;
-
-                        // remove the form accessory bar
-                        [peripheralView removeFromSuperview];
-                    }
-                    // hides the thin grey line used to adorn the bar (iOS 6)
-                    if ([[peripheralView description] hasPrefix:@"<UIImageView"]) {
-                        [[peripheralView layer] setOpacity:0.0];
-                    }
-                }
-            }
-        }
-    }
 }
 
 - (NSArray*)parseInterfaceOrientations:(NSArray*)orientations
