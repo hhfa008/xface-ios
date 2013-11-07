@@ -57,7 +57,6 @@
     <preference name="PaginationBreakingMode" value="page" /> <!-- page, column -->
     <preference name="PaginationMode" value="unpaginated" /> <!-- unpaginated, leftToRight, topToBottom, bottomToTop, rightToLeft -->
 
-    <preference name="UsePlayerMode" value="true" />
     <preference name="EngineVersion" value="3.2.x" />
     <preference name="EngineBuild" value="12345" />
     <preference name="SplashScreenDelayDuration" value="2000" />
