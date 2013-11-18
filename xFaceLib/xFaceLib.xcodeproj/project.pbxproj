@@ -261,9 +261,6 @@
 		C8DF699C17EE9FCB008B0CAF /* XCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68B017EE9FCB008B0CAF /* XCipher.m */; };
 		C8DF699D17EE9FCB008B0CAF /* XCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68B017EE9FCB008B0CAF /* XCipher.m */; };
 		C8DF699E17EE9FCB008B0CAF /* XConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68B117EE9FCB008B0CAF /* XConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF699F17EE9FCB008B0CAF /* XDeviceProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68B217EE9FCB008B0CAF /* XDeviceProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF69A017EE9FCB008B0CAF /* XDeviceProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68B317EE9FCB008B0CAF /* XDeviceProperties.m */; };
-		C8DF69A117EE9FCB008B0CAF /* XDeviceProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68B317EE9FCB008B0CAF /* XDeviceProperties.m */; };
 		C8DF69A217EE9FCB008B0CAF /* XExtendedDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68B417EE9FCB008B0CAF /* XExtendedDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF69A317EE9FCB008B0CAF /* XExtendedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68B517EE9FCB008B0CAF /* XExtendedDictionary.m */; };
 		C8DF69A417EE9FCB008B0CAF /* XExtendedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68B517EE9FCB008B0CAF /* XExtendedDictionary.m */; };
@@ -532,8 +529,6 @@
 		C8DF68AF17EE9FCB008B0CAF /* XCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCipher.h; sourceTree = "<group>"; };
 		C8DF68B017EE9FCB008B0CAF /* XCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCipher.m; sourceTree = "<group>"; };
 		C8DF68B117EE9FCB008B0CAF /* XConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XConstants.h; sourceTree = "<group>"; };
-		C8DF68B217EE9FCB008B0CAF /* XDeviceProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDeviceProperties.h; sourceTree = "<group>"; };
-		C8DF68B317EE9FCB008B0CAF /* XDeviceProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDeviceProperties.m; sourceTree = "<group>"; };
 		C8DF68B417EE9FCB008B0CAF /* XExtendedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XExtendedDictionary.h; sourceTree = "<group>"; };
 		C8DF68B517EE9FCB008B0CAF /* XExtendedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XExtendedDictionary.m; sourceTree = "<group>"; };
 		C8DF68B617EE9FCB008B0CAF /* XFileOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFileOperator.h; sourceTree = "<group>"; };
@@ -998,8 +993,6 @@
 				C8DF68AF17EE9FCB008B0CAF /* XCipher.h */,
 				C8DF68B017EE9FCB008B0CAF /* XCipher.m */,
 				C8DF68B117EE9FCB008B0CAF /* XConstants.h */,
-				C8DF68B217EE9FCB008B0CAF /* XDeviceProperties.h */,
-				C8DF68B317EE9FCB008B0CAF /* XDeviceProperties.m */,
 				C8DF68B417EE9FCB008B0CAF /* XExtendedDictionary.h */,
 				C8DF68B517EE9FCB008B0CAF /* XExtendedDictionary.m */,
 				C8DF68B617EE9FCB008B0CAF /* XFileOperator.h */,
@@ -1106,7 +1099,6 @@
 				C8A15F8417EEA50600FB3E68 /* ZipArchive.h in Headers */,
 				C8DF690117EE9FCB008B0CAF /* XAppPreinstallListener.h in Headers */,
 				C8DF68DE17EE9FCB008B0CAF /* XOnlineMode.h in Headers */,
-				C8DF699F17EE9FCB008B0CAF /* XDeviceProperties.h in Headers */,
 				C8DF690E17EE9FCB008B0CAF /* XInstallListener.h in Headers */,
 				C8DF693217EE9FCB008B0CAF /* XWebApplication_Privates.h in Headers */,
 				C8DF698917EE9FCB008B0CAF /* NSString+XStartParams.h in Headers */,
@@ -1332,7 +1324,6 @@
 				C8DF68E217EE9FCB008B0CAF /* XOnlineResourceInfo.m in Sources */,
 				C8DF698F17EE9FCB008B0CAF /* UIDevice+Additions.m in Sources */,
 				C8DF695017EE9FCB008B0CAF /* XLightweightSystemBootstrap.m in Sources */,
-				C8DF69A017EE9FCB008B0CAF /* XDeviceProperties.m in Sources */,
 				C8DF69BA17EE9FCB008B0CAF /* XSecurityFileOperator.m in Sources */,
 				C8DF68FF17EE9FCB008B0CAF /* XAppManagement.m in Sources */,
 				C8DF693617EE9FCB008B0CAF /* XAppInfo.m in Sources */,
@@ -1385,7 +1376,6 @@
 				C8DF693E17EE9FCB008B0CAF /* XAppList.m in Sources */,
 				C8DF690917EE9FCB008B0CAF /* XAppXMLParser_Legacy.m in Sources */,
 				C8DF68F917EE9FCB008B0CAF /* XAppInstaller.m in Sources */,
-				C8DF69A117EE9FCB008B0CAF /* XDeviceProperties.m in Sources */,
 				C8DF696417EE9FCB008B0CAF /* XSystemBootstrapFactory.m in Sources */,
 				C8DF692617EE9FCB008B0CAF /* CDVPlugin+XPlugin.m in Sources */,
 				C8A15F6117EEA50600FB3E68 /* APDocument.m in Sources */,
