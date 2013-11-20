@@ -31,6 +31,14 @@
 #import "XAppList.h"
 #import "XApplication.h"
 #import "XCommandQueue.h"
+#import <Cordova/CDVViewController.h>
+#import "XViewController.h"
+#import "XAppInfo.h"
+
+@interface XJavaScriptEvaluator () {
+    __weak CDVViewController* _viewController;
+}
+@end
 
 @implementation XJavaScriptEvaluator
 
@@ -38,8 +46,21 @@
 {
     NSString *callbackId = [arguments objectAtIndex:0];
     CDVPluginResult *result = [arguments objectAtIndex:1];
-    
+
     [self sendPluginResult:result callbackId:callbackId];
+}
+
+- (NSString*)pathForResource:(NSString*)resourcepath
+{
+    NSString* root = [[((XViewController*)_viewController).ownerApp appInfo] srcPath];
+
+    NSString* fullPath = [root stringByAppendingPathComponent:resourcepath];
+
+    if (![[NSFileManager defaultManager] fileExistsAtPath:fullPath isDirectory:nil]) {
+        return nil;
+    }
+    return fullPath;
+
 }
 
 @end
