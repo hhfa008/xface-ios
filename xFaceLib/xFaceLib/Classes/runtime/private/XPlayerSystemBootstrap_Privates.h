@@ -40,19 +40,12 @@
 - (BOOL) deployResources;
 
 /**
-    为合并user data做准备工作：如迁移app下的workspace、data目录到上级目录
-    @param needMerging 输出参数，用于标识是否需要对user data进行合并.当user data目录存在时返回YES,否则返回NO
-    @returns 准备工作执行成功时返回YES，否则返回NO
- */
-- (BOOL) prepareForMergingUserData:(BOOL *)needMerging;
-
-/**
-    合并srcPath下的user data到dest path下
-    @param srcPath 待合并user data所在源路径
-    @param destPath user data合并后所在目的路径
+    递归拷贝srcPath下的user data到dest path下
+    @param srcPath 待拷贝user data所在源路径
+    @param destPath user data目的路径
     @returns 成功时返回YES，否则返回NO
  */
-- (BOOL) mergeUserDataAtPath:(NSString *)srcPath toPath:(NSString *)destPath;
+- (BOOL) copyUserDataRecursivelyAtPath:(NSString *)srcPath toPath:(NSString *)destPath;
 
 /**
     创建默认启动的应用

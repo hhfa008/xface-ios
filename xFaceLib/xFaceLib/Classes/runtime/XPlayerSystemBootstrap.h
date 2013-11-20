@@ -33,5 +33,8 @@
    在player模式下的系统启动
  */
 @interface XPlayerSystemBootstrap : NSObject <XSystemBootstrap, XSyncDelegate>
+{
+    NSString *_defaultAppSrcRoot;
+}
 
 @end

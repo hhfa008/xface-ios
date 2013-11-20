@@ -95,11 +95,11 @@
 - (BOOL) deployResources
 {
     BOOL ret = NO;
-    NSBundle *mainBundle = [NSBundle mainBundle];
     XConfiguration *config = [XConfiguration getInstance];
 
-    //首先检查<Applilcation_Home>/Documents/目录下是否存在xface_player.zip，如果存在，则解压到特定目录，否则拷贝www下的离散文件到特定目录
-    // 其中xface_player.zip需要用户通过itunes拷贝到<Applilcation_Home>/Documents/目录下
+    //首先检查<Applilcation_Home>/Documents/目录下是否存在xface_player.zip:
+    //1) 如果存在，则将其解压到<Applilcation_Home>/Documents/xface_player/apps/helloxface目录并将其作为默认应用进行加载
+    //2) 如果不存在，则直接将<Applilcation_Home>/xFacePlayer.app/xface3/helloxface下的离散文件作为默认应用进行加载
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];
 
@@ -118,84 +118,46 @@
     BOOL isPackageExisted = [fileManager fileExistsAtPath:packagePath];
     if (isPackageExisted)
     {
+        _defaultAppSrcRoot = APP_ROOT_WORKSPACE;
         ret = [XUtils unpackPackageAtPath:packagePath toPath:destPath];
         return ret;
     }
     else
     {
-        NSString *srcAppFolderPath = [mainBundle pathForResource:DEFAULT_APP_ID_FOR_PLAYER ofType:nil inDirectory:XFACE_BUNDLE_FOLDER];
+        _defaultAppSrcRoot = APP_ROOT_PREINSTALLED;
 
+        NSBundle *mainBundle = [NSBundle mainBundle];
+        NSString *srcAppFolderPath = [mainBundle pathForResource:DEFAULT_APP_ID_FOR_PLAYER ofType:nil inDirectory:XFACE_BUNDLE_FOLDER];
         NSAssert(srcAppFolderPath, @"Start app using player mode, but the default app files don't exist!");
 
-        //当srcAppFolderPath目录下文件较多且destPath已经存在时，将导致copyFileRecursively过程较慢，从而影响player的启动速度
-        //为提高player启动速度，又考虑到player的使用场景，调整资源部署过程，只对workspace,data目录进行merge操作，避免对整个app目录的遍历过程
-        BOOL needMerging = NO;
-        ret = [self prepareForMergingUserData:&needMerging];
-
-        //在prepare过程中已经将destPath删除，故避免了对整个app目录的遍历过程
-        ret &= [XFileUtils copyFileRecursively:srcAppFolderPath toPath:destPath];
-
-        if (ret && needMerging)
-        {
-            ret =  [self mergeUserDataAtPath:srcAppFolderPath toPath:destPath];
-        }
+        //为提高player启动速度，仅拷贝workspace,data目录，不再拷贝应用离散文件
+        ret = [self copyUserDataRecursivelyAtPath:srcAppFolderPath toPath:destPath];
         return ret;
     }
 }
 
-- (BOOL) prepareForMergingUserData:(BOOL *)needMerging
-{
-    BOOL ret = YES;
-    *needMerging = NO;
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    XConfiguration *config = [XConfiguration getInstance];
-    NSString *destPath = [[config appInstallationDir] stringByAppendingPathComponent:DEFAULT_APP_ID_FOR_PLAYER];
-    NSArray *userDataDirs = [NSArray arrayWithObjects:APP_WORKSPACE_FOLDER, APP_DATA_DIR_FOLDER, nil];
-    if ([fileManager fileExistsAtPath:destPath])
-    {
-        //将app下的workspace、data目录移动到上级目录，为合并userdata做准备
-        NSEnumerator *enumerator = [userDataDirs objectEnumerator];
-        NSString *dir = nil;
-        BOOL isDir = NO;
-
-        while (dir = [enumerator nextObject])
-        {
-            NSString *userDataDir = [destPath stringByAppendingPathComponent:dir];
-            if ([fileManager fileExistsAtPath:userDataDir isDirectory:&isDir] && isDir)
-            {
-                NSString *tempUserDataDir = [[config appInstallationDir] stringByAppendingPathComponent:dir];
-                ret &= [XFileUtils moveItemAtPath:userDataDir toPath:tempUserDataDir error:nil];
-                *needMerging = YES;
-            }
-        }
-
-        ret &= [XFileUtils removeItemAtPath:destPath error:nil];
-    }
-    return ret;
-}
-
-- (BOOL) mergeUserDataAtPath:(NSString *)srcPath toPath:(NSString *)destPath
+- (BOOL) copyUserDataRecursivelyAtPath:(NSString *)srcPath toPath:(NSString *)destPath
 {
     NSArray *userDataDirs = [NSArray arrayWithObjects:APP_WORKSPACE_FOLDER, APP_DATA_DIR_FOLDER, nil];
     NSEnumerator *enumerator = [userDataDirs objectEnumerator];
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    XConfiguration *config = [XConfiguration getInstance];
     NSString *dir = nil;
     BOOL isDir = NO;
     BOOL ret = YES;
 
+    if (![fileManager fileExistsAtPath:destPath])
+    {
+        // 保证destPath目录存在，否则执行copyItem时将失败（Cocoa error 4）
+        [fileManager createDirectoryAtPath:destPath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+
     while (dir = [enumerator nextObject])
     {
-        NSString *tempUserDataDir = [[config appInstallationDir] stringByAppendingPathComponent:dir];
-        if ([fileManager fileExistsAtPath:tempUserDataDir isDirectory:&isDir] && isDir)
+        NSString *srcUserDataDir = [srcPath stringByAppendingPathComponent:dir];
+        if ([fileManager fileExistsAtPath:srcUserDataDir isDirectory:&isDir] && isDir)
         {
-            NSString *srcUserDataDir = [srcPath stringByAppendingPathComponent:dir];
-            if ([fileManager fileExistsAtPath:srcUserDataDir isDirectory:&isDir] && isDir)
-            {
-                ret &= [XFileUtils copyFileRecursively:srcUserDataDir toPath:tempUserDataDir];
-            }
             NSString *destUserDataDir = [destPath stringByAppendingPathComponent:dir];
-            ret &= [XFileUtils moveItemAtPath:tempUserDataDir toPath:destUserDataDir error:nil];
+            ret &= [XFileUtils copyFileRecursively:srcUserDataDir toPath:destUserDataDir];
         }
     }
     return ret;
@@ -209,12 +171,13 @@
 
     if (info == nil) {
         info = [[XAppInfo alloc] init];
-        info.appId = DEFAULT_APP_ID_FOR_PLAYER;
         info.isEncrypted = NO;
         info.entry = DEFAULT_APP_START_PAGE;
         info.type = APP_TYPE_XAPP;
     }
 
+    info.appId = DEFAULT_APP_ID_FOR_PLAYER;
+    info.srcRoot = _defaultAppSrcRoot;
     return [XApplicationFactory create:info];
 }
 
