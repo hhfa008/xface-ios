@@ -28,7 +28,6 @@
 
 #import "XSystemBootstrapFactory.h"
 #import "XSystemBootstrap.h"
-#import "XPlayerSystemBootstrap.h"
 #import "XLightweightSystemBootstrap.h"
 #import "XUtils.h"
 #import "XConstants.h"
@@ -37,16 +36,7 @@
 
 + (id <XSystemBootstrap>)createWithDelegate:(id <XSystemBootstrapDelegate>)delegate
 {
-    id<XSystemBootstrap> systemBootstrap = nil;
-
-    if ([XUtils isPlayer])
-    {
-        systemBootstrap = [[XPlayerSystemBootstrap alloc] init];
-    }
-    else
-    {
-        systemBootstrap = [[XLightweightSystemBootstrap alloc] init];
-    }
+    id<XSystemBootstrap> systemBootstrap = [[XLightweightSystemBootstrap alloc] init];
     [systemBootstrap setBootDelegate:delegate];
 
     return systemBootstrap;

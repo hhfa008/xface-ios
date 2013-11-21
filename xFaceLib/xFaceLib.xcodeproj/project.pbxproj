@@ -150,7 +150,6 @@
 		C8DF692D17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF685E17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF692E17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF685F17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF692F17EE9FCB008B0CAF /* XNativeApplication_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686017EE9FCB008B0CAF /* XNativeApplication_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF693017EE9FCB008B0CAF /* XPlayerSystemBootstrap_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686117EE9FCB008B0CAF /* XPlayerSystemBootstrap_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693117EE9FCB008B0CAF /* XRuntime_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686217EE9FCB008B0CAF /* XRuntime_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693217EE9FCB008B0CAF /* XWebApplication_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686317EE9FCB008B0CAF /* XWebApplication_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693317EE9FCB008B0CAF /* XWhitelist_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686417EE9FCB008B0CAF /* XWhitelist_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -187,18 +186,12 @@
 		C8DF695217EE9FCB008B0CAF /* XNativeApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF687A17EE9FCB008B0CAF /* XNativeApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF695317EE9FCB008B0CAF /* XNativeApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF687B17EE9FCB008B0CAF /* XNativeApplication.m */; };
 		C8DF695417EE9FCB008B0CAF /* XNativeApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF687B17EE9FCB008B0CAF /* XNativeApplication.m */; };
-		C8DF695517EE9FCB008B0CAF /* XPlayerSystemBootstrap.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF687C17EE9FCB008B0CAF /* XPlayerSystemBootstrap.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF695617EE9FCB008B0CAF /* XPlayerSystemBootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF687D17EE9FCB008B0CAF /* XPlayerSystemBootstrap.m */; };
-		C8DF695717EE9FCB008B0CAF /* XPlayerSystemBootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF687D17EE9FCB008B0CAF /* XPlayerSystemBootstrap.m */; };
 		C8DF695817EE9FCB008B0CAF /* XResourceURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF687E17EE9FCB008B0CAF /* XResourceURLProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF695917EE9FCB008B0CAF /* XResourceURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF687F17EE9FCB008B0CAF /* XResourceURLProtocol.m */; };
 		C8DF695A17EE9FCB008B0CAF /* XResourceURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF687F17EE9FCB008B0CAF /* XResourceURLProtocol.m */; };
 		C8DF695B17EE9FCB008B0CAF /* XRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF688017EE9FCB008B0CAF /* XRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF695C17EE9FCB008B0CAF /* XRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF688117EE9FCB008B0CAF /* XRuntime.m */; };
 		C8DF695D17EE9FCB008B0CAF /* XRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF688117EE9FCB008B0CAF /* XRuntime.m */; };
-		C8DF695E17EE9FCB008B0CAF /* XSync.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF688217EE9FCB008B0CAF /* XSync.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF695F17EE9FCB008B0CAF /* XSync.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF688317EE9FCB008B0CAF /* XSync.m */; };
-		C8DF696017EE9FCB008B0CAF /* XSync.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF688317EE9FCB008B0CAF /* XSync.m */; };
 		C8DF696117EE9FCB008B0CAF /* XSystemBootstrap.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF688417EE9FCB008B0CAF /* XSystemBootstrap.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF696217EE9FCB008B0CAF /* XSystemBootstrapFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF688517EE9FCB008B0CAF /* XSystemBootstrapFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF696317EE9FCB008B0CAF /* XSystemBootstrapFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF688617EE9FCB008B0CAF /* XSystemBootstrapFactory.m */; };
@@ -451,7 +444,6 @@
 		C8DF685E17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJavaScriptEvaluator_Privates.h; sourceTree = "<group>"; };
 		C8DF685F17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLightweightSystemBootstrap_Privates.h; sourceTree = "<group>"; };
 		C8DF686017EE9FCB008B0CAF /* XNativeApplication_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNativeApplication_Privates.h; sourceTree = "<group>"; };
-		C8DF686117EE9FCB008B0CAF /* XPlayerSystemBootstrap_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPlayerSystemBootstrap_Privates.h; sourceTree = "<group>"; };
 		C8DF686217EE9FCB008B0CAF /* XRuntime_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRuntime_Privates.h; sourceTree = "<group>"; };
 		C8DF686317EE9FCB008B0CAF /* XWebApplication_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWebApplication_Privates.h; sourceTree = "<group>"; };
 		C8DF686417EE9FCB008B0CAF /* XWhitelist_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWhitelist_Privates.h; sourceTree = "<group>"; };
@@ -478,14 +470,10 @@
 		C8DF687917EE9FCB008B0CAF /* XLightweightSystemBootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLightweightSystemBootstrap.m; sourceTree = "<group>"; };
 		C8DF687A17EE9FCB008B0CAF /* XNativeApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNativeApplication.h; sourceTree = "<group>"; };
 		C8DF687B17EE9FCB008B0CAF /* XNativeApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNativeApplication.m; sourceTree = "<group>"; };
-		C8DF687C17EE9FCB008B0CAF /* XPlayerSystemBootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPlayerSystemBootstrap.h; sourceTree = "<group>"; };
-		C8DF687D17EE9FCB008B0CAF /* XPlayerSystemBootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPlayerSystemBootstrap.m; sourceTree = "<group>"; };
 		C8DF687E17EE9FCB008B0CAF /* XResourceURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XResourceURLProtocol.h; sourceTree = "<group>"; };
 		C8DF687F17EE9FCB008B0CAF /* XResourceURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XResourceURLProtocol.m; sourceTree = "<group>"; };
 		C8DF688017EE9FCB008B0CAF /* XRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRuntime.h; sourceTree = "<group>"; };
 		C8DF688117EE9FCB008B0CAF /* XRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRuntime.m; sourceTree = "<group>"; };
-		C8DF688217EE9FCB008B0CAF /* XSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSync.h; sourceTree = "<group>"; };
-		C8DF688317EE9FCB008B0CAF /* XSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSync.m; sourceTree = "<group>"; };
 		C8DF688417EE9FCB008B0CAF /* XSystemBootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSystemBootstrap.h; sourceTree = "<group>"; };
 		C8DF688517EE9FCB008B0CAF /* XSystemBootstrapFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSystemBootstrapFactory.h; sourceTree = "<group>"; };
 		C8DF688617EE9FCB008B0CAF /* XSystemBootstrapFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSystemBootstrapFactory.m; sourceTree = "<group>"; };
@@ -912,14 +900,10 @@
 				C8DF687917EE9FCB008B0CAF /* XLightweightSystemBootstrap.m */,
 				C8DF687A17EE9FCB008B0CAF /* XNativeApplication.h */,
 				C8DF687B17EE9FCB008B0CAF /* XNativeApplication.m */,
-				C8DF687C17EE9FCB008B0CAF /* XPlayerSystemBootstrap.h */,
-				C8DF687D17EE9FCB008B0CAF /* XPlayerSystemBootstrap.m */,
 				C8DF687E17EE9FCB008B0CAF /* XResourceURLProtocol.h */,
 				C8DF687F17EE9FCB008B0CAF /* XResourceURLProtocol.m */,
 				C8DF688017EE9FCB008B0CAF /* XRuntime.h */,
 				C8DF688117EE9FCB008B0CAF /* XRuntime.m */,
-				C8DF688217EE9FCB008B0CAF /* XSync.h */,
-				C8DF688317EE9FCB008B0CAF /* XSync.m */,
 				C8DF688417EE9FCB008B0CAF /* XSystemBootstrap.h */,
 				C8DF688517EE9FCB008B0CAF /* XSystemBootstrapFactory.h */,
 				C8DF688617EE9FCB008B0CAF /* XSystemBootstrapFactory.m */,
@@ -946,7 +930,6 @@
 				C8DF685E17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h */,
 				C8DF685F17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h */,
 				C8DF686017EE9FCB008B0CAF /* XNativeApplication_Privates.h */,
-				C8DF686117EE9FCB008B0CAF /* XPlayerSystemBootstrap_Privates.h */,
 				C8DF686217EE9FCB008B0CAF /* XRuntime_Privates.h */,
 				C8DF686317EE9FCB008B0CAF /* XWebApplication_Privates.h */,
 				C8DF686417EE9FCB008B0CAF /* XWhitelist_Privates.h */,
@@ -1068,7 +1051,6 @@
 				C8DF692D17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h in Headers */,
 				C8DF69B617EE9FCB008B0CAF /* XPlainFileOperator.h in Headers */,
 				C8DF68F417EE9FCB008B0CAF /* XAppXMLParserFactory_Privates.h in Headers */,
-				C8DF695E17EE9FCB008B0CAF /* XSync.h in Headers */,
 				C8DF692417EE9FCB008B0CAF /* CDVPlugin+XPlugin.h in Headers */,
 				C8DF68ED17EE9FCB008B0CAF /* XSecurityResourceFilterFactory.h in Headers */,
 				C8DF698D17EE9FCB008B0CAF /* XUtils_Privates.h in Headers */,
@@ -1146,14 +1128,12 @@
 				C8DF69C517EE9FCB008B0CAF /* XZipArchive.h in Headers */,
 				C8DF693517EE9FCB008B0CAF /* XAppInfo.h in Headers */,
 				C8DF68F717EE9FCB008B0CAF /* XAppInstaller.h in Headers */,
-				C8DF695517EE9FCB008B0CAF /* XPlayerSystemBootstrap.h in Headers */,
 				C8A15F7717EEA50600FB3E68 /* crypt.h in Headers */,
 				C8DF691817EE9FCB008B0CAF /* XSystemEventHandler_Privates.h in Headers */,
 				C8A15F8017EEA50600FB3E68 /* unzip.h in Headers */,
 				C8A15F7617EEA50600FB3E68 /* MobClick.h in Headers */,
 				C8DF68F217EE9FCB008B0CAF /* XAppPreinstallListener_Private.h in Headers */,
 				C8DF69A217EE9FCB008B0CAF /* XExtendedDictionary.h in Headers */,
-				C8DF693017EE9FCB008B0CAF /* XPlayerSystemBootstrap_Privates.h in Headers */,
 				C8DF698C17EE9FCB008B0CAF /* XLogRedirct_Privates.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1291,7 +1271,6 @@
 				C8DF696317EE9FCB008B0CAF /* XSystemBootstrapFactory.m in Sources */,
 				C8DF694A17EE9FCB008B0CAF /* XHTTPURLResponse.m in Sources */,
 				C8DF68D017EE9FCB008B0CAF /* XAppRunningMode.m in Sources */,
-				C8DF695F17EE9FCB008B0CAF /* XSync.m in Sources */,
 				C8DF68EA17EE9FCB008B0CAF /* XSecurityPolicyFactory.m in Sources */,
 				C8DF698A17EE9FCB008B0CAF /* NSString+XStartParams.m in Sources */,
 				C8DF696C17EE9FCB008B0CAF /* XVersionLableFactory.m in Sources */,
@@ -1308,7 +1287,6 @@
 				C8DF69B117EE9FCB008B0CAF /* XLog.m in Sources */,
 				C8DF697817EE9FCB008B0CAF /* XHTTPSURLProtocol.m in Sources */,
 				C8A15F6317EEA50600FB3E68 /* APElement.m in Sources */,
-				C8DF695617EE9FCB008B0CAF /* XPlayerSystemBootstrap.m in Sources */,
 				C8A15F6017EEA50600FB3E68 /* APDocument.m in Sources */,
 				C8DF697B17EE9FCB008B0CAF /* APDocument+XAPDocument.m in Sources */,
 				C8DF68D617EE9FCB008B0CAF /* XDefaultSecurityResourceFilter.m in Sources */,
@@ -1371,7 +1349,6 @@
 				C8DF698517EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.m in Sources */,
 				C8DF69BE17EE9FCB008B0CAF /* XStoreProductPresenter.m in Sources */,
 				C8DF694B17EE9FCB008B0CAF /* XHTTPURLResponse.m in Sources */,
-				C8DF695717EE9FCB008B0CAF /* XPlayerSystemBootstrap.m in Sources */,
 				C8DF694817EE9FCB008B0CAF /* XCommandQueue.m in Sources */,
 				C8DF693E17EE9FCB008B0CAF /* XAppList.m in Sources */,
 				C8DF690917EE9FCB008B0CAF /* XAppXMLParser_Legacy.m in Sources */,
@@ -1437,7 +1414,6 @@
 				C8A15F8617EEA50600FB3E68 /* ZipArchive.mm in Sources */,
 				C8DF698217EE9FCB008B0CAF /* NSData+Encoding.m in Sources */,
 				C8A15F7C17EEA50600FB3E68 /* mztools.c in Sources */,
-				C8DF696017EE9FCB008B0CAF /* XSync.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
