@@ -385,8 +385,16 @@ static XUtils* sSelPerformer = nil;
 + (BOOL)copyJsCore
 {
     //TODO:如果支持将扩展js代码合并到xface.js，则此方法可以移除
+    //拷贝xface.js,cordova_plugins.js,plugins目录到<Application_Home>/Documents/xface3/js_core下
     BOOL ret = YES;
     NSString *systemWorkspace = [[XConfiguration getInstance] systemWorkspace];
+
+    if ([XUtils isPlayer])
+    {
+        systemWorkspace = [systemWorkspace stringByReplacingOccurrencesOfString:XFACE_PLAYER_WORKSPACE withString:XFACE_WORKSPACE_FOLDER];
+        [[NSFileManager defaultManager] createDirectoryAtPath:systemWorkspace withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+
     NSString *defaultAppId = [XUtils isPlayer] ? DEFAULT_APP_ID_FOR_PLAYER : [[XConfiguration getInstance] preinstallApps][0];
 
     NSBundle *mainBundle = [NSBundle bundleForClass:[self class]];

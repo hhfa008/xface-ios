@@ -1,5 +1,5 @@
 // Platform: ios
-// 3.2.0-dev-be15823
+// 3.3.0-dev-8cf05e9
 /*
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements.  See the NOTICE file
@@ -8,9 +8,9 @@
  to you under the Apache License, Version 2.0 (the
  "License"); you may not use this file except in compliance
  with the License.  You may obtain a copy of the License at
-
+ 
      http://www.apache.org/licenses/LICENSE-2.0
-
+ 
  Unless required by applicable law or agreed to in writing,
  software distributed under the License is distributed on an
  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -19,7 +19,7 @@
  under the License.
 */
 ;(function() {
-var CORDOVA_JS_BUILD_LABEL = '3.2.0-dev-be15823';
+var CORDOVA_JS_BUILD_LABEL = '3.3.0-dev-8cf05e9';
 // file: lib/scripts/require.js
 
 /*jshint -W079 */
@@ -1029,6 +1029,36 @@ module.exports = iOSExec;
 
 });
 
+// file: lib/common/exec/proxy.js
+define("cordova/exec/proxy", function(require, exports, module) {
+
+
+// internal map of proxy function
+var CommandProxyMap = {};
+
+module.exports = {
+
+    // example: cordova.commandProxy.add("Accelerometer",{getCurrentAcceleration: function(successCallback, errorCallback, options) {...},...);
+    add:function(id,proxyObj) {
+        console.log("adding proxy for " + id);
+        CommandProxyMap[id] = proxyObj;
+        return proxyObj;
+    },
+
+    // cordova.commandProxy.remove("Accelerometer");
+    remove:function(id) {
+        var proxy = CommandProxyMap[id];
+        delete CommandProxyMap[id];
+        CommandProxyMap[id] = null;
+        return proxy;
+    },
+
+    get:function(service,action) {
+        return ( CommandProxyMap[service] ? CommandProxyMap[service][action] : null );
+    }
+};
+});
+
 // file: lib/common/init.js
 define("cordova/init", function(require, exports, module) {
 
@@ -1354,8 +1384,6 @@ function findCordovaPath() {
                 if(-1 != index){
                     index = path.lastIndexOf('/', index);
                     path = path.substring(0, index) + '/Documents/xface3/js_core/';
-                }else if(-1 != path.indexOf('xface_player')){
-                    path = path.substring(0, path.indexOf('xface_player')) + 'xface_player/js_core/';
                 }else if(-1 != path.indexOf('Documents')){
                     path = path.substring(0, path.indexOf('Documents')) + 'Documents/xface3/js_core/';
                 }
@@ -1638,6 +1666,9 @@ Workspace.prototype.strEndsWith = function(str, suffix) {
 };
 
 Workspace.prototype.toURL = function(path) {
+    if(isAndroid()){
+        path = path.replace('file://','');
+    }
     return "file://localhost" + path;
 };
 
@@ -1645,24 +1676,36 @@ Workspace.prototype.toPath = function(url) {
     // path为"file://localhost/user/..", 不同的平台执行urlUtil.makeAbsolute(path)后,返回的url可能有以下形式：
     // 1）file://localhost/user/..
     // 2）file:///user/..
+    // 3）file://\\\\localhost  windows phone执行urlUtil.makeAbsolute(path)返回的URL形式
+    var path;
     if(this.strStartsWith(url, 'file://localhost')) {
-        return url.replace('file://localhost', '');
-    } else if(-1 != url.indexOf("://")) {
+        path = url.replace('file://localhost', '');
+    } else if (this.strStartsWith(url, 'file://\\\\localhost')) {
+        path = url.replace('file://\\\\localhost', '');
+    } else if (-1 != url.indexOf("://")) {
         //remove scheme(e.g., file://)
-        return url.substring(url.indexOf("://") + 3, url.length);
+        path = url.substring(url.indexOf("://") + 3, url.length);
     } else {
         // Don't log when running unit tests.
         if (typeof jasmine == 'undefined') {
             console.log(url + ' is not an url!');
         }
-        return url;
+        path = url;
     }
+    if(isAndroid()){
+        path = "file://" + path;
+    }
+    return path;
 };
+
+function isAndroid(){
+    return 'android' === require('cordova/platform').id;
+}
 
 Workspace.prototype.isAbsolutePath = function(path){
     // FIXME:Confirm this is right on all platforms
     // Absolute path starts with a slash
-    return this.strStartsWith(path, '/');
+    return this.strStartsWith(path, '/') || this.strStartsWith(path, 'file://') ;
 };
 
 Workspace.prototype.buildPath = function(aString, bString){
@@ -1718,7 +1761,7 @@ Workspace.prototype.checkWorkspace = function(basePath, relativePath, functionNa
         result = this.buildPath(basePath, result);
         result = this.resolvePath(result);
     }
-
+    result = result.replace(/\\/g,'/');
     if (this.strStartsWith(result, basePath)){
         return result;
     }else{
