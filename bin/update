@@ -31,14 +31,26 @@ function setShellFatal(value, func) {
 }
 
 function copyJsAndCordovaLib(projectPath) {
-    shell.cp('-f', path.join(ROOT, 'CordovaLib', 'cordova.js'), path.join(projectPath, 'www'));
-    shell.rm('-rf', path.join(projectPath, 'CordovaLib'));
-    shell.cp('-r', path.join(ROOT, 'CordovaLib'), projectPath);
+    shell.rm('-rf', path.join(projectPath, 'cordova-ios'));
+    shell.cp('-r', path.join(ROOT, 'cordova-ios'), projectPath);
     // Ensure no workspace files got copied over.
-    var entries = fs.readdirSync(path.join(projectPath, 'CordovaLib', 'CordovaLib.xcodeproj'));
+    var entries = fs.readdirSync(path.join(projectPath, 'cordova-ios', 'CordovaLib', 'CordovaLib.xcodeproj'));
     entries.forEach(function(p) {
         if (/.*xc.*/.test(p)) {
-            shell.rm('-rf', path.join(projectPath, 'CordovaLib', 'CordovaLib.xcodeproj', p));
+            shell.rm('-rf', path.join(projectPath, 'cordova-ios', 'CordovaLib', 'CordovaLib.xcodeproj', p));
+        }
+    });
+}
+
+function copyJsAndxFaceLib(projectPath) {
+    shell.cp('-f', path.join(ROOT, 'xFaceLib', 'xFaceLib', 'xface.js'), path.join(projectPath, 'helloxface', 'www'));
+    shell.rm('-rf', path.join(projectPath, 'xFaceLib'));
+    shell.cp('-r', path.join(ROOT, 'xFaceLib'), projectPath);
+    // Ensure no workspace files got copied over.
+    var entries = fs.readdirSync(path.join(projectPath, 'xFaceLib', 'xFaceLib.xcodeproj'));
+    entries.forEach(function(p) {
+        if (/.*xc.*/.test(p)) {
+            shell.rm('-rf', path.join(projectPath, 'xFaceLib', 'xFaceLib.xcodeproj', p));
         }
     });
 }
@@ -58,9 +70,10 @@ function copyScripts(projectPath) {
 }
 
 exports.updateProject = function(projectPath) {
-    var version = fs.readFileSync(path.join(ROOT, 'CordovaLib', 'VERSION'), 'utf-8').trim();
+    var version = fs.readFileSync(path.join(ROOT, 'xFaceLib', 'xFaceLib', 'VERSION'), 'utf-8').trim();
     setShellFatal(true, function() {
         copyJsAndCordovaLib(projectPath);
+        copyJsAndxFaceLib(projectPath);
         copyScripts(projectPath);
         console.log('iOS project is now at version ' + version);
     });
