@@ -26,13 +26,6 @@
 //
 //
 
-//
-//  XCommandQueue.m
-//  xFace
-//
-//  Copyright (c) 2013年 Polyvi Inc. All rights reserved.
-//
-
 #import "XCommandQueue.h"
 #import "XConstants.h"
 #import "XAppView.h"
@@ -68,7 +61,7 @@
     {
         return YES;
     }
-    
+
     return [super execute:command];
 }
 
@@ -92,7 +85,7 @@
     {
         return NO;
     }
-    
+
     if ([CLOSE_XAPPLICATION_COMMAND isEqualToString:cmdMethodName])
     {
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:XAPPLICATION_CLOSE_NOTIFICATION object:[(XViewController *)self->_viewController ownerApp]]];
@@ -100,14 +93,14 @@
     else if ([XAPPLICATION_SEND_MESSAGE_COMMAND isEqualToString:cmdMethodName])
     {
         NSString *msgId = [cmd.arguments objectAtIndex:0];
-        
+
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:XAPPLICATION_SEND_MESSAGE_NOTIFICATION object:[(XViewController *)self->_viewController ownerApp] userInfo:@{@"msgId": msgId}]];
     }
     else
     {
         NSAssert(NO, nil);
     }
-    
+
     return YES;
 }
 
