@@ -49,6 +49,7 @@
 @implementation XViewController
 
 @synthesize ownerApp;
+@synthesize loadFromString;
 
 - (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
@@ -110,10 +111,16 @@
 {
     [super webView:webView didFailLoadWithError:error];
 
-    self->_loadFromString = YES;
+    NSString *urlStr = [[NSURL URLWithString:[error.userInfo objectForKey:@"NSErrorFailingURLStringKey"]] absoluteString];
+    if ([urlStr isEqualToString:@"about:blank"]) {
+        return;
+    }
 
-    NSString *html = [NSString stringWithFormat:@"<html><head><meta name='viewport' content='width=device-width, user-scalable=no' /><head><body> %@%@ </body></html>", @"Failed to load webpage with error: ", [error localizedDescription]];
-    [webView loadHTMLString:html baseURL:nil];
+    self.loadFromString = YES;
+
+    NSString *loadErr = [NSString stringWithFormat:@"<br/>Failed to load webpage:<br/>%@<br/>with error:<br/>%@", urlStr, [error localizedDescription]];
+    NSString *html = [NSString stringWithFormat:@"<html><head><meta name='viewport' content='width=device-width, user-scalable=no' /></head><body> %@ </body></html>", loadErr];
+    [self.webView loadHTMLString:html baseURL:nil];
 }
 
 @end

@@ -34,10 +34,8 @@
 @class CDVWhitelist;
 
 @interface XViewController : CDVViewController
-{
-    BOOL                    _loadFromString;     /**< 通过设置页面内容的方式加载webview */
-}
 
-@property (weak, nonatomic) id<XApplication> ownerApp;/**< 关联的app */
+@property (nonatomic, assign) BOOL loadFromString;
+@property (weak, nonatomic) id<XApplication> ownerApp;  /**< 关联的app */
 
 @end
