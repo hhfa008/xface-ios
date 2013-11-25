@@ -42,6 +42,15 @@
 
 @implementation XJavaScriptEvaluator
 
+#pragma mark override
+
+- (id)initWithViewController:(CDVViewController*)viewController
+{
+    self = [super initWithViewController:viewController];
+    _viewController = viewController;
+    return self;
+}
+
 - (void) eval:(NSMutableArray *)arguments
 {
     NSString *callbackId = [arguments objectAtIndex:0];
