@@ -45,7 +45,7 @@ static NSArray* com_polyvi_xface_ConfigPreferences;
 
 + (void)initialize
 {
-    com_polyvi_xface_ConfigPreferences = [[NSArray alloc] initWithObjects:USE_PLAYER_MODE_PROPERTY,
+    com_polyvi_xface_ConfigPreferences = [[NSArray alloc] initWithObjects:
                                             ENGINE_VERSION,
                                             ENGINE_BUILD,
                                             SPLASH_SCREEN_DELAY_DURATION,

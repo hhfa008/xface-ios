@@ -37,13 +37,8 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];
 
-    // 区别player与非player的系统工作空间，以隔离相关配置，避免互相覆盖数据，影响程序正常运行
-    // player的系统工作空间路径形如：<Applilcation_Home>/Documents/xface_player/
-    // 非player的系统工作空间路径形如：<Applilcation_Home>/Documents/xface3/
-
-    BOOL isPlayerUsed = [XUtils isPlayer];
-    NSString *workspaceName = isPlayerUsed ? XFACE_PLAYER_WORKSPACE :  XFACE_WORKSPACE_FOLDER ;
-    return [documentDirectory stringByAppendingFormat:@"%@%@%@", FILE_SEPARATOR, workspaceName, FILE_SEPARATOR];
+    // 系统工作空间路径形如：<Applilcation_Home>/Documents/xface3/
+    return [documentDirectory stringByAppendingFormat:@"%@%@%@", FILE_SEPARATOR, XFACE_WORKSPACE_FOLDER, FILE_SEPARATOR];
 }
 
 @end

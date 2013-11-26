@@ -30,7 +30,6 @@
 #define XFACE_WORKSPACE_FOLDER                   @"xface3" // under <Applilcation_Home>/Documents/
 #define XFACE_BUNDLE_FOLDER                      @"xface3" // under <Application_Home>/xFace.app/
 #define XFACE_PLAYER_WORKSPACE                   @"xface_player"
-#define XFACE_PLAYER_PACKAGE_NAME                @"xface_player.zip"
 #define APPLICATION_INSTALLATION_FOLDER          @"apps"
 #define APPLICATION_ICONS_FOLDER                 @"app_icons"
 #define APPLICATION_CONFIG_FILE_NAME             @"app.xml"
@@ -82,7 +81,6 @@
 #define SYSTEM_CONFIG_FILE_NAME                  @"config.xml"
 #define TAG_APP_PACKAGE                          @"app_package"
 #define TAG_PREFERENCE                           @"preference"
-#define USE_PLAYER_MODE_PROPERTY                 @"UsePlayerMode"
 #define ENGINE_VERSION                           @"EngineVersion"
 #define ENGINE_BUILD                             @"EngineBuild"
 #define SPLASH_SCREEN_DELAY_DURATION             @"SplashScreenDelayDuration"

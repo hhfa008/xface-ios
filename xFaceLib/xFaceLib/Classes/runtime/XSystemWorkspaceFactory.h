@@ -29,7 +29,7 @@
 @interface XSystemWorkspaceFactory : NSObject
 
 /**
-  生成系统工作目录路径
+    生成系统工作目录路径
  */
 + (NSString *)create;
 

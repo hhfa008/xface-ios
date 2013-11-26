@@ -27,21 +27,12 @@
 
 #import "XFileOperatorFactory.h"
 #import "XSecurityFileOperator.h"
-#import "XPlainFileOperator.h"
-#import "XUtils.h"
 
 @implementation XFileOperatorFactory
 
 + (id)create
 {
-    if ([XUtils isPlayer])
-    {
-        return [[XPlainFileOperator alloc] init];
-    }else
-    {
-        return [[XSecurityFileOperator alloc] init];
-    }
-    return nil;
+    return [[XSecurityFileOperator alloc] init];
 }
 
 @end

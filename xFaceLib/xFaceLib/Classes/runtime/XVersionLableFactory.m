@@ -21,42 +21,17 @@
 */
 
 //
-//  XSystemBootstrapFactory.m
+//  XVersionLableFactory.m
 //  xFace
 //
 //
 
 #import "XVersionLableFactory.h"
-#import "XUtils.h"
-#import "XConstants.h"
-
-#define  VERSION_LABLE_HEIGHT  50
-
-#define  FACTOR_X              0.50
-#define  FACTOR_Y              0.50
 
 @implementation XVersionLableFactory
 
 + (id) createWithFrame:(CGRect)frame
 {
-    if ([XUtils isPlayer])
-    {
-        //version label 显示在xface logo的正下方
-        UILabel *versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(FACTOR_X * frame.size.width - 100, FACTOR_Y * frame.size.height + 25, FACTOR_X * frame.size.width + 100, VERSION_LABLE_HEIGHT)];
-
-        [versionLabel setTextColor:[UIColor whiteColor]];
-        [versionLabel setBackgroundColor:[UIColor clearColor]];
-        NSString* versionInfo = [NSString stringWithFormat:@"version:%@.%@",
-                                 [XUtils getPreferenceForKey:ENGINE_VERSION],
-                                 [XUtils getPreferenceForKey:ENGINE_BUILD]];
-
-        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-        NSString* bundleId = [NSString stringWithFormat:@"bundleId:%@", [bundle bundleIdentifier]];
-
-        versionLabel.text = [NSString stringWithFormat:@"%@\n%@", versionInfo, bundleId];;
-        versionLabel.numberOfLines = 0;
-        return versionLabel;
-    }
     return nil;
 }
 

@@ -158,11 +158,6 @@
 + (id) getPreferenceForKey:(NSString *)keyName;
 
 /**
-   判断是否为player模式
- */
-+ (BOOL) isPlayer;
-
-/**
  读取documents目录下的data.plist，并取出某个配置项的值
  @param key 配置关键字
  @return 配置项的值，不存在则返回nil
