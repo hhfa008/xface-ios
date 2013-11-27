@@ -24,8 +24,6 @@
 		C8A15F7117EEA50600FB3E68 /* iToast.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A15F4A17EEA50600FB3E68 /* iToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8A15F7217EEA50600FB3E68 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F4B17EEA50600FB3E68 /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C8A15F7317EEA50600FB3E68 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F4B17EEA50600FB3E68 /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C8A15F7517EEA50600FB3E68 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A15F4D17EEA50600FB3E68 /* libMobClickLibrary.a */; };
-		C8A15F7617EEA50600FB3E68 /* MobClick.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A15F4E17EEA50600FB3E68 /* MobClick.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8A15F7717EEA50600FB3E68 /* crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A15F5117EEA50600FB3E68 /* crypt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8A15F7817EEA50600FB3E68 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F5217EEA50600FB3E68 /* ioapi.c */; };
 		C8A15F7917EEA50600FB3E68 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F5217EEA50600FB3E68 /* ioapi.c */; };
@@ -42,7 +40,6 @@
 		C8A15F8417EEA50600FB3E68 /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A15F5A17EEA50600FB3E68 /* ZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8A15F8517EEA50600FB3E68 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F5B17EEA50600FB3E68 /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C8A15F8617EEA50600FB3E68 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F5B17EEA50600FB3E68 /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C8A15F8C17EEB73100FB3E68 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A15F4D17EEA50600FB3E68 /* libMobClickLibrary.a */; };
 		C8A2C8FD17E856560009C73A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C8FC17E856560009C73A /* SenTestingKit.framework */; };
 		C8A2C90017E856560009C73A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C8ED17E856550009C73A /* Foundation.framework */; };
 		C8A2C90317E856560009C73A /* libxFaceLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C8EA17E856550009C73A /* libxFaceLib.a */; };
@@ -240,9 +237,6 @@
 		C8DF698E17EE9FCB008B0CAF /* UIDevice+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68A617EE9FCB008B0CAF /* UIDevice+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF698F17EE9FCB008B0CAF /* UIDevice+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68A717EE9FCB008B0CAF /* UIDevice+Additions.m */; };
 		C8DF699017EE9FCB008B0CAF /* UIDevice+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68A717EE9FCB008B0CAF /* UIDevice+Additions.m */; };
-		C8DF699117EE9FCB008B0CAF /* XAnalyzer.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68A817EE9FCB008B0CAF /* XAnalyzer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF699217EE9FCB008B0CAF /* XAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68A917EE9FCB008B0CAF /* XAnalyzer.m */; };
-		C8DF699317EE9FCB008B0CAF /* XAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68A917EE9FCB008B0CAF /* XAnalyzer.m */; };
 		C8DF699417EE9FCB008B0CAF /* XAPElement.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68AA17EE9FCB008B0CAF /* XAPElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF699517EE9FCB008B0CAF /* XAPElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68AB17EE9FCB008B0CAF /* XAPElement.m */; };
 		C8DF699617EE9FCB008B0CAF /* XAPElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68AB17EE9FCB008B0CAF /* XAPElement.m */; };
@@ -347,8 +341,6 @@
 		C8A15F4017EEA50600FB3E68 /* Credentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
 		C8A15F4A17EEA50600FB3E68 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
 		C8A15F4B17EEA50600FB3E68 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
-		C8A15F4D17EEA50600FB3E68 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
-		C8A15F4E17EEA50600FB3E68 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		C8A15F5117EEA50600FB3E68 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
 		C8A15F5217EEA50600FB3E68 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
 		C8A15F5317EEA50600FB3E68 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
@@ -504,8 +496,6 @@
 		C8DF68A517EE9FCB008B0CAF /* XUtils_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XUtils_Privates.h; sourceTree = "<group>"; };
 		C8DF68A617EE9FCB008B0CAF /* UIDevice+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Additions.h"; sourceTree = "<group>"; };
 		C8DF68A717EE9FCB008B0CAF /* UIDevice+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Additions.m"; sourceTree = "<group>"; };
-		C8DF68A817EE9FCB008B0CAF /* XAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAnalyzer.h; sourceTree = "<group>"; };
-		C8DF68A917EE9FCB008B0CAF /* XAnalyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAnalyzer.m; sourceTree = "<group>"; };
 		C8DF68AA17EE9FCB008B0CAF /* XAPElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAPElement.h; sourceTree = "<group>"; };
 		C8DF68AB17EE9FCB008B0CAF /* XAPElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAPElement.m; sourceTree = "<group>"; };
 		C8DF68AC17EE9FCB008B0CAF /* XApplicationPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XApplicationPersistence.h; sourceTree = "<group>"; };
@@ -545,7 +535,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8A15F8C17EEB73100FB3E68 /* libMobClickLibrary.a in Frameworks */,
 				C832C42517E97F0F00D3A35A /* libCordova.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,7 +558,6 @@
 				C8A2C8FD17E856560009C73A /* SenTestingKit.framework in Frameworks */,
 				C8A2C90017E856560009C73A /* Foundation.framework in Frameworks */,
 				C8A2C90317E856560009C73A /* libxFaceLib.a in Frameworks */,
-				C8A15F7517EEA50600FB3E68 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,7 +570,6 @@
 				C8A15F3617EEA50600FB3E68 /* APXML */,
 				C8A15F3E17EEA50600FB3E68 /* Credential */,
 				C8A15F4917EEA50600FB3E68 /* iToast */,
-				C8A15F4C17EEA50600FB3E68 /* UMAnalytics_Sdk_2.2.0.OpenUDID */,
 				C8A15F4F17EEA50600FB3E68 /* ZipArchive */,
 			);
 			path = extlibs;
@@ -618,15 +605,6 @@
 				C8A15F4B17EEA50600FB3E68 /* iToast.m */,
 			);
 			path = iToast;
-			sourceTree = "<group>";
-		};
-		C8A15F4C17EEA50600FB3E68 /* UMAnalytics_Sdk_2.2.0.OpenUDID */ = {
-			isa = PBXGroup;
-			children = (
-				C8A15F4D17EEA50600FB3E68 /* libMobClickLibrary.a */,
-				C8A15F4E17EEA50600FB3E68 /* MobClick.h */,
-			);
-			path = UMAnalytics_Sdk_2.2.0.OpenUDID;
 			sourceTree = "<group>";
 		};
 		C8A15F4F17EEA50600FB3E68 /* ZipArchive */ = {
@@ -961,8 +939,6 @@
 				C8DF68A217EE9FCB008B0CAF /* NSString+XStartParams.m */,
 				C8DF68A617EE9FCB008B0CAF /* UIDevice+Additions.h */,
 				C8DF68A717EE9FCB008B0CAF /* UIDevice+Additions.m */,
-				C8DF68A817EE9FCB008B0CAF /* XAnalyzer.h */,
-				C8DF68A917EE9FCB008B0CAF /* XAnalyzer.m */,
 				C8DF68AA17EE9FCB008B0CAF /* XAPElement.h */,
 				C8DF68AB17EE9FCB008B0CAF /* XAPElement.m */,
 				C8DF68AC17EE9FCB008B0CAF /* XApplicationPersistence.h */,
@@ -1049,7 +1025,6 @@
 				C8DF692B17EE9FCB008B0CAF /* XConfiguration_Privates.h in Headers */,
 				C8A15F6217EEA50600FB3E68 /* APElement.h in Headers */,
 				C8DF68E917EE9FCB008B0CAF /* XSecurityPolicyFactory.h in Headers */,
-				C8DF699117EE9FCB008B0CAF /* XAnalyzer.h in Headers */,
 				C8DF69BC17EE9FCB008B0CAF /* XStoreProductPresenter.h in Headers */,
 				C8DF693317EE9FCB008B0CAF /* XWhitelist_Privates.h in Headers */,
 				C8DF68CE17EE9FCB008B0CAF /* XOnlineMode_Privates.h in Headers */,
@@ -1123,7 +1098,6 @@
 				C8A15F7717EEA50600FB3E68 /* crypt.h in Headers */,
 				C8DF691817EE9FCB008B0CAF /* XSystemEventHandler_Privates.h in Headers */,
 				C8A15F8017EEA50600FB3E68 /* unzip.h in Headers */,
-				C8A15F7617EEA50600FB3E68 /* MobClick.h in Headers */,
 				C8DF68F217EE9FCB008B0CAF /* XAppPreinstallListener_Private.h in Headers */,
 				C8DF69A217EE9FCB008B0CAF /* XExtendedDictionary.h in Headers */,
 				C8DF698C17EE9FCB008B0CAF /* XLogRedirct_Privates.h in Headers */,
@@ -1251,7 +1225,6 @@
 				C8DF69B417EE9FCB008B0CAF /* XLogRedirect.m in Sources */,
 				C8DF697E17EE9FCB008B0CAF /* md5.m in Sources */,
 				C8DF69C317EE9FCB008B0CAF /* XUtils.m in Sources */,
-				C8DF699217EE9FCB008B0CAF /* XAnalyzer.m in Sources */,
 				C8DF69A717EE9FCB008B0CAF /* XFileOperatorFactory.m in Sources */,
 				C8DF69A317EE9FCB008B0CAF /* XExtendedDictionary.m in Sources */,
 				C8DF690517EE9FCB008B0CAF /* XAppXMLParser.m in Sources */,
@@ -1375,7 +1348,6 @@
 				C8DF69AB17EE9FCB008B0CAF /* XFileUtils.m in Sources */,
 				C8DF697917EE9FCB008B0CAF /* XHTTPSURLProtocol.m in Sources */,
 				C8DF697017EE9FCB008B0CAF /* XViewController.m in Sources */,
-				C8DF699317EE9FCB008B0CAF /* XAnalyzer.m in Sources */,
 				C8DF697617EE9FCB008B0CAF /* XCredentialManager.m in Sources */,
 				C8DF69C117EE9FCB008B0CAF /* XUtils+Additions.m in Sources */,
 				C8DF696A17EE9FCB008B0CAF /* XUIApplication.m in Sources */,

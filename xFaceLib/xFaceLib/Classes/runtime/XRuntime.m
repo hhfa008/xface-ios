@@ -38,7 +38,6 @@
 #import "XUtils.h"
 #import "XSystemBootstrapFactory.h"
 #import "XSystemEventHandler.h"
-#import "XAnalyzer.h"
 #import "XConfiguration.h"
 #import "XViewController.h"
 #import "NSMutableArray+XStackAdditions.h"
@@ -67,8 +66,6 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
     self = [super init];
     if (self)
     {
-        self.analyzer = [[XAnalyzer alloc] init];
-
         self.viewController = [[XViewController alloc] init];
         self.activeViewControllers = [[NSMutableArray alloc] init];
 
