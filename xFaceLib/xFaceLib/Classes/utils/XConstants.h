@@ -83,7 +83,6 @@
 #define TAG_PREFERENCE                           @"preference"
 #define ENGINE_VERSION                           @"EngineVersion"
 #define ENGINE_BUILD                             @"EngineBuild"
-#define SPLASH_SCREEN_DELAY_DURATION             @"SplashScreenDelayDuration"
 #define CHECK_UPDATE_PROP_NAME                   @"CheckUpdate"
 #define UPDATE_ADDRESS_PROP_NAME                 @"UpdateAddress"
 #define SECURITY_ADDRESS_PROP_NAME               @"SecurityAddress"
