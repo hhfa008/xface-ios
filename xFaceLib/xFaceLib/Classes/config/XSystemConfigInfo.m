@@ -48,8 +48,6 @@ static NSArray* com_polyvi_xface_ConfigPreferences;
     com_polyvi_xface_ConfigPreferences = [[NSArray alloc] initWithObjects:
                                             ENGINE_VERSION,
                                             ENGINE_BUILD,
-                                            CHECK_UPDATE_PROP_NAME,
-                                            UPDATE_ADDRESS_PROP_NAME,
                                             SECURITY_ADDRESS_PROP_NAME,
                                             nil];
 }

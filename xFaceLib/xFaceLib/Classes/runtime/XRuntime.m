@@ -34,7 +34,6 @@
 #import "XAppList.h"
 #import "NSObject+JSONSerialization.h"
 #import "XRuntime_Privates.h"
-#import "XAppUpdater.h"
 #import "XUtils.h"
 #import "XSystemBootstrapFactory.h"
 #import "XSystemEventHandler.h"
@@ -109,10 +108,6 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
 {
     // try to register push notification
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
-
-    //执行检测更新
-    self->appUpdater = [[XAppUpdater alloc] init];
-    [self->appUpdater run];
 
     self.systemBootstrap = [XSystemBootstrapFactory createWithDelegate:self];
     [self.systemBootstrap prepareWorkEnvironment];

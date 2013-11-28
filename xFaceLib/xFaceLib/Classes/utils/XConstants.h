@@ -83,8 +83,6 @@
 #define TAG_PREFERENCE                           @"preference"
 #define ENGINE_VERSION                           @"EngineVersion"
 #define ENGINE_BUILD                             @"EngineBuild"
-#define CHECK_UPDATE_PROP_NAME                   @"CheckUpdate"
-#define UPDATE_ADDRESS_PROP_NAME                 @"UpdateAddress"
 #define SECURITY_ADDRESS_PROP_NAME               @"SecurityAddress"
 
 // info.plist中定义的常量

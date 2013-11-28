@@ -55,8 +55,6 @@
 
     <preference name="EngineVersion" value="3.2.x" />
     <preference name="EngineBuild" value="12345" />
-    <preference name="CheckUpdate" value="false" />
-    <preference name="UpdateAddress" value="" />
     <preference name="SecurityAddress" value="" />
 
     <feature name="LocalStorage">
