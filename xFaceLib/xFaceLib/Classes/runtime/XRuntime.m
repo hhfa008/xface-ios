@@ -53,7 +53,6 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
 @synthesize appManagement;
 @synthesize systemBootstrap;
 @synthesize sysEventHandler;
-@synthesize appUpdater;
 @synthesize pushDelegate;
 @synthesize bootParams;
 @synthesize viewController;

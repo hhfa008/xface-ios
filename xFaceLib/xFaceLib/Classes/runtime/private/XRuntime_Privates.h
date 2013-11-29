@@ -32,9 +32,7 @@
 @class XAppManagement;
 @class XJavaScriptEvaluator;
 @class XSystemBootstrap;
-@class XAppUpdater;
 @class XSystemEventHandler;
-@class XAnalyzer;
 
 @interface XRuntime ()
 
@@ -59,22 +57,9 @@
 @property (strong, nonatomic) XSystemEventHandler *sysEventHandler;
 
 /**
-    负责检测是否存在新版本的app.
-    @note XAppUpdater有UIAlertViewDelegate，不能是局部变量，否则UIAlertView弹出之后，
-          XAppUpdater是局部变量的话就被回收了（执行dealloc），再点击UIAlertView的按钮，
-          触发UIAlertViewDelegate，就引起崩溃。
- */
-@property (strong, nonatomic) XAppUpdater *appUpdater;
-
-/**
     启动参数
  */
 @property (strong, readwrite, nonatomic) NSString *bootParams;
-
-/**
-    负责初始化第三方数据统计工具，以及通过监听event实现event,screen统计功能
- */
-@property (strong, nonatomic) XAnalyzer *analyzer;
 
 /**
     显示错误提示框
