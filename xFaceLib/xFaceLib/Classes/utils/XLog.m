@@ -32,37 +32,37 @@
 
 @implementation XLog
 
-+(void) logV:(NSString*)className msg:(NSString*)msg
++(void) logV:(NSString*)msg
 {
-    NSString* s = [self constructLogMessage:className msg:msg logLevel:@"Verbose"];
+    NSString* s = [self constructLogMessage:msg withLogLevel:@"Verbose"];
     NSLog(@"%@", s);
     [[XLogRedirect getInstance] logV:@"xface" msg:s];
 }
 
-+(void) logD:(NSString*)className msg:(NSString*)msg
++(void) logD:(NSString*)msg
 {
-    NSString* s = [self constructLogMessage:className msg:msg logLevel:@"Debug"];
+    NSString* s = [self constructLogMessage:msg withLogLevel:@"Debug"];
     NSLog(@"%@", s);
     [[XLogRedirect getInstance] logD:@"xface" msg:s];
 }
 
-+(void) logI:(NSString*)className msg:(NSString*)msg
++(void) logI:(NSString*)msg
 {
-    NSString* s = [self constructLogMessage:className msg:msg logLevel:@"Info"];
+    NSString* s = [self constructLogMessage:msg withLogLevel:@"Info"];
     NSLog(@"%@", s);
     [[XLogRedirect getInstance] logI:@"xface" msg:s];
 }
 
-+(void) logW:(NSString*)className msg:(NSString*)msg
++(void) logW:(NSString*)msg
 {
-    NSString* s = [self constructLogMessage:className msg:msg logLevel:@"Warning"];
+    NSString* s = [self constructLogMessage:msg withLogLevel:@"Warning"];
     NSLog(@"%@", s);
     [[XLogRedirect getInstance] logW:@"xface" msg:s];
 }
 
-+(void) logE:(NSString*)className msg:(NSString*)msg
++(void) logE:(NSString*)msg
 {
-    NSString* s = [self constructLogMessage:className msg:msg logLevel:@"Error"];
+    NSString* s = [self constructLogMessage:msg withLogLevel:@"Error"];
     NSLog(@"%@", s);
     [[XLogRedirect getInstance] logE:@"xface" msg:s];
 }
@@ -72,9 +72,9 @@
     [[XLogRedirect getInstance] close];
 }
 
-+(NSString *) constructLogMessage:(NSString *)className msg:(NSString *)msg logLevel:(NSString *)logLevel
++(NSString *) constructLogMessage:(NSString *)msg withLogLevel:(NSString *)logLevel
 {
-    return [NSString stringWithFormat:@"[%@] [__%@__] %@\n", className, logLevel, msg];
+    return [NSString stringWithFormat:@"[__%@__]%@\n", logLevel, msg];
 }
 
 @end

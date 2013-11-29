@@ -38,50 +38,55 @@
 #define XLOG_LEVEL_E 5
 
 #if XLOG_LEVEL_V >= XLOG_LEVEL
-#define XLogV(...) \
+#define XLogV(fmt, ...) \
 do{\
-NSString* s = [NSString stringWithFormat:__VA_ARGS__];\
-[XLog logV:NSStringFromClass([self class]) msg:s];\
+NSString* s = [NSString stringWithFormat:(@"%s [Line %d] " fmt),\
+               __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__];\
+[XLog logV:s];\
 }while(0)
 #else
 #define XLogV(...)
 #endif
 
 #if XLOG_LEVEL_D >= XLOG_LEVEL
-#define XLogD(...) \
+#define XLogD(fmt, ...) \
 do{\
-NSString* s = [NSString stringWithFormat:__VA_ARGS__];\
-[XLog logD:NSStringFromClass([self class]) msg:s];\
+NSString* s = [NSString stringWithFormat:(@"%s [Line %d] " fmt),\
+               __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__];\
+[XLog logD:s];\
 }while(0)
 #else
 #define XLogD(...)
 #endif
 
 #if XLOG_LEVEL_I >= XLOG_LEVEL
-#define XLogI(...) \
+#define XLogI(fmt, ...) \
 do{\
-NSString* s = [NSString stringWithFormat:__VA_ARGS__];\
-[XLog logI:NSStringFromClass([self class]) msg:s];\
+NSString* s = [NSString stringWithFormat:(@"%s [Line %d] " fmt),\
+               __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__];\
+[XLog logI:s];\
 }while(0)
 #else
 #define XLogI(...)
 #endif
 
 #if XLOG_LEVEL_W >= XLOG_LEVEL
-#define XLogW(...) \
+#define XLogW(fmt, ...) \
 do{\
-NSString* s = [NSString stringWithFormat:__VA_ARGS__];\
-[XLog logW:NSStringFromClass([self class]) msg:s];\
+NSString* s = [NSString stringWithFormat:(@"%s [Line %d] " fmt),\
+               __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__];\
+[XLog logW:s];\
 }while(0)
 #else
 #define XLogW(...)
 #endif
 
 #if XLOG_LEVEL_E >= XLOG_LEVEL
-#define XLogE(...) \
+#define XLogE(fmt, ...) \
 do{\
-NSString* s = [NSString stringWithFormat:__VA_ARGS__];\
-[XLog logE:NSStringFromClass([self class]) msg:s];\
+NSString* s = [NSString stringWithFormat:(@"%s [Line %d] " fmt),\
+               __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__];\
+[XLog logE:s];\
 }while(0)
 #else
 #define XLogE(...)
@@ -92,38 +97,33 @@ NSString* s = [NSString stringWithFormat:__VA_ARGS__];\
 
 /**
     以VERBOSE类型输出log
-    @param tag log信息的tag名称
     @param msg 需要输出的log信息
  */
-+(void) logV:(NSString*)tag msg:(NSString*)msg;
++(void) logV:(NSString*)msg;
 
 /**
     以DEBUG类型输出log
-    @param tag log信息的tag名称
     @param msg 需要输出的log信息
  */
-+(void) logD:(NSString*)tag msg:(NSString*)msg;
++(void) logD:(NSString*)msg;
 
 /**
     以INFO类型输出log
-    @param tag log信息的tag名称
     @param msg 需要输出的log信息
  */
-+(void) logI:(NSString*)tag msg:(NSString*)msg;
++(void) logI:(NSString*)msg;
 
 /**
     以WARN类型输出log
-    @param tag log信息的tag名称
     @param msg 需要输出的log信息
  */
-+(void) logW:(NSString*)tag msg:(NSString*)msg;
++(void) logW:(NSString*)msg;
 
 /**
     以ERROR类型输出log
-    @param tag log信息的tag名称
     @param msg 需要输出的log信息
  */
-+(void) logE:(NSString*)tag msg:(NSString*)msg;
++(void) logE:(NSString*)msg;
 
 /**
     关闭log

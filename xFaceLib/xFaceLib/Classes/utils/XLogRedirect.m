@@ -28,12 +28,6 @@
 #import "XLogRedirect.h"
 #import "XUtils.h"
 
-#define LEVEL_V   @"verbose:"
-#define LEVEL_D   @"debug:"
-#define LEVEL_I   @"info:"
-#define LEVEL_W   @"warn:"
-#define LEVEL_E   @"error:"
-
 #define PORT      6656
 #define CLOSESIGNAL  @"close_signal"
 
@@ -44,32 +38,32 @@ static XLogRedirect *instance;
 
 -(void) logV:(NSString *)tag msg:(NSString *)msg
 {
-    NSString* s = [NSString stringWithFormat:@"%@%@%@", LEVEL_V, tag, msg];
+    NSString* s = [NSString stringWithFormat:@"[%@]-%@", tag, msg];
     [self log:s];
 }
 
 -(void) logD:(NSString *)tag msg:(NSString *)msg
 {
-    NSString* s = [NSString stringWithFormat:@"%@%@%@", LEVEL_D, tag, msg];
+    NSString* s = [NSString stringWithFormat:@"[%@]-%@", tag, msg];
     [self log:s];
 }
 
 -(void) logI:(NSString *)tag msg:(NSString *)msg
 {
-    NSString* s = [NSString stringWithFormat:@"%@%@%@", LEVEL_I, tag, msg];
+    NSString* s = [NSString stringWithFormat:@"[%@]-%@", tag, msg];
     [self log:s];
 }
 
 -(void) logW:(NSString *)tag msg:(NSString *)msg
 {
-    NSString* s = [NSString stringWithFormat:@"%@%@%@", LEVEL_W, tag, msg];
+    NSString* s = [NSString stringWithFormat:@"[%@]-%@", tag, msg];
     [self log:s];
 }
 
 -(void) logE:(NSString *)tag msg:(NSString *)msg
 {
-    NSString* s = [NSString stringWithFormat:@"%@%@%@", LEVEL_E, tag, msg];
-   [self log:s];
+    NSString* s = [NSString stringWithFormat:@"[%@]-%@", tag, msg];
+    [self log:s];
 }
 
 + (XLogRedirect *) getInstance
