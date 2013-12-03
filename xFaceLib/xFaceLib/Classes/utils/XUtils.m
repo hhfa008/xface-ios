@@ -313,36 +313,6 @@ static XUtils* sSelPerformer = nil;
     return [config systemWorkspace];
 }
 
-+ (NSString*)resolveSplashScreenImageResourceWithOrientation:(UIInterfaceOrientation)orientation
-{
-    NSString *launchImageFile = [[NSBundle mainBundle] objectForInfoDictionaryKey:UI_LAUNCH_IMAGE_FILE_KEY];
-    launchImageFile = launchImageFile ? launchImageFile : SPLASH_FILE_NAME;
-
-    NSString *resolvedImage = launchImageFile;
-    if ([UIDevice deviceType] & IPHONE5)
-    {
-        // 处理当前设备为iPhone 5 或 iPod Touch 5th-gen的情况
-        resolvedImage = [NSString stringWithFormat:@"%@-568h", launchImageFile];
-    }
-    else if(([UIDevice deviceType] & IPAD))
-    {
-        // 处理当前设备为iPad的情况
-        switch (orientation)
-        {
-            case UIInterfaceOrientationLandscapeLeft:
-            case UIInterfaceOrientationLandscapeRight:
-                resolvedImage = [NSString stringWithFormat:@"%@-Landscape", launchImageFile];
-                break;
-            case UIInterfaceOrientationPortrait:
-            case UIInterfaceOrientationPortraitUpsideDown:
-            default:
-                resolvedImage = [NSString stringWithFormat:@"%@-Portrait", launchImageFile];
-                break;
-        }
-    }
-    return resolvedImage;
-}
-
 + (NSString *)buildConfigFilePathWithAppId:(NSString *)appId
 {
     // 应用配置文件所在路径形如：~/Documents/xface3/apps/appId/app.xml

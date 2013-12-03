@@ -191,13 +191,6 @@
 + (NSString*) getWorkDir;
 
 /**
-    根据当前设备类型获取splashscreen图片的文件名
-    @param orientation 当前设备屏幕朝向
-    @returns 获取到的splashscreen图片的文件名
- */
-+ (NSString*)resolveSplashScreenImageResourceWithOrientation:(UIInterfaceOrientation)orientation;
-
-/**
     构造应用配置文件所在绝对路径
     @param appId 用于构造应用配置文件路径的app id
     @returns 应用配置文件所在绝对路径
