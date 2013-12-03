@@ -28,7 +28,6 @@
 
 #import "XAppList.h"
 #import "XApplication.h"
-#import "XAppView.h"
 
 @implementation XAppList
 

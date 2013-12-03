@@ -28,7 +28,6 @@
 
 #import "XCommandQueue.h"
 #import "XConstants.h"
-#import "XAppView.h"
 #import "XUtils.h"
 #import "XViewController.h"
 #import <Cordova/CDVPluginResult.h>

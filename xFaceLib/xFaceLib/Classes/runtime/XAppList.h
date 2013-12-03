@@ -28,7 +28,6 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol XAppView;
 @protocol XApplication;
 
 /**

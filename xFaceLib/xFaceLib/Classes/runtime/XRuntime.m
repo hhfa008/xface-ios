@@ -29,7 +29,6 @@
 #import "XRuntime.h"
 #import "XAppManagement.h"
 #import "XApplication.h"
-#import "XAppView.h"
 #import "XConstants.h"
 #import "XAppList.h"
 #import "NSObject+JSONSerialization.h"

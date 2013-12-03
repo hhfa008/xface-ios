@@ -30,7 +30,6 @@
 #import "XWebApplication.h"
 #import "XConfiguration.h"
 #import "XConstants.h"
-#import "XAppView.h"
 #import "XAppInfo.h"
 #import "XUtils.h"
 #import "XConfiguration.h"
