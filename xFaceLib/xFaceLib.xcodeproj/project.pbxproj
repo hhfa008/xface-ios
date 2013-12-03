@@ -51,7 +51,6 @@
 		C8AA619217F046C200A0C3A5 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8944C1E17E9474B0070A849 /* MediaPlayer.framework */; };
 		C8AA619317F046C800A0C3A5 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C8944C1C17E947440070A849 /* libz.1.2.5.dylib */; };
 		C8AA619417F046F200A0C3A5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8944C1417E9472B0070A849 /* SystemConfiguration.framework */; };
-		C8AA619717F0472600A0C3A5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8944C1817E947380070A849 /* StoreKit.framework */; };
 		C8AA619817F0476B00A0C3A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8944C1217E946DA0070A849 /* UIKit.framework */; };
 		C8AA619C17F0482900A0C3A5 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8AA619B17F0482900A0C3A5 /* AssetsLibrary.framework */; };
 		C8AA61A317F048BC00A0C3A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8AA619917F047BD00A0C3A5 /* CoreGraphics.framework */; };
@@ -145,7 +144,6 @@
 		C8DF692C17EE9FCB008B0CAF /* XExtensionResult_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF685D17EE9FCB008B0CAF /* XExtensionResult_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF692D17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF685E17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF692E17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF685F17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF692F17EE9FCB008B0CAF /* XNativeApplication_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686017EE9FCB008B0CAF /* XNativeApplication_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693117EE9FCB008B0CAF /* XRuntime_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686217EE9FCB008B0CAF /* XRuntime_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693217EE9FCB008B0CAF /* XWebApplication_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686317EE9FCB008B0CAF /* XWebApplication_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693317EE9FCB008B0CAF /* XWhitelist_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686417EE9FCB008B0CAF /* XWhitelist_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -176,9 +174,6 @@
 		C8DF694F17EE9FCB008B0CAF /* XLightweightSystemBootstrap.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF687817EE9FCB008B0CAF /* XLightweightSystemBootstrap.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF695017EE9FCB008B0CAF /* XLightweightSystemBootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF687917EE9FCB008B0CAF /* XLightweightSystemBootstrap.m */; };
 		C8DF695117EE9FCB008B0CAF /* XLightweightSystemBootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF687917EE9FCB008B0CAF /* XLightweightSystemBootstrap.m */; };
-		C8DF695217EE9FCB008B0CAF /* XNativeApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF687A17EE9FCB008B0CAF /* XNativeApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF695317EE9FCB008B0CAF /* XNativeApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF687B17EE9FCB008B0CAF /* XNativeApplication.m */; };
-		C8DF695417EE9FCB008B0CAF /* XNativeApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF687B17EE9FCB008B0CAF /* XNativeApplication.m */; };
 		C8DF695817EE9FCB008B0CAF /* XResourceURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF687E17EE9FCB008B0CAF /* XResourceURLProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF695917EE9FCB008B0CAF /* XResourceURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF687F17EE9FCB008B0CAF /* XResourceURLProtocol.m */; };
 		C8DF695A17EE9FCB008B0CAF /* XResourceURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF687F17EE9FCB008B0CAF /* XResourceURLProtocol.m */; };
@@ -267,9 +262,6 @@
 		C8DF69B917EE9FCB008B0CAF /* XSecurityFileOperator.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68C417EE9FCB008B0CAF /* XSecurityFileOperator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF69BA17EE9FCB008B0CAF /* XSecurityFileOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68C517EE9FCB008B0CAF /* XSecurityFileOperator.m */; };
 		C8DF69BB17EE9FCB008B0CAF /* XSecurityFileOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68C517EE9FCB008B0CAF /* XSecurityFileOperator.m */; };
-		C8DF69BC17EE9FCB008B0CAF /* XStoreProductPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68C617EE9FCB008B0CAF /* XStoreProductPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF69BD17EE9FCB008B0CAF /* XStoreProductPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68C717EE9FCB008B0CAF /* XStoreProductPresenter.m */; };
-		C8DF69BE17EE9FCB008B0CAF /* XStoreProductPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68C717EE9FCB008B0CAF /* XStoreProductPresenter.m */; };
 		C8DF69BF17EE9FCB008B0CAF /* XUtils+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68C817EE9FCB008B0CAF /* XUtils+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF69C017EE9FCB008B0CAF /* XUtils+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68C917EE9FCB008B0CAF /* XUtils+Additions.m */; };
 		C8DF69C117EE9FCB008B0CAF /* XUtils+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68C917EE9FCB008B0CAF /* XUtils+Additions.m */; };
@@ -320,7 +312,6 @@
 /* Begin PBXFileReference section */
 		C8944C1217E946DA0070A849 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C8944C1417E9472B0070A849 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		C8944C1817E947380070A849 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C8944C1C17E947440070A849 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		C8944C1E17E9474B0070A849 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		C8944C2017E947510070A849 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -427,7 +418,6 @@
 		C8DF685D17EE9FCB008B0CAF /* XExtensionResult_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XExtensionResult_Privates.h; sourceTree = "<group>"; };
 		C8DF685E17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJavaScriptEvaluator_Privates.h; sourceTree = "<group>"; };
 		C8DF685F17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLightweightSystemBootstrap_Privates.h; sourceTree = "<group>"; };
-		C8DF686017EE9FCB008B0CAF /* XNativeApplication_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNativeApplication_Privates.h; sourceTree = "<group>"; };
 		C8DF686217EE9FCB008B0CAF /* XRuntime_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRuntime_Privates.h; sourceTree = "<group>"; };
 		C8DF686317EE9FCB008B0CAF /* XWebApplication_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWebApplication_Privates.h; sourceTree = "<group>"; };
 		C8DF686417EE9FCB008B0CAF /* XWhitelist_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWhitelist_Privates.h; sourceTree = "<group>"; };
@@ -450,8 +440,6 @@
 		C8DF687717EE9FCB008B0CAF /* XJavaScriptEvaluator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJavaScriptEvaluator.m; sourceTree = "<group>"; };
 		C8DF687817EE9FCB008B0CAF /* XLightweightSystemBootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLightweightSystemBootstrap.h; sourceTree = "<group>"; };
 		C8DF687917EE9FCB008B0CAF /* XLightweightSystemBootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLightweightSystemBootstrap.m; sourceTree = "<group>"; };
-		C8DF687A17EE9FCB008B0CAF /* XNativeApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNativeApplication.h; sourceTree = "<group>"; };
-		C8DF687B17EE9FCB008B0CAF /* XNativeApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNativeApplication.m; sourceTree = "<group>"; };
 		C8DF687E17EE9FCB008B0CAF /* XResourceURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XResourceURLProtocol.h; sourceTree = "<group>"; };
 		C8DF687F17EE9FCB008B0CAF /* XResourceURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XResourceURLProtocol.m; sourceTree = "<group>"; };
 		C8DF688017EE9FCB008B0CAF /* XRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRuntime.h; sourceTree = "<group>"; };
@@ -513,8 +501,6 @@
 		C8DF68C117EE9FCB008B0CAF /* XLogRedirect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLogRedirect.m; sourceTree = "<group>"; };
 		C8DF68C417EE9FCB008B0CAF /* XSecurityFileOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSecurityFileOperator.h; sourceTree = "<group>"; };
 		C8DF68C517EE9FCB008B0CAF /* XSecurityFileOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSecurityFileOperator.m; sourceTree = "<group>"; };
-		C8DF68C617EE9FCB008B0CAF /* XStoreProductPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStoreProductPresenter.h; sourceTree = "<group>"; };
-		C8DF68C717EE9FCB008B0CAF /* XStoreProductPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStoreProductPresenter.m; sourceTree = "<group>"; };
 		C8DF68C817EE9FCB008B0CAF /* XUtils+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XUtils+Additions.h"; sourceTree = "<group>"; };
 		C8DF68C917EE9FCB008B0CAF /* XUtils+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XUtils+Additions.m"; sourceTree = "<group>"; };
 		C8DF68CA17EE9FCB008B0CAF /* XUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XUtils.h; sourceTree = "<group>"; };
@@ -541,7 +527,6 @@
 				C8AA61A317F048BC00A0C3A5 /* CoreGraphics.framework in Frameworks */,
 				C8AA619C17F0482900A0C3A5 /* AssetsLibrary.framework in Frameworks */,
 				C8AA619817F0476B00A0C3A5 /* UIKit.framework in Frameworks */,
-				C8AA619717F0472600A0C3A5 /* StoreKit.framework in Frameworks */,
 				C8AA619417F046F200A0C3A5 /* SystemConfiguration.framework in Frameworks */,
 				C8AA619317F046C800A0C3A5 /* libz.1.2.5.dylib in Frameworks */,
 				C8AA619217F046C200A0C3A5 /* MediaPlayer.framework in Frameworks */,
@@ -658,7 +643,6 @@
 				C8944C2017E947510070A849 /* libsqlite3.dylib */,
 				C8944C1E17E9474B0070A849 /* MediaPlayer.framework */,
 				C8944C1C17E947440070A849 /* libz.1.2.5.dylib */,
-				C8944C1817E947380070A849 /* StoreKit.framework */,
 				C8944C1417E9472B0070A849 /* SystemConfiguration.framework */,
 				C8944C1217E946DA0070A849 /* UIKit.framework */,
 				C8A2C8ED17E856550009C73A /* Foundation.framework */,
@@ -862,8 +846,6 @@
 				C8DF687717EE9FCB008B0CAF /* XJavaScriptEvaluator.m */,
 				C8DF687817EE9FCB008B0CAF /* XLightweightSystemBootstrap.h */,
 				C8DF687917EE9FCB008B0CAF /* XLightweightSystemBootstrap.m */,
-				C8DF687A17EE9FCB008B0CAF /* XNativeApplication.h */,
-				C8DF687B17EE9FCB008B0CAF /* XNativeApplication.m */,
 				C8DF687E17EE9FCB008B0CAF /* XResourceURLProtocol.h */,
 				C8DF687F17EE9FCB008B0CAF /* XResourceURLProtocol.m */,
 				C8DF688017EE9FCB008B0CAF /* XRuntime.h */,
@@ -892,7 +874,6 @@
 				C8DF685D17EE9FCB008B0CAF /* XExtensionResult_Privates.h */,
 				C8DF685E17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h */,
 				C8DF685F17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h */,
-				C8DF686017EE9FCB008B0CAF /* XNativeApplication_Privates.h */,
 				C8DF686217EE9FCB008B0CAF /* XRuntime_Privates.h */,
 				C8DF686317EE9FCB008B0CAF /* XWebApplication_Privates.h */,
 				C8DF686417EE9FCB008B0CAF /* XWhitelist_Privates.h */,
@@ -953,8 +934,6 @@
 				C8DF68C117EE9FCB008B0CAF /* XLogRedirect.m */,
 				C8DF68C417EE9FCB008B0CAF /* XSecurityFileOperator.h */,
 				C8DF68C517EE9FCB008B0CAF /* XSecurityFileOperator.m */,
-				C8DF68C617EE9FCB008B0CAF /* XStoreProductPresenter.h */,
-				C8DF68C717EE9FCB008B0CAF /* XStoreProductPresenter.m */,
 				C8DF68C817EE9FCB008B0CAF /* XUtils+Additions.h */,
 				C8DF68C917EE9FCB008B0CAF /* XUtils+Additions.m */,
 				C8DF68CA17EE9FCB008B0CAF /* XUtils.h */,
@@ -1015,7 +994,6 @@
 				C8DF692B17EE9FCB008B0CAF /* XConfiguration_Privates.h in Headers */,
 				C8A15F6217EEA50600FB3E68 /* APElement.h in Headers */,
 				C8DF68E917EE9FCB008B0CAF /* XSecurityPolicyFactory.h in Headers */,
-				C8DF69BC17EE9FCB008B0CAF /* XStoreProductPresenter.h in Headers */,
 				C8DF693317EE9FCB008B0CAF /* XWhitelist_Privates.h in Headers */,
 				C8DF68CE17EE9FCB008B0CAF /* XOnlineMode_Privates.h in Headers */,
 				C8DF696217EE9FCB008B0CAF /* XSystemBootstrapFactory.h in Headers */,
@@ -1050,7 +1028,6 @@
 				C8DF68E817EE9FCB008B0CAF /* XSecurityPolicy.h in Headers */,
 				C8DF69BF17EE9FCB008B0CAF /* XUtils+Additions.h in Headers */,
 				C8DF694917EE9FCB008B0CAF /* XHTTPURLResponse.h in Headers */,
-				C8DF695217EE9FCB008B0CAF /* XNativeApplication.h in Headers */,
 				C8DF69A617EE9FCB008B0CAF /* XFileOperatorFactory.h in Headers */,
 				C8DF692717EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.h in Headers */,
 				C8DF699417EE9FCB008B0CAF /* XAPElement.h in Headers */,
@@ -1061,7 +1038,6 @@
 				C8DF693C17EE9FCB008B0CAF /* XAppList.h in Headers */,
 				C8DF68D517EE9FCB008B0CAF /* XDefaultSecurityResourceFilter.h in Headers */,
 				C8DF690F17EE9FCB008B0CAF /* XLightweightAppInstaller.h in Headers */,
-				C8DF692F17EE9FCB008B0CAF /* XNativeApplication_Privates.h in Headers */,
 				C8DF68F617EE9FCB008B0CAF /* XAmsConstants.h in Headers */,
 				C8DF68F317EE9FCB008B0CAF /* XAppXMLParser_Legacy_Privates.h in Headers */,
 				C8DF68D217EE9FCB008B0CAF /* XDefaultSecurityPolicy.h in Headers */,
@@ -1257,7 +1233,6 @@
 				C8DF68FF17EE9FCB008B0CAF /* XAppManagement.m in Sources */,
 				C8DF693617EE9FCB008B0CAF /* XAppInfo.m in Sources */,
 				C8DF694417EE9FCB008B0CAF /* XAppWebView.m in Sources */,
-				C8DF695317EE9FCB008B0CAF /* XNativeApplication.m in Sources */,
 				C8DF68DF17EE9FCB008B0CAF /* XOnlineMode.m in Sources */,
 				C8A15F5D17EEA50600FB3E68 /* APAttribute.m in Sources */,
 				C8DF699C17EE9FCB008B0CAF /* XCipher.m in Sources */,
@@ -1267,7 +1242,6 @@
 				C8DF690B17EE9FCB008B0CAF /* XAppXMLParserFactory.m in Sources */,
 				C8A15F7E17EEA50600FB3E68 /* unzip.c in Sources */,
 				C8DF690217EE9FCB008B0CAF /* XAppPreinstallListener.m in Sources */,
-				C8DF69BD17EE9FCB008B0CAF /* XStoreProductPresenter.m in Sources */,
 				C8DF690817EE9FCB008B0CAF /* XAppXMLParser_Legacy.m in Sources */,
 				C8DF698117EE9FCB008B0CAF /* NSData+Encoding.m in Sources */,
 				C8DF68F817EE9FCB008B0CAF /* XAppInstaller.m in Sources */,
@@ -1298,7 +1272,6 @@
 				C8DF695117EE9FCB008B0CAF /* XLightweightSystemBootstrap.m in Sources */,
 				C8DF69A817EE9FCB008B0CAF /* XFileOperatorFactory.m in Sources */,
 				C8DF698517EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.m in Sources */,
-				C8DF69BE17EE9FCB008B0CAF /* XStoreProductPresenter.m in Sources */,
 				C8DF694B17EE9FCB008B0CAF /* XHTTPURLResponse.m in Sources */,
 				C8DF694817EE9FCB008B0CAF /* XCommandQueue.m in Sources */,
 				C8DF693E17EE9FCB008B0CAF /* XAppList.m in Sources */,
@@ -1309,7 +1282,6 @@
 				C8A15F6117EEA50600FB3E68 /* APDocument.m in Sources */,
 				C8DF695A17EE9FCB008B0CAF /* XResourceURLProtocol.m in Sources */,
 				C8DF693B17EE9FCB008B0CAF /* XApplicationFactory.m in Sources */,
-				C8DF695417EE9FCB008B0CAF /* XNativeApplication.m in Sources */,
 				C8DF692917EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.m in Sources */,
 				C8DF68E317EE9FCB008B0CAF /* XOnlineResourceInfo.m in Sources */,
 				C8DF69C417EE9FCB008B0CAF /* XUtils.m in Sources */,

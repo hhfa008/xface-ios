@@ -29,7 +29,6 @@
 #import "XApplicationFactory.h"
 #import "XAppInfo.h"
 #import "XWebApplication.h"
-#import "XNativeApplication.h"
 #import "XConstants.h"
 
 @implementation XApplicationFactory
@@ -39,7 +38,7 @@
     id<XApplication> app = nil;
     if ( [[appInfo type] isEqualToString:APP_TYPE_NAPP] )
     {
-        app = [[XNativeApplication alloc] initWithAppInfo:appInfo];
+        XLogE(@"Failed to create native application, make sure you have added native app plugin!");
     }
     else
     {

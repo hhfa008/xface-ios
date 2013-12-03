@@ -42,7 +42,6 @@
 		C832C40C17E97BED00D3A35A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C832C40B17E97BED00D3A35A /* libsqlite3.dylib */; };
 		C832C40E17E97BF200D3A35A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C832C40D17E97BF200D3A35A /* MediaPlayer.framework */; };
 		C832C41017E97BF700D3A35A /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C832C40F17E97BF700D3A35A /* libz.1.2.5.dylib */; };
-		C832C41417E97C0200D3A35A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C832C41317E97C0200D3A35A /* StoreKit.framework */; };
 		C832C41617E97C0A00D3A35A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C832C41517E97C0A00D3A35A /* SystemConfiguration.framework */; };
 		C832C41817E97C1600D3A35A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C832C41717E97C1600D3A35A /* UIKit.framework */; };
 		C832C41A17E97C1C00D3A35A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C832C41917E97C1C00D3A35A /* Foundation.framework */; };
@@ -111,7 +110,6 @@
 		C832C40B17E97BED00D3A35A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C832C40D17E97BF200D3A35A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		C832C40F17E97BF700D3A35A /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
-		C832C41317E97C0200D3A35A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C832C41517E97C0A00D3A35A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C832C41717E97C1600D3A35A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C832C41917E97C1C00D3A35A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,7 +125,6 @@
 				C832C41A17E97C1C00D3A35A /* Foundation.framework in Frameworks */,
 				C832C41817E97C1600D3A35A /* UIKit.framework in Frameworks */,
 				C832C41617E97C0A00D3A35A /* SystemConfiguration.framework in Frameworks */,
-				C832C41417E97C0200D3A35A /* StoreKit.framework in Frameworks */,
 				C832C41017E97BF700D3A35A /* libz.1.2.5.dylib in Frameworks */,
 				C832C40E17E97BF200D3A35A /* MediaPlayer.framework in Frameworks */,
 				C832C40C17E97BED00D3A35A /* libsqlite3.dylib in Frameworks */,
@@ -227,7 +224,6 @@
 				C832C41917E97C1C00D3A35A /* Foundation.framework */,
 				C832C41717E97C1600D3A35A /* UIKit.framework */,
 				C832C41517E97C0A00D3A35A /* SystemConfiguration.framework */,
-				C832C41317E97C0200D3A35A /* StoreKit.framework */,
 				C832C40F17E97BF700D3A35A /* libz.1.2.5.dylib */,
 				C832C40D17E97BF200D3A35A /* MediaPlayer.framework */,
 				C832C40B17E97BED00D3A35A /* libsqlite3.dylib */,
