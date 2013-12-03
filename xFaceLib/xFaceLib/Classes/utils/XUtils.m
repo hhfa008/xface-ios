@@ -39,6 +39,7 @@
 #import "XAppInfo.h"
 #import "iToast.h"
 #import "XFileUtils.h"
+#import "XViewController.h"
 
 #define APP_VERSION_FOUR_SEQUENCE (4)
 #define BACKSLASH       @"\\"
@@ -407,6 +408,16 @@ static XUtils* sSelPerformer = nil;
         }
     }
 
+    return ret;
+}
+
++ (BOOL)isDefaultAppWebView:(UIWebView *)theWebView
+{
+    id<UIApplicationDelegate> appDelegate = [UIApplication sharedApplication].delegate;
+    XRuntime *runtime = [appDelegate performSelector:@selector(runtime)];
+    XViewController *viewController = [runtime performSelector:@selector(viewController)];
+
+    BOOL ret = (theWebView == viewController.webView);
     return ret;
 }
 

@@ -226,4 +226,9 @@
  */
 + (BOOL)copyJsCore;
 
+/**
+    判断给定参数是否为defaultApp web view
+ */
++ (BOOL)isDefaultAppWebView:(UIWebView *)theWebView;
+
 @end
