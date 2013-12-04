@@ -25,6 +25,8 @@
 //
 //
 
+//TODO:如果将socket log做成独立的插件(需要cli辅助修改*-Prefix.pch)，为与Cordova兼容，最终只能保留DLog(XLogD)与ALog(XLogE)
+
 #ifdef DEBUG
 #define XLOG_LEVEL 1
 #else
@@ -91,6 +93,18 @@ NSString* s = [NSString stringWithFormat:(@"%s [Line %d] " fmt),\
 #else
 #define XLogE(...)
 #endif
+
+#if defined(DLog)
+#undef DLog
+#endif
+
+#define DLog XLogD
+
+#if defined(ALog)
+#undef ALog
+#endif
+
+#define ALog XLogE
 
 //该类用于XLog重定向
 @interface XLog : NSObject

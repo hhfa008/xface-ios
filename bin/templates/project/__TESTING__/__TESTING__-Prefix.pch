@@ -23,4 +23,6 @@
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
+    #import <Cordova/CDVDebug.h>
+    #import <xFace/XLog.h>
 #endif
