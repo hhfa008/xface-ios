@@ -90,6 +90,18 @@
     [self.webView stopLoading];
 }
 
+- (void)registerPlugin:(CDVPlugin*)plugin withClassName:(NSString*)className
+{
+    NSAssert(className, @"className should not be nil!");
+    if (!plugin) {
+        if (![className isEqualToString:NSStringFromClass([CDVLocalStorage class])]) {
+            ALog(@"Failed to register plugin %@", className);
+        }
+        return;
+    }
+    [super registerPlugin:plugin withClassName:className];
+}
+
 #pragma mark UIWebViewDelegate
 
 - (void) webViewDidFinishLoad:(UIWebView *)theWebView

@@ -56,6 +56,8 @@
 		C8AA61A317F048BC00A0C3A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8AA619917F047BD00A0C3A5 /* CoreGraphics.framework */; };
 		C8AA61A417F048C300A0C3A5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8AA619E17F0484800A0C3A5 /* CoreLocation.framework */; };
 		C8AA61A517F0492D00A0C3A5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8AA61A117F048A500A0C3A5 /* MobileCoreServices.framework */; };
+		C8AD111F184F325A00CC45CA /* CDVLocalStorage+XLocalStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD111E184F325A00CC45CA /* CDVLocalStorage+XLocalStorage.m */; };
+		C8AD1120184F32D000CC45CA /* CDVLocalStorage+XLocalStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD111E184F325A00CC45CA /* CDVLocalStorage+XLocalStorage.m */; };
 		C8DF68CE17EE9FCB008B0CAF /* XOnlineMode_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF681017EE9FCB008B0CAF /* XOnlineMode_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF68CF17EE9FCB008B0CAF /* XAppRunningMode.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF681117EE9FCB008B0CAF /* XAppRunningMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF68D017EE9FCB008B0CAF /* XAppRunningMode.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF681217EE9FCB008B0CAF /* XAppRunningMode.m */; };
@@ -353,6 +355,7 @@
 		C8AA619B17F0482900A0C3A5 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		C8AA619E17F0484800A0C3A5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C8AA61A117F048A500A0C3A5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C8AD111E184F325A00CC45CA /* CDVLocalStorage+XLocalStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDVLocalStorage+XLocalStorage.m"; sourceTree = "<group>"; };
 		C8DF681017EE9FCB008B0CAF /* XOnlineMode_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XOnlineMode_Privates.h; sourceTree = "<group>"; };
 		C8DF681117EE9FCB008B0CAF /* XAppRunningMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAppRunningMode.h; sourceTree = "<group>"; };
 		C8DF681217EE9FCB008B0CAF /* XAppRunningMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAppRunningMode.m; sourceTree = "<group>"; };
@@ -823,6 +826,7 @@
 			isa = PBXGroup;
 			children = (
 				C8DF685A17EE9FCB008B0CAF /* private */,
+				C8AD111E184F325A00CC45CA /* CDVLocalStorage+XLocalStorage.m */,
 				C8DF685617EE9FCB008B0CAF /* CDVPlugin+XPlugin.h */,
 				C8DF685717EE9FCB008B0CAF /* CDVPlugin+XPlugin.m */,
 				C8DF685817EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.h */,
@@ -1250,6 +1254,7 @@
 				C8A15F8117EEA50600FB3E68 /* zip.c in Sources */,
 				C8DF68FC17EE9FCB008B0CAF /* XAppInstallListener.m in Sources */,
 				C8DF68D917EE9FCB008B0CAF /* XLocalMode.m in Sources */,
+				C8AD111F184F325A00CC45CA /* CDVLocalStorage+XLocalStorage.m in Sources */,
 				C8DF696617EE9FCB008B0CAF /* XSystemWorkspaceFactory.m in Sources */,
 				C8DF695917EE9FCB008B0CAF /* XResourceURLProtocol.m in Sources */,
 				C8DF691317EE9FCB008B0CAF /* XConfiguration.m in Sources */,
@@ -1320,6 +1325,7 @@
 				C8A15F6417EEA50600FB3E68 /* APElement.m in Sources */,
 				C8A15F6817EEA50600FB3E68 /* Credentials.m in Sources */,
 				C8A15F8217EEA50600FB3E68 /* zip.c in Sources */,
+				C8AD1120184F32D000CC45CA /* CDVLocalStorage+XLocalStorage.m in Sources */,
 				C8DF690C17EE9FCB008B0CAF /* XAppXMLParserFactory.m in Sources */,
 				C8A15F7917EEA50600FB3E68 /* ioapi.c in Sources */,
 				C8DF69C717EE9FCB008B0CAF /* XZipArchive.m in Sources */,
