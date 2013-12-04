@@ -157,7 +157,7 @@
 
     if (!defaultAppId)
     {
-        XLogE(@"Failed to preinstall default app, please verify app config file exists!");
+        ALog(@"Failed to preinstall default app, please verify app config file exists!");
         [[[[iToast makeText:@"Failed to preinstall default app, please verify app config file exists!"] setGravity:iToastGravityCenter] setDuration:iToastDurationLong] show];
         return;
     }
@@ -172,7 +172,7 @@
     }
     else if (![defaultAppId isEqualToString:originalDefaultAppId])
     {
-        XLogE(@"Cannot update the default app with a different app id!");
+        ALog(@"Cannot update the default app with a different app id!");
         [[[[iToast makeText:@"Cannot update the default app with a different app id!"] setGravity:iToastGravityCenter] setDuration:iToastDurationLong] show];
     }
 

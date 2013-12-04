@@ -38,7 +38,7 @@
     id<XApplication> app = nil;
     if ( [[appInfo type] isEqualToString:APP_TYPE_NAPP] )
     {
-        XLogE(@"Failed to create native application, make sure you have added native app plugin!");
+        ALog(@"Failed to create native application, make sure you have added native app plugin!");
     }
     else
     {

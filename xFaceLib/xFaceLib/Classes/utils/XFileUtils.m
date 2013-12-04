@@ -65,7 +65,7 @@
     [result setObject:[NSNumber numberWithInt:code] forKey:@"code"];
     [result setObject:source forKey:@"source"];
     [result setObject:target forKey:@"target"];
-    XLogE(@"FileTransferError %@", result);
+    ALog(@"FileTransferError %@", result);
 
     return result;
 }
@@ -83,7 +83,7 @@
         ret = [fileMgr removeItemAtPath:filePath error:error];
         if (!ret && error)
         {
-            XLogE(@"Failed to delete: %@ (error: %@)", filePath, [*error localizedDescription]);
+            ALog(@"Failed to delete: %@ (error: %@)", filePath, [*error localizedDescription]);
             return ret;
         }
     }
@@ -101,7 +101,7 @@
         ret = [fileMgr removeItemAtPath:path error:error];
         if(!ret && error)
         {
-            XLogE(@"[%@] Failed to remove item at path: %@ (error: %@)", NSStringFromSelector(_cmd), path, [*error localizedDescription]);
+            ALog(@"Failed to remove item at path: %@ (error: %@)", path, [*error localizedDescription]);
         }
     }
 
@@ -113,14 +113,14 @@
     BOOL ret = NO;
     if ( (![srcPath length]) || (![dstPath length]) )
     {
-        XLogE(@"[%@] Failed to move item due to srcPath or dstPath is nil!", NSStringFromSelector(_cmd));
+        ALog(@"Failed to move item due to srcPath or dstPath is nil!");
         return ret;
     }
 
     NSFileManager* fileMgr = [NSFileManager defaultManager];
     if (![fileMgr fileExistsAtPath:srcPath])
     {
-        XLogD(@"[%@] Failed to move item due to src file or directory is non-existent!", NSStringFromSelector(_cmd));
+        ALog(@"Failed to move item due to src file or directory is non-existent!");
         return ret;
     }
 
@@ -135,7 +135,7 @@
         ret = [fileMgr createDirectoryAtPath:parentDir withIntermediateDirectories:YES attributes:nil error:error];
         if(!ret && error)
         {
-            XLogE(@"[%@] Failed to create directory at path:%@ with error:%@", NSStringFromSelector(_cmd), dstPath, [*error localizedDescription]);
+            ALog(@"Failed to create directory at path:%@ with error:%@", dstPath, [*error localizedDescription]);
             return ret;
         }
     }
@@ -143,7 +143,7 @@
     ret = [fileMgr moveItemAtPath:srcPath toPath:dstPath error:error];
     if(!ret && error)
     {
-        XLogE(@"[%@] Failed to move item at path:%@ to path:%@ with error:%@", NSStringFromSelector(_cmd), srcPath, dstPath, [*error localizedDescription]);
+        ALog(@"Failed to move item at path:%@ to path:%@ with error:%@", srcPath, dstPath, [*error localizedDescription]);
     }
     return ret;
 }
@@ -154,14 +154,14 @@
     BOOL ret = NO;
     if ( (![srcPath length]) || (![dstPath length]) )
     {
-        XLogE(@"[%@] Failed to move item due to srcPath or dstPath is nil!", NSStringFromSelector(_cmd));
+        ALog(@"Failed to move item due to srcPath or dstPath is nil!");
         return ret;
     }
 
     NSFileManager* fileMgr = [NSFileManager defaultManager];
     if (![fileMgr fileExistsAtPath:srcPath])
     {
-        XLogD(@"[%@] Failed to move item due to src file or directory is non-existent!", NSStringFromSelector(_cmd));
+        ALog(@"Failed to move item due to src file or directory is non-existent!");
         return ret;
     }
 
@@ -176,7 +176,7 @@
         ret = [fileMgr createDirectoryAtPath:parentDir withIntermediateDirectories:YES attributes:nil error:error];
         if(!ret && error)
         {
-            XLogE(@"[%@] Failed to create directory at path:%@ with error:%@", NSStringFromSelector(_cmd), dstPath, [*error localizedDescription]);
+            ALog(@"Failed to create directory at path:%@ with error:%@", dstPath, [*error localizedDescription]);
             return ret;
         }
     }
@@ -184,7 +184,7 @@
     ret = [fileMgr copyItemAtPath:srcPath toPath:dstPath error:error];
     if(!ret && error)
     {
-        XLogE(@"[%@] Failed to copy item at path:%@ to path:%@ with error:%@", NSStringFromSelector(_cmd), srcPath, dstPath, [*error localizedDescription]);
+        ALog(@"Failed to copy item at path:%@ to path:%@ with error:%@", srcPath, dstPath, [*error localizedDescription]);
     }
     return ret;
 }
@@ -230,14 +230,14 @@
         }
         else if(![fileManager removeItemAtPath:destPath error:&error])
         {
-            XLogE(@"Remove file item: %@ failed, info: %@!", destPath, [error localizedDescription]);
+            ALog(@"Remove file item: %@ failed, info: %@!", destPath, [error localizedDescription]);
             return NO;
         }
     }
 
     if(![fileManager copyItemAtPath:srcPath toPath:destPath error:&error])
     {
-        XLogE(@"Copy file item: %@ failed, info: %@!", destPath, [error localizedDescription]);
+        ALog(@"Copy file item: %@ failed, info: %@!", destPath, [error localizedDescription]);
         return NO;
     }
     return YES;
@@ -258,7 +258,7 @@
     BOOL ret = [fileMgr createDirectoryAtPath:tmpDirPath withIntermediateDirectories:YES attributes:nil error:&error];
     if(!ret && error)
     {
-        XLogE(@"[%@] Failed to create directory at path:%@ with error:%@", NSStringFromSelector(_cmd), tmpDirPath, [error localizedDescription]);
+        ALog(@"Failed to create directory at path:%@ with error:%@", tmpDirPath, [error localizedDescription]);
     }
 
     return ret ? tmpDirPath : nil;

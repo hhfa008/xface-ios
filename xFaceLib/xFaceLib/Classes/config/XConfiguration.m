@@ -109,7 +109,7 @@ static XConfiguration *instance;
         BOOL ret = [fileManager createDirectoryAtPath:workspace withIntermediateDirectories:YES attributes:nil error:&error];
         if(!ret)
         {
-            XLogE(@"%@", [error localizedDescription]);
+            ALog(@"%@", [error localizedDescription]);
             workspace = nil;
         } else {
             // Disable iCloud & iTunes backup.
@@ -139,7 +139,7 @@ static XConfiguration *instance;
         BOOL ret = [fileManager createDirectoryAtPath:installationPath withIntermediateDirectories:YES attributes:nil error:&error];
         if(!ret)
         {
-            XLogE(@"%@", [error localizedDescription]);
+            ALog(@"%@", [error localizedDescription]);
             installationPath = nil;
         }
     }
@@ -162,7 +162,7 @@ static XConfiguration *instance;
         BOOL ret = [fileManager createDirectoryAtPath:appIconsPath withIntermediateDirectories:YES attributes:nil error:&error];
         if(!ret)
         {
-            XLogE(@"%@", [error localizedDescription]);
+            ALog(@"%@", [error localizedDescription]);
             appIconsPath = nil;
         }
     }
@@ -190,7 +190,7 @@ static XConfiguration *instance;
         BOOL ret = [systemConfigFileOperator saveString:EMTPY_USER_APPS_CONTENT toFile:appsFilePath];
         if(!ret)
         {
-            XLogE(@"Failed to create userApps.xml at path:%@", appsFilePath);
+            ALog(@"Failed to create userApps.xml at path:%@", appsFilePath);
             appsFilePath = nil;
         }
     }

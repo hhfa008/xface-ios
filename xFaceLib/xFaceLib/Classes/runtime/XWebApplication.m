@@ -107,7 +107,7 @@
         BOOL ret = [fileManager createDirectoryAtPath:workspace withIntermediateDirectories:YES attributes:nil error:&error];
         if(!ret)
         {
-            XLogE(@"%@", [error localizedDescription]);
+            ALog(@"%@", [error localizedDescription]);
             workspace = nil;
         }
     }
@@ -128,7 +128,7 @@
         BOOL ret = [fileManager createDirectoryAtPath:dataDir withIntermediateDirectories:YES attributes:nil error:&error];
         if(!ret)
         {
-            XLogE(@"%@", [error localizedDescription]);
+            ALog(@"%@", [error localizedDescription]);
             dataDir = nil;
         }
     }

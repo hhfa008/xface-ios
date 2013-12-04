@@ -62,7 +62,7 @@
         if (!ret)
         {
             [listener onError:INSTALL withAppId:nil withError:NO_SRC_PACKAGE];
-            XLogE(@"[%@] Failed to install app due to package not found!", NSStringFromSelector(_cmd));
+            ALog(@"Failed to install app due to package not found!");
             return;
         }
 
@@ -70,7 +70,7 @@
         if (!appInfo)
         {
             [listener onError:INSTALL withAppId:nil withError:NO_APP_CONFIG_FILE];
-            XLogE(@"[%@] Failed to install app due to app config file not found!", NSStringFromSelector(_cmd));
+            ALog(@"Failed to install app due to app config file not found!");
             return;
         }
 
@@ -121,7 +121,7 @@
         if (!ret)
         {
             [listener onError:UPDATE withAppId:nil withError:NO_SRC_PACKAGE];
-            XLogE(@"[%@] Failed to update app due to package not found!", NSStringFromSelector(_cmd));
+            ALog(@"Failed to update app due to package not found!");
             return;
         }
 
@@ -129,7 +129,7 @@
         if (!appInfo)
         {
             [listener onError:UPDATE withAppId:nil withError:NO_APP_CONFIG_FILE];
-            XLogE(@"[%@] Failed to update app due to app config file not found!", NSStringFromSelector(_cmd));
+            ALog(@"Failed to update app due to app config file not found!");
             return;
         }
 
@@ -191,7 +191,7 @@
 
     if (!iconSrcPath || !iconDstPath || [iconSrcPath isEqualToString:[appInfo srcPath]])
     {
-        XLogE(@"Error:failed to move app icon");
+        ALog(@"Error:failed to move app icon");
         return;
     }
 

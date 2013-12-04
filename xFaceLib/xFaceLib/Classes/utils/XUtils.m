@@ -75,10 +75,10 @@ static XUtils* sSelPerformer = nil;
 
     if(ret)
     {
-        XLogI(@"unpack application package successfully");
+        DLog(@"unpack application package successfully!");
     } else
     {
-        XLogE(@"Error:unpack application package failed");
+        ALog(@"Failed to unpack application package!");
     }
     return ret;
 }
@@ -140,7 +140,7 @@ static XUtils* sSelPerformer = nil;
     }
 
     //如果app.xml是不能识别的，会返回一个为nil 的appxml parser
-    XLogE(@"can't parse app.xml");
+    ALog(@"can't parse app.xml");
     return nil;
 }
 
@@ -165,7 +165,7 @@ static XUtils* sSelPerformer = nil;
         XAppInfo *appInfo = [XUtils getAppInfoFromAppXMLData:xmlData];
         return appInfo;
     }
-    XLogE(@"app.xml at path:%@ not found!", appConfigFilePath);
+    ALog(@"app.xml at path:%@ not found!", appConfigFilePath);
     return nil;
 }
 
@@ -201,7 +201,7 @@ static XUtils* sSelPerformer = nil;
     }
     else
     {
-        XLogE(@"Error:path:%@ is not authorized", resolvedPath);
+        ALog(@"Error:path:%@ is not authorized", resolvedPath);
         return nil;
     }
 }
@@ -225,7 +225,7 @@ static XUtils* sSelPerformer = nil;
     BOOL ret = [xmlData writeToFile:filePath atomically:YES];
     if (!ret)
     {
-        XLogE(@"Error:writting configuration failed and file path is: %@", filePath);
+        ALog(@"Error:writting configuration failed and file path is: %@", filePath);
     }
     return ret;
 }

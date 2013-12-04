@@ -125,13 +125,13 @@
     BOOL ret = NO;
     id<XApplication> app = [self.appList getAppById:appId];
     if (nil == app) {
-        XLogE(@"Error:failed to start app, cannot find app by id: %@", appId);
+        ALog(@"Failed to start app, cannot find app by id: %@", appId);
         return ret;
     }
 
     if (![self verifyAppConfig:app])
     {
-        XLogE(@"Error:failed to verify app config for app with id: %@", appId);
+        ALog(@"Failed to verify app config for app with id: %@", appId);
         return ret;
     }
 
@@ -169,7 +169,7 @@
 {
     id<XApplication> app = [self.appList getAppById:appId];
     if (nil == app) {
-        XLogE(@"Error:failed to close app, cannot find app by id: %@", appId);
+        ALog(@"Failed to close app, cannot find app by id: %@", appId);
         return;
     }
 
@@ -238,7 +238,7 @@
     }
     else
     {
-        XLogW(@"[%@] unknown event:%@", NSStringFromSelector(_cmd), event);
+        ALog(@"Unknown event:%@", event);
     }
 }
 

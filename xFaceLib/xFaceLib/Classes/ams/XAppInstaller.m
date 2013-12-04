@@ -63,7 +63,7 @@
         if (!ret)
         {
             [listener onError:INSTALL withAppId:nil withError:NO_SRC_PACKAGE];
-            XLogE(@"[%@] Failed to install app due to package not found!", NSStringFromSelector(_cmd));
+            ALog(@"Failed to install app due to package not found!");
             return;
         }
 
@@ -74,7 +74,7 @@
         if (!appInfo)
         {
             [listener onError:INSTALL withAppId:nil withError:NO_APP_CONFIG_FILE];
-            XLogE(@"[%@] Failed to install app due to app config file not found!", NSStringFromSelector(_cmd));
+            ALog(@"Failed to install app due to app config file not found!");
             return;
         }
         NSString *appId = [appInfo appId];
@@ -84,7 +84,7 @@
         if (YES == ret)
         {
             [listener onError:INSTALL withAppId:appId withError:APP_ALREADY_EXISTED];
-            XLogE(@"[%@] Failed to install '%@' due to app already existed!", NSStringFromSelector(_cmd), appId);
+            ALog(@"Failed to install '%@' due to app already existed!", appId);
             return;
         }
 
@@ -99,7 +99,7 @@
             // 解压失败，删除解压过程中生成的文件
             [XFileUtils removeItemAtPath:dstPath error:nil];
             [listener onError:INSTALL withAppId:appId withError:IO_ERROR];
-             XLogE(@"[%@] Failed to install '%@' due to IO error!", NSStringFromSelector(_cmd), appId);
+             ALog(@"Failed to install '%@' due to IO error!", appId);
             return;
         }
 
@@ -138,7 +138,7 @@
         if (!ret)
         {
             [listener onError:UPDATE withAppId:nil withError:NO_SRC_PACKAGE];
-            XLogE(@"[%@] Failed to update app due to package not found!", NSStringFromSelector(_cmd));
+            ALog(@"Failed to update app due to package not found!");
             return;
         }
 
@@ -149,7 +149,7 @@
         if (!appInfo)
         {
             [listener onError:UPDATE withAppId:nil withError:NO_APP_CONFIG_FILE];
-            XLogE(@"[%@] Failed to update app due to app config file not found!", NSStringFromSelector(_cmd));
+            ALog(@"Failed to update app due to app config file not found!");
             return;
         }
         NSString *appId = [appInfo appId];
@@ -159,7 +159,7 @@
         if (NO == ret)
         {
             [listener onError:UPDATE withAppId:appId withError:NO_TARGET_APP];
-            XLogE(@"[%@] Failed to update app due to target app not found!", NSStringFromSelector(_cmd));
+            ALog(@"Failed to update app due to target app not found!");
             return;
         }
 
@@ -174,7 +174,7 @@
             // 解压失败，删除解压过程中生成的文件
             [XFileUtils removeItemAtPath:tmpDirPath error:nil];
             [listener onError:UPDATE withAppId:appId withError:IO_ERROR];
-            XLogE(@"[%@] Failed to update '%@' due to IO error!", NSStringFromSelector(_cmd), appId);
+            ALog(@"Failed to update '%@' due to IO error!", appId);
             return;
         }
 
@@ -186,7 +186,7 @@
             // 目录迁移失败，删除临时目录
             [XFileUtils removeItemAtPath:tmpDirPath error:nil];
             [listener onError:UPDATE withAppId:appId withError:IO_ERROR];
-            XLogE(@"[%@] Failed to update '%@' due to IO error!", NSStringFromSelector(_cmd), appId);
+            ALog(@"Failed to update '%@' due to IO error!", appId);
             return;
         }
 
@@ -228,7 +228,7 @@
         if (!app)
         {
             [listener onError:UNINSTALL withAppId:appId withError:NO_TARGET_APP];
-            XLogE(@"[%@] Failed to uninstall '%@' due to '%@' not found!", NSStringFromSelector(_cmd), appId, appId);
+            ALog(@"Failed to uninstall '%@' due to '%@' not found!", appId, appId);
             return;
         }
 
@@ -239,7 +239,7 @@
         if (!ret)
         {
             [listener onError:UNINSTALL withAppId:appId withError:IO_ERROR];
-            XLogE(@"[%@] Failed to uninstall '%@' at path:%@ with error:%@", NSStringFromSelector(_cmd), appId, installedPath, [error localizedDescription]);
+            ALog(@"Failed to uninstall '%@' at path:%@ with error:%@", appId, installedPath, [error localizedDescription]);
         }
         else
         {
@@ -274,7 +274,7 @@
 
     if (!iconSrcPath || !iconDstPath || [iconSrcPath isEqualToString:iconWorkspace])
     {
-        XLogE(@"Error:failed to move app icon");
+        ALog(@"Error:failed to move app icon");
         return;
     }
 
@@ -283,7 +283,7 @@
     BOOL ret = [XFileUtils moveItemAtPath:iconSrcPath toPath:iconDstPath error:&error];
     if (!ret && error)
     {
-        XLogE(@"Failed to move app icon at path:%@ to path:%@ with error:%@", iconSrcPath, iconDstPath, [error localizedDescription]);
+        ALog(@"Failed to move app icon at path:%@ to path:%@ with error:%@", iconSrcPath, iconDstPath, [error localizedDescription]);
     }
     return;
 }

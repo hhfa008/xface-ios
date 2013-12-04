@@ -45,7 +45,7 @@
 
         NSString* sqlCommand = [NSString stringWithFormat:@"select * from CacheResources where id in ( select resource from CacheEntries where cache in( select cache from CacheEntries where resource in ( select id from CacheResources where url = \'%@\')))", appURL];
         const char *query_stmt = [sqlCommand UTF8String];
-        XLogI(@"the sql is %@", sqlCommand);
+        DLog(@"the sql is %@", sqlCommand);
 
         if ((sqlite3_open([pathStr UTF8String], &database) == SQLITE_OK) &&
             (sqlite3_prepare_v2(database, query_stmt, -1, &statement, NULL) == SQLITE_OK))
@@ -61,7 +61,7 @@
         }
 
         if ([self->index count] == 0) {
-            XLogE(@"failed to access database or no app cache");
+            ALog(@"Failed to access database or no app cache!");
             sqlite3_close(database);
             database = NULL;
             return nil;

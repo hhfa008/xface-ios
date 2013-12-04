@@ -47,7 +47,7 @@
 
         self->databasePath = [cacheFolder stringByAppendingPathComponent:@"ApplicationCache.db"];
         self.mode = ONLINE;
-        XLogI(@"the database path is %@", databasePath);
+        DLog(@"the database path is %@", databasePath);
     }
     return self;
 }
@@ -110,7 +110,7 @@
      an empty database and webkit will crash on us when accessing this empty database*/
     if (![[NSFileManager defaultManager] fileExistsAtPath:self->databasePath])
     {
-        XLogE(@"The cache manifest db has not been created by Webkit yet");
+        ALog(@"The cache manifest db has not been created by Webkit yet");
         return;
     }
 
@@ -125,18 +125,18 @@
             [self deleteCacheGroups:cacheGroupIds usingDBConnection:newDBconnection];
             if (sqlite3_exec(newDBconnection, "COMMIT TRANSACTION", 0, 0, 0) != SQLITE_OK)
             {
-                XLogE(@"SQL Error: %s", sqlite3_errmsg(newDBconnection));
+                ALog(@"SQL Error: %s", sqlite3_errmsg(newDBconnection));
             }
         }
         else
         {
-            XLogE(@"SQL Error: %s", sqlite3_errmsg(newDBconnection));
+            ALog(@"SQL Error: %s", sqlite3_errmsg(newDBconnection));
         }
         sqlite3_close(newDBconnection);
     }
     else
     {
-        XLogE(@"Error opening the database located at: %@", self->databasePath);
+        ALog(@"Error opening the database located at: %@", self->databasePath);
         newDBconnection = NULL;
     }
 }
@@ -164,7 +164,7 @@
     }
     else
     {
-        XLogE(@"SQL Error: %s",sqlite3_errmsg(db));
+        ALog(@"SQL Error: %s",sqlite3_errmsg(db));
     }
     sqlite3_finalize(statement);
     return result;
@@ -187,7 +187,7 @@
     }
     else
     {
-        XLogE(@"SQL Error: %s",sqlite3_errmsg(db));
+        ALog(@"SQL Error: %s",sqlite3_errmsg(db));
     }
     sqlite3_finalize(statement);
 }
@@ -210,7 +210,7 @@
     }
     else
     {
-        XLogE(@"SQL Error: %s",sqlite3_errmsg(db));
+        ALog(@"SQL Error: %s",sqlite3_errmsg(db));
     }
     sqlite3_finalize(statement);
 }

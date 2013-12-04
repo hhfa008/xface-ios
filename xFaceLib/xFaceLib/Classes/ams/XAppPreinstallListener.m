@@ -75,7 +75,7 @@
     NSArray *contentFiles = [fileManager contentsOfDirectoryAtPath:path error:&error];
     if(error)
     {
-        XLogE(@"Can't get content files of dir: %@, error: %@", path, [error localizedDescription]);
+        ALog(@"Can't get content files of dir: %@, error: %@", path, [error localizedDescription]);
         return nil;
     }
 

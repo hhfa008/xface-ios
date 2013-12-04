@@ -44,7 +44,7 @@
     ret = (UNZ_OK == err);
     if (!ret)
     {
-        XLogE(@"Error in locating the file in zip");
+        ALog(@"Error in locating the file in zip");
     }
     return ret;
 }
@@ -57,7 +57,7 @@
     int err = unzGetCurrentFileInfo(_unzFile, &file_info, filename_inzip, sizeof(filename_inzip), NULL, 0, NULL, 0);
     if (UNZ_OK != err)
     {
-        XLogE(@"Error in getting current file info");
+        ALog(@"Error in getting current file info");
         return nil;
     }
 
@@ -65,7 +65,7 @@
     err = unzOpenCurrentFilePassword(_unzFile, NULL);
     if (UNZ_OK != err)
     {
-        XLogE(@"Error in opening current file");
+        ALog(@"Error in opening current file");
         return nil;
     }
 
@@ -77,7 +77,7 @@
     int bytes = unzReadCurrentFile(_unzFile, [data mutableBytes], [data length]);
     if (bytes < 0)
     {
-        XLogE(@"Error in reading '%@' in zip", fileNameInZip);
+        ALog(@"Error in reading '%@' in zip", fileNameInZip);
         return nil;
     }
     [data setLength:bytes];
@@ -86,7 +86,7 @@
     err = unzCloseCurrentFile(_unzFile);
     if (UNZ_OK != err)
     {
-        XLogE(@"Error in  closing '%@' in zip", fileNameInZip);
+        ALog(@"Error in  closing '%@' in zip", fileNameInZip);
     }
 
     return data;
