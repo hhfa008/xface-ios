@@ -270,9 +270,9 @@
 		C8DF69C217EE9FCB008B0CAF /* XUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68CA17EE9FCB008B0CAF /* XUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF69C317EE9FCB008B0CAF /* XUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68CB17EE9FCB008B0CAF /* XUtils.m */; };
 		C8DF69C417EE9FCB008B0CAF /* XUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68CB17EE9FCB008B0CAF /* XUtils.m */; };
-		C8DF69C517EE9FCB008B0CAF /* XZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68CC17EE9FCB008B0CAF /* XZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF69C617EE9FCB008B0CAF /* XZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68CD17EE9FCB008B0CAF /* XZipArchive.m */; };
-		C8DF69C717EE9FCB008B0CAF /* XZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68CD17EE9FCB008B0CAF /* XZipArchive.m */; };
+		C8DF69C517EE9FCB008B0CAF /* ZipArchive+XZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68CC17EE9FCB008B0CAF /* ZipArchive+XZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C8DF69C617EE9FCB008B0CAF /* ZipArchive+XZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68CD17EE9FCB008B0CAF /* ZipArchive+XZipArchive.m */; };
+		C8DF69C717EE9FCB008B0CAF /* ZipArchive+XZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68CD17EE9FCB008B0CAF /* ZipArchive+XZipArchive.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -508,8 +508,8 @@
 		C8DF68C917EE9FCB008B0CAF /* XUtils+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XUtils+Additions.m"; sourceTree = "<group>"; };
 		C8DF68CA17EE9FCB008B0CAF /* XUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XUtils.h; sourceTree = "<group>"; };
 		C8DF68CB17EE9FCB008B0CAF /* XUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XUtils.m; sourceTree = "<group>"; };
-		C8DF68CC17EE9FCB008B0CAF /* XZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZipArchive.h; sourceTree = "<group>"; };
-		C8DF68CD17EE9FCB008B0CAF /* XZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZipArchive.m; sourceTree = "<group>"; };
+		C8DF68CC17EE9FCB008B0CAF /* ZipArchive+XZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZipArchive+XZipArchive.h"; sourceTree = "<group>"; };
+		C8DF68CD17EE9FCB008B0CAF /* ZipArchive+XZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZipArchive+XZipArchive.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -942,8 +942,8 @@
 				C8DF68C917EE9FCB008B0CAF /* XUtils+Additions.m */,
 				C8DF68CA17EE9FCB008B0CAF /* XUtils.h */,
 				C8DF68CB17EE9FCB008B0CAF /* XUtils.m */,
-				C8DF68CC17EE9FCB008B0CAF /* XZipArchive.h */,
-				C8DF68CD17EE9FCB008B0CAF /* XZipArchive.m */,
+				C8DF68CC17EE9FCB008B0CAF /* ZipArchive+XZipArchive.h */,
+				C8DF68CD17EE9FCB008B0CAF /* ZipArchive+XZipArchive.m */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1060,7 +1060,7 @@
 				C8DF692E17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h in Headers */,
 				C8DF691917EE9FCB008B0CAF /* XSystemEventHandler.h in Headers */,
 				C8A15F5C17EEA50600FB3E68 /* APAttribute.h in Headers */,
-				C8DF69C517EE9FCB008B0CAF /* XZipArchive.h in Headers */,
+				C8DF69C517EE9FCB008B0CAF /* ZipArchive+XZipArchive.h in Headers */,
 				C8DF693517EE9FCB008B0CAF /* XAppInfo.h in Headers */,
 				C8DF68F717EE9FCB008B0CAF /* XAppInstaller.h in Headers */,
 				C8A15F7717EEA50600FB3E68 /* crypt.h in Headers */,
@@ -1227,7 +1227,7 @@
 				C8DF691017EE9FCB008B0CAF /* XLightweightAppInstaller.m in Sources */,
 				C8A15F7817EEA50600FB3E68 /* ioapi.c in Sources */,
 				C8DF699817EE9FCB008B0CAF /* XApplicationPersistence.m in Sources */,
-				C8DF69C617EE9FCB008B0CAF /* XZipArchive.m in Sources */,
+				C8DF69C617EE9FCB008B0CAF /* ZipArchive+XZipArchive.m in Sources */,
 				C8A15F7217EEA50600FB3E68 /* iToast.m in Sources */,
 				C8DF696F17EE9FCB008B0CAF /* XViewController.m in Sources */,
 				C8DF68E217EE9FCB008B0CAF /* XOnlineResourceInfo.m in Sources */,
@@ -1328,7 +1328,7 @@
 				C8AD1120184F32D000CC45CA /* CDVLocalStorage+XLocalStorage.m in Sources */,
 				C8DF690C17EE9FCB008B0CAF /* XAppXMLParserFactory.m in Sources */,
 				C8A15F7917EEA50600FB3E68 /* ioapi.c in Sources */,
-				C8DF69C717EE9FCB008B0CAF /* XZipArchive.m in Sources */,
+				C8DF69C717EE9FCB008B0CAF /* ZipArchive+XZipArchive.m in Sources */,
 				C8DF68D117EE9FCB008B0CAF /* XAppRunningMode.m in Sources */,
 				C8DF69B517EE9FCB008B0CAF /* XLogRedirect.m in Sources */,
 				C8DF68EB17EE9FCB008B0CAF /* XSecurityPolicyFactory.m in Sources */,

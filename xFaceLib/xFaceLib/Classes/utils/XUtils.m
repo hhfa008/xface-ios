@@ -26,7 +26,7 @@
 //
 
 #import "XUtils.h"
-#import "XZipArchive.h"
+#import "ZipArchive+XZipArchive.h"
 #import "XConstants.h"
 #import "XConfiguration.h"
 #import "APXML.h"

@@ -25,7 +25,7 @@
 //
 //
 
-#import "XZipArchive.h"
+#import "ZipArchive+XZipArchive.h"
 
 #define FILE_IN_ZIP_MAX_NAME_LENGTH (256)
 
