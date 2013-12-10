@@ -124,7 +124,7 @@
     [super webView:webView didFailLoadWithError:error];
 
     NSString *urlStr = [[NSURL URLWithString:[error.userInfo objectForKey:@"NSErrorFailingURLStringKey"]] absoluteString];
-    if ([urlStr isEqualToString:@"about:blank"]) {
+    if (![urlStr length] || [urlStr isEqualToString:@"about:blank"]) {
         return;
     }
 
