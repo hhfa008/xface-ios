@@ -1,5 +1,5 @@
 // Platform: ios
-// 3.3.0-dev-8cf05e9
+// 3.4.0-dev-58cf72f
 /*
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements.  See the NOTICE file
@@ -19,7 +19,7 @@
  under the License.
 */
 ;(function() {
-var CORDOVA_JS_BUILD_LABEL = '3.3.0-dev-8cf05e9';
+var CORDOVA_JS_BUILD_LABEL = '3.4.0-dev-58cf72f';
 // file: lib/scripts/require.js
 
 /*jshint -W079 */
@@ -34,7 +34,7 @@ var require,
         requireStack = [],
     // Map of module ID -> index into requireStack of modules currently being built.
         inProgressModules = {},
-        SEPERATOR = ".";
+        SEPARATOR = ".";
 
 
 
@@ -44,7 +44,7 @@ var require,
                 var resultantId = id;
                 //Its a relative path, so lop off the last portion and add the id (minus "./")
                 if (id.charAt(0) === ".") {
-                    resultantId = module.id.slice(0, module.id.lastIndexOf(SEPERATOR)) + SEPERATOR + id.slice(2);
+                    resultantId = module.id.slice(0, module.id.lastIndexOf(SEPARATOR)) + SEPARATOR + id.slice(2);
                 }
                 return require(resultantId);
             };
@@ -508,7 +508,7 @@ function include(parent, objects, clobber, merge) {
                 include(result, obj.children, clobber, merge);
             }
         } catch(e) {
-            utils.alert('Exception building cordova JS globals: ' + e + ' for key "' + key + '"');
+            utils.alert('Exception building Cordova JS globals: ' + e + ' for key "' + key + '"');
         }
     });
 }
@@ -1279,9 +1279,59 @@ exports.reset();
 define("cordova/platform", function(require, exports, module) {
 
 module.exports = {
-    id: 'ios'
+    id: 'ios',
+    bootstrap: function() {
+        var modulemapper = require('cordova/modulemapper');
+
+        // TODO: Extract this as a proper plugin.
+        modulemapper.clobbers('xFace/xapp', 'xFace.app');
+    }
 };
 
+
+});
+
+// file: lib/common/plugin/privateModule.js
+define("xFace/plugin/privateModule", function(require, exports, module) {
+
+/*
+ This file was modified from or inspired by Apache Cordova.
+
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements. See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership. The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License. You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied. See the License for the
+ specific language governing permissions and limitations
+ under the License.
+*/
+
+var exec = require('cordova/exec');
+var privateModule = function(){};
+
+ /**
+  * 该接口用于js调用native功能（没有返回值）
+  */
+privateModule.prototype.execCommand = function(type, args) {
+    if(type === "xFace_close_application:") {
+        exec(null, null, null, "closeApplication", args);
+    } else if(type === "xFace_app_send_message:") {
+        exec(null, null, null, "appSendMessage", args);
+    } else {
+        console.log("Command[" + type + "] is not supported in privateModule.js! ");
+    }
+};
+
+module.exports = new privateModule();
 
 });
 
@@ -1783,6 +1833,54 @@ define("xFace", function(require, exports, module) {
 
 var xFace = require('cordova');
 module.exports = xFace;
+});
+
+// file: lib/common/xapp.js
+define("xFace/xapp", function(require, exports, module) {
+
+/*
+ This file was modified from or inspired by Apache Cordova.
+
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements. See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership. The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License. You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied. See the License for the
+ specific language governing permissions and limitations
+ under the License.
+*/
+
+/**
+ * @module app
+ */
+var exec = require('cordova/exec');
+
+var app =
+{
+    /**
+     * 关闭当前应用app（Android, iOS, WP8）
+     * 如果当前只有一个app,在android/WP8平台上则退出xFace;在iOS平台上由于系统限制不退出xFace!!
+     * @example
+            xFace.app.close();
+     * @method close
+     * @platform Android, iOS, WP8
+     * @since 3.0.0
+     */
+    close:function() {
+        require('xFace/plugin/privateModule').execCommand("xFace_close_application:", []);
+    }
+};
+module.exports = app;
+
 });
 
 window.cordova = require('cordova');
