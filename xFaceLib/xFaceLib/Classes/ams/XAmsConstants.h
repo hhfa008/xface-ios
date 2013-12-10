@@ -36,6 +36,10 @@ typedef enum {
     NO_TARGET_APP,                 /**< 没有找到待操作的目标应用 */
     NO_APP_CONFIG_FILE,            /**< 不存在应用配置文件 */
     RESERVED,                      /**< 保留字段,兼容旧的REMOVE_APP_FAILED*/
+    APP_NOT_FOUND,                 /**< 启动的应用不存在 */
+    APP_ALREADY_RUNNING,           /**< 应用已经启动 */
+    APP_ENTRY_ERR,                 /**< 应用入口错误 */
+    START_NATIVE_APP_ERR,          /**< 启动native应用错误 */
     UNKNOWN                        /**< 未知错误 */
 } AMS_ERROR;
 

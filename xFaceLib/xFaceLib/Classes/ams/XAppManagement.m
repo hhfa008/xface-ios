@@ -120,25 +120,29 @@
     return YES;
 }
 
-- (BOOL) startApp:(NSString *)appId withParameters:(NSString *)params
+- (AMS_ERROR) startApp:(NSString *)appId withParameters:(NSString *)params
 {
-    BOOL ret = NO;
+    AMS_ERROR ret = UNKNOWN;
     id<XApplication> app = [self.appList getAppById:appId];
     if (nil == app) {
         ALog(@"Failed to start app, cannot find app by id: %@", appId);
-        return ret;
+        return APP_NOT_FOUND;
     }
 
     if (![self verifyAppConfig:app])
     {
-        ALog(@"Failed to verify app config for app with id: %@", appId);
-        return ret;
+        ALog(@"Failed to verify app config for app: %@", appId);
+        return UNKNOWN;
     }
 
+    //TODO:同步p4 change 17084 checkAppRequiredEngineVersion
 
     if ([app isNative])
     {
-        ret = [app loadWithParameters:params];
+        if(![app loadWithParameters:params])
+        {
+            return START_NATIVE_APP_ERR;
+        }
     }
     else
     {
@@ -158,7 +162,11 @@
                 [app setData:params.data forKey:APP_DATA_KEY_FOR_START_PARAMS];
             }
             [[self amsDelegate] startApp:app];
-            ret = YES;
+            ret = ERROR_BASE;
+        }
+        else
+        {
+            return APP_ALREADY_RUNNING;
         }
     }
 
@@ -180,8 +188,8 @@
 - (BOOL) startDefaultAppWithParams:(NSString *)params
 {
     NSString *defaultAppId = [[self appList] defaultAppId];
-    BOOL ret = [self startApp:defaultAppId withParameters:params];
-    return ret;
+    AMS_ERROR ret = [self startApp:defaultAppId withParameters:params];
+    return ret == ERROR_BASE;
 }
 
 - (void) markAsDefaultApp:(NSString *)appId

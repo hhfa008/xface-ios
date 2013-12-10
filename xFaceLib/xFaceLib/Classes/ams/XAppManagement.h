@@ -27,6 +27,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "XAmsConstants.h"
+
 @protocol XInstallListener;
 @protocol XAmsDelegate;
 @protocol XAppInstallerProtocol;
@@ -87,7 +89,7 @@
 	@param params 应用启动参数
     @return 启动是否成功
  */
-- (BOOL) startApp:(NSString *)appId withParameters:(NSString *)params;
+- (AMS_ERROR) startApp:(NSString *)appId withParameters:(NSString *)params;
 
 /**
 	关闭应用
