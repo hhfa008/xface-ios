@@ -41,13 +41,13 @@
 #import "NSString+XStartParams.h"
 
 #define jsForFireAppEvent(event, arg) [NSString stringWithFormat:\
-                      @"(function() { \
-                      try { \
-                          cordova.require('com.polyvi.xface.core.xapp.app').fireAppEvent(\'%@\'%@); \
-                        } catch (e) { \
-                            console.log('exception in fireAppEvent:' + e);\
-                        } \
-                    })()",\
+                    @"(function() { \
+                          try { \
+                              xFace.require('com.polyvi.xface.extension.ams.app').fireAppEvent(\'%@\'%@); \
+                          } catch (e) { \
+                              console.log('exception in fireAppEvent:' + e);\
+                          } \
+                       })()",\
                     event, arg];
 
 
