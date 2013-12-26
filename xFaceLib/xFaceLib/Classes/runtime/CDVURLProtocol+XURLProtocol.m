@@ -1,6 +1,6 @@
 /*
  This file was modified from or inspired by Apache Cordova.
- 
+
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements. See the NOTICE file
  distributed with this work for additional information
@@ -8,9 +8,9 @@
  to you under the Apache License, Version 2.0 (the
  "License"); you may not use this file except in compliance
  with the License. You may obtain a copy of the License at
- 
+
  http://www.apache.org/licenses/LICENSE-2.0
- 
+
  Unless required by applicable law or agreed to in writing,
  software distributed under the License is distributed on an
  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -48,7 +48,7 @@ static CDVViewController *viewControllerForRequest(NSURLRequest* request)
     // The exec bridge explicitly sets the VC address in a header.
     // This works around the User-Agent not being set for file: URLs.
     NSString* addrString = [request valueForHTTPHeaderField:@"vc"];
-    
+
     if (addrString == nil) {
         NSString* userAgent = [request valueForHTTPHeaderField:@"User-Agent"];
         if (userAgent == nil) {
@@ -60,14 +60,14 @@ static CDVViewController *viewControllerForRequest(NSURLRequest* request)
         }
         addrString = [userAgent substringFromIndex:bracketLocation + 1];
     }
-    
+
     long long viewControllerAddress = [addrString longLongValue];
     @synchronized(gRegisteredViewControllers) {
         if (![gRegisteredViewControllers containsObject:[NSNumber numberWithLongLong:viewControllerAddress]]) {
             return nil;
         }
     }
-    
+
     return (__bridge CDVViewController*)(void*)viewControllerAddress;
 }
 
@@ -81,7 +81,7 @@ static CDVViewController *viewControllerForRequest(NSURLRequest* request)
         [NSURLProtocol registerClass:[CDVURLProtocol class]];
         gRegisteredViewControllers = [[NSMutableSet alloc] initWithCapacity:8];
     }
-    
+
     @synchronized(gRegisteredViewControllers) {
         [gRegisteredViewControllers addObject:[NSNumber numberWithLongLong:(long long)viewController]];
     }
@@ -98,7 +98,7 @@ static CDVViewController *viewControllerForRequest(NSURLRequest* request)
 {
     NSURL* theUrl = [theRequest URL];
     CDVViewController* viewController = viewControllerForRequest(theRequest);
-    
+
     if ([[theUrl absoluteString] hasPrefix:kXAssetsLibraryPrefixs]) {
         return YES;
     } else if (viewController != nil) {
@@ -113,8 +113,9 @@ static CDVViewController *viewControllerForRequest(NSURLRequest* request)
             if (hasCmds) {
                 SEL sel = @selector(enqueCommandBatch:);
                 [viewController.commandQueue performSelectorOnMainThread:sel withObject:queuedCommandsJSON waitUntilDone:NO];
+                [viewController.commandQueue performSelectorOnMainThread:@selector(executePending) withObject:nil waitUntilDone:NO];
             } else {
-                SEL sel = @selector(maybeFetchCommandsFromJs:);
+                SEL sel = @selector(processXhrExecBridgePoke:);
                 [viewController.commandQueue performSelectorOnMainThread:sel withObject:[NSNumber numberWithInteger:[requestId integerValue]] waitUntilDone:NO];
             }
             // Returning NO here would be 20% faster, but it spams WebInspector's console with failure messages.
@@ -130,7 +131,7 @@ static CDVViewController *viewControllerForRequest(NSURLRequest* request)
             return ![[[(XViewController *)viewController ownerApp] whitelist] URLIsAllowed:theUrl];
         }
     }
-    
+
     return NO;
 }
 
@@ -138,7 +139,7 @@ static CDVViewController *viewControllerForRequest(NSURLRequest* request)
 {
     // NSLog(@"%@ received %@ - start", self, NSStringFromSelector(_cmd));
     NSURL* url = [[self request] URL];
-    
+
     if ([[url path] isEqualToString:@"/!gap_exec"]) {
         [self sendResponseWithResponseCode:200 data:nil mimeType:nil];
         return;
@@ -161,12 +162,12 @@ static CDVViewController *viewControllerForRequest(NSURLRequest* request)
             // Retrieving the asset failed for some reason.  Send an error.
             [self sendResponseWithResponseCode:401 data:nil mimeType:nil];
         };
-        
+
         ALAssetsLibrary* assetsLibrary = [[ALAssetsLibrary alloc] init];
         [assetsLibrary assetForURL:url resultBlock:resultBlock failureBlock:failureBlock];
         return;
     }
-    
+
     NSString* body = [NSString stringWithFormat:@"ERROR whitelist rejection: url='%@'", [url absoluteString]];
     [self sendResponseWithResponseCode:401 data:[body dataUsingEncoding:NSASCIIStringEncoding] mimeType:nil];
 }
@@ -183,7 +184,7 @@ static CDVViewController *viewControllerForRequest(NSURLRequest* request)
                       expectedContentLength:[data length]
                            textEncodingName:encodingName];
     response.statusCode = statusCode;
-    
+
     [[self client] URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageNotAllowed];
     if (data != nil) {
         [[self client] URLProtocol:self didLoadData:data];
