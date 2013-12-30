@@ -39,6 +39,7 @@
 #import "XLightweightAppInstaller.h"
 #import "XUtils.h"
 #import "NSString+XStartParams.h"
+#import "iToast.h"
 
 #define jsForFireAppEvent(event, arg) [NSString stringWithFormat:\
                     @"(function() { \
@@ -120,6 +121,14 @@
     return YES;
 }
 
+- (void)checkAppRequiredEngineVersion:(NSString*)requiredVersion
+{
+    NSString* engineVersion = [XUtils getPreferenceForKey:ENGINE_VERSION];
+    if ([engineVersion compare:requiredVersion] == NSOrderedAscending) {
+        [[[iToast makeText:(@"The engine is older than what the app requires, Please update the engine to avoid potential issues.")] setDuration:iToastDurationNormal] show];
+    }
+}
+
 - (AMS_ERROR) startApp:(NSString *)appId withParameters:(NSString *)params
 {
     AMS_ERROR ret = UNKNOWN;
@@ -135,7 +144,7 @@
         return UNKNOWN;
     }
 
-    //TODO:同步p4 change 17084 checkAppRequiredEngineVersion
+    [self checkAppRequiredEngineVersion:app.appInfo.engineVersion];
 
     if ([app isNative])
     {
