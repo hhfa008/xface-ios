@@ -73,6 +73,11 @@
 
 #pragma mark override
 
+- (CDVWhitelist*)whitelist
+{
+    return [[self ownerApp] whitelist];
+}
+
 - (UIWebView*)newCordovaViewWithFrame:(CGRect)bounds
 {
     XAppWebView *appView = [[XAppWebView alloc] initWithFrame:bounds];

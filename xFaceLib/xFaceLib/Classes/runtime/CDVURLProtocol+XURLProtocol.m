@@ -29,10 +29,10 @@
 #import <AssetsLibrary/ALAssetRepresentation.h>
 #import <AssetsLibrary/ALAssetsLibrary.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <Cordova/CDVViewController.h>
+
 #import "CDVURLProtocol+XURLProtocol.h"
 #import "XHTTPURLResponse.h"
-#import "XViewController.h"
-#import "XApplication.h"
 
 // Contains a set of NSNumbers of addresses of controllers. It doesn't store
 // the actual pointer to avoid retaining.
@@ -126,9 +126,9 @@ static CDVViewController *viewControllerForRequest(NSURLRequest* request)
         }
         // we only care about http and https connections.
         // CORS takes care of http: trying to access file: URLs.
-        if ([[[(XViewController *)viewController ownerApp] whitelist] schemeIsAllowed:[theUrl scheme]]) {
+        if ([[viewController whitelist] schemeIsAllowed:[theUrl scheme]]) {
             // if it FAILS the whitelist, we return TRUE, so we can fail the connection later
-            return ![[[(XViewController *)viewController ownerApp] whitelist] URLIsAllowed:theUrl];
+            return ![[viewController whitelist] URLIsAllowed:theUrl];
         }
     }
 
