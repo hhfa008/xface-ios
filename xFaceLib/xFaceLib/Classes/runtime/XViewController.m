@@ -85,6 +85,7 @@
     self.wwwFolderName = XFACE_BUNDLE_FOLDER;
 
     [super viewDidLoad];
+    self.webView.dataDetectorTypes = UIDataDetectorTypeNone;
 
     //避免加载错误页面："ERROR: Start Page at 'www/index.html' was not found."
     [self.webView stopLoading];
