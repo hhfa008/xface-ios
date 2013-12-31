@@ -120,7 +120,7 @@ static BOOL imported = NO;
     CFArrayRef              importedItems;
 
     status = kCredentialImportStatusFailed;
-    if ([data length] == 0) {
+    if ([data length] == 0 || [pw length] == 0) {
         return status;
     }
 
