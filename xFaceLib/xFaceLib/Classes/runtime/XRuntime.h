@@ -32,15 +32,7 @@
 
 @class XViewController;
 
-@protocol XPushHandler <NSObject>
-
-- (void)fire:(NSString *)pushString;
-
-@end
-
 @interface XRuntime : NSObject <XAmsDelegate, XSystemBootstrapDelegate>
-
-@property (assign, nonatomic) id <XPushHandler> pushDelegate;
 
 /**
     与default app关联的应用视图控制器
@@ -53,10 +45,5 @@
     处理启动参数
  */
 -(void) handleOpenURL:(NSString *)url;
-
-/**
-    对Apple Push Service注册成功的情况进行处理
- */
--(void) didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken;
 
 @end

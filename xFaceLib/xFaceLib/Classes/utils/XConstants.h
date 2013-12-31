@@ -68,9 +68,6 @@
 #define ATTR_ID                                  @"id"
 #define ATTR_VALUE                               @"value"
 
-// key in data.plist
-#define XFACE_DATA_KEY_DEVICETOKEN               @"deviceToken"
-
 //tag in debug.xml
 #define DEBUG_CONFIG_FILE                        @"debug.xml"
 #define TAG_ROOT                                 @"config"

@@ -52,7 +52,6 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
 @synthesize appManagement;
 @synthesize systemBootstrap;
 @synthesize sysEventHandler;
-@synthesize pushDelegate;
 @synthesize bootParams;
 @synthesize viewController;
 @synthesize activeViewControllers;
@@ -92,21 +91,11 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)pushNotification:(NSDictionary *)userInfo
-{
-    if (self.pushDelegate) {
-        [self.pushDelegate fire:[userInfo JSONString]];
-    }
-}
-
 /**
   进行runtime的初始化操作，然后启动应用
  */
 - (void) doInitialization
 {
-    // try to register push notification
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
-
     self.systemBootstrap = [XSystemBootstrapFactory createWithDelegate:self];
     [self.systemBootstrap prepareWorkEnvironment];
 }
@@ -126,11 +115,6 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
 
         [self setBootParams:params];
     }
-}
-
--(void) didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
-{
-    [XUtils setValueToDataForKey:XFACE_DATA_KEY_DEVICETOKEN value:deviceToken];
 }
 
 #pragma mark XSystemBootstrapDelegate
