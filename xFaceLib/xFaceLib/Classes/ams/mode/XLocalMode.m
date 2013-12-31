@@ -51,13 +51,11 @@
 
 - (NSURL*)getURL:(id<XApplication>)app
 {
-    NSString *appId = [app getAppId];
     NSString *entry = [[app appInfo] entry];
-
     NSString *appSrcPath = [[app appInfo] srcPath];
     if (![appSrcPath length])
     {
-        appSrcPath = [[[XConfiguration getInstance] appInstallationDir] stringByAppendingFormat:@"%@", appId];
+        appSrcPath = [app installedDirectory];
     }
 
     NSString *filePath = [appSrcPath stringByAppendingPathComponent:entry];
