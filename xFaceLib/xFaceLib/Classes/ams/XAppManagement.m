@@ -197,6 +197,14 @@
 - (BOOL) startDefaultAppWithParams:(NSString *)params
 {
     NSString *defaultAppId = [[self appList] defaultAppId];
+
+    //分离appId
+    if ([params length] > 0) {
+        NSString* query = [[NSURL URLWithString:params] query];
+        params = [query length] > 0 ? query : params;
+    }
+
+    //TODO:启动参数中指定的appid
     AMS_ERROR ret = [self startApp:defaultAppId withParameters:params];
     return ret == ERROR_BASE;
 }
