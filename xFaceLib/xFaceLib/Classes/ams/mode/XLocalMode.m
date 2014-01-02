@@ -52,14 +52,32 @@
 - (NSURL*)getURL:(id<XApplication>)app
 {
     NSString *entry = [[app appInfo] entry];
+    NSString *appSrcPath = [self getSrcPathForApp:app];
+
+    NSString *entryPath = [appSrcPath stringByAppendingPathComponent:entry];
+    return [NSURL fileURLWithPath:entryPath];
+}
+
+- (NSString*)getSrcPathForApp:(id<XApplication>)app
+{
     NSString *appSrcPath = [[app appInfo] srcPath];
+    NSString *appId = [app getAppId];
     if (![appSrcPath length])
     {
         appSrcPath = [app installedDirectory];
     }
 
-    NSString *filePath = [appSrcPath stringByAppendingPathComponent:entry];
-    return [NSURL fileURLWithPath:filePath];
+    //没有版本号的UUID，无符号链接
+    NSDictionary* UUIDs = [[NSUserDefaults standardUserDefaults] dictionaryForKey:kAppVersionUUIDKey];
+    NSString* versionUUID = [UUIDs objectForKey:[app getAppId]];
+    if (versionUUID == nil)
+    {
+        return appSrcPath;
+    }
+
+    NSString* linkPath = [appSrcPath stringByAppendingPathComponent:versionUUID];
+
+    return linkPath;
 }
 
 - (NSString*)getIconURL:(XAppInfo*)appInfo

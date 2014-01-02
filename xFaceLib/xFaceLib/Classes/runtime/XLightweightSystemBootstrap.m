@@ -51,6 +51,9 @@
     BOOL ret = YES;
     NSString* errorDescription = [[NSString alloc] init];
 
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kAppVersionUUIDKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
     // ipa包版本更新时，记录ipa版本到userDefaults中
     if ((self.isIpaUpdated = [self ipaUpdated]))
     {

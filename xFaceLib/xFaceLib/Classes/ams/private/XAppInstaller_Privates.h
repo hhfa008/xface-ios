@@ -41,4 +41,24 @@
  */
 - (void) moveAppIconWithAppInfo:(XAppInfo *)appInfo;
 
+/**
+    更新应用版本的唯一标识符
+    @param app 应用对象
+    @returns 返回应用版本的唯一标识符
+ */
+- (NSString* )updateVersionUUIDForApp:(id<XApplication>)app;
+
+/**
+    清除应用版本的唯一标识符
+    @param app 应用对象
+ */
+- (void)clearVersionUUIDForApp:(id<XApplication>)app;
+
+/**
+    创建应用源代码路径的符号链接
+    @param app 应用对象
+    @returns 创建成功YES，否则NO
+ */
+- (BOOL)createSymbolicLinkForApp:(id<XApplication>)app;
+
 @end

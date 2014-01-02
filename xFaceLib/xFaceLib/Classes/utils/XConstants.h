@@ -104,4 +104,6 @@
 
 #define WILDCARDS               @"*"
 
+#define kAppVersionUUIDKey      @"kAppVersionUUIDKey"
+
 

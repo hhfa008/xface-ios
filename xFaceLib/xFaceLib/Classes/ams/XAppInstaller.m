@@ -106,6 +106,15 @@
         [appInfo setSrcRoot:APP_ROOT_WORKSPACE];
         id<XApplication> app = [XApplicationFactory create:appInfo];
 
+        ret = [self createSymbolicLinkForApp:app];
+
+        if (NO == ret)
+        {
+            [XFileUtils removeItemAtPath:dstPath error:nil];
+            [listener onError:INSTALL withAppId:appId withError:IO_ERROR];
+            return;
+        }
+
         // 更新appList
         [self->appList add:app];
 
@@ -206,6 +215,14 @@
         // 将应用图标移动到<Applilcation_Home>/Documents/xface3/app_icons/appId/目录下，便于默认应用访问
         [self moveAppIconWithAppInfo:appInfo];
 
+        ret = [self createSymbolicLinkForApp:originalApp];
+
+        if (NO == ret)
+        {
+            [listener onError:UPDATE withAppId:appId withError:IO_ERROR];
+            return;
+        }
+
         [listener onProgressUpdated:UPDATE withStatus:FINISHED];
 
         // 删除应用更新包
@@ -243,6 +260,8 @@
         }
         else
         {
+            //清除应用版本的唯一标识符
+            [self clearVersionUUIDForApp:app];
             // 更新已安装列表
             [self->appList removeAppById:appId];
             [self->appPersistence removeAppFromConfig:appId];
@@ -286,6 +305,61 @@
         ALog(@"Failed to move app icon at path:%@ to path:%@ with error:%@", iconSrcPath, iconDstPath, [error localizedDescription]);
     }
     return;
+}
+
+- (NSString* )updateVersionUUIDForApp:(id<XApplication>)app
+{
+    NSDictionary* UUIDs = [[NSUserDefaults standardUserDefaults] dictionaryForKey:kAppVersionUUIDKey];
+
+    NSMutableDictionary* newUUIDs = UUIDs != nil ?
+    [NSMutableDictionary dictionaryWithDictionary:UUIDs] : [NSMutableDictionary dictionary];
+
+    NSString* newUUID = (__bridge NSString *)CFUUIDCreateString(kCFAllocatorDefault,CFUUIDCreate(kCFAllocatorDefault));
+
+    [newUUIDs setObject:newUUID forKey:[app getAppId]];
+    [[NSUserDefaults standardUserDefaults] setObject:newUUIDs forKey:kAppVersionUUIDKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    return newUUID;
+}
+
+- (void)clearVersionUUIDForApp:(id<XApplication>)app
+{
+    NSDictionary* UUIDs = [[NSUserDefaults standardUserDefaults] dictionaryForKey:kAppVersionUUIDKey];
+
+    if (UUIDs == nil) {
+        return;
+    }
+
+    NSMutableDictionary* newUUIDs = [NSMutableDictionary dictionaryWithDictionary:UUIDs];
+
+    [newUUIDs removeObjectForKey:[app getAppId]];
+    [[NSUserDefaults standardUserDefaults] setObject:newUUIDs forKey:kAppVersionUUIDKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (BOOL)createSymbolicLinkForApp:(id<XApplication>)app
+{
+    NSString *appSrcPath = [[app appInfo] srcPath];
+    NSString *appId = [app getAppId];
+    if (![appSrcPath length])
+    {
+        appSrcPath = [[[XConfiguration getInstance] appInstallationDir] stringByAppendingFormat:@"%@", appId];
+    }
+
+    NSFileManager *manager = [NSFileManager defaultManager];
+    __autoreleasing NSError *error = nil;
+
+    //更新版本号的UUID，创建符号链接
+    NSString* versionUUID = [self updateVersionUUIDForApp:app];
+
+    NSString* linkPath = [appSrcPath stringByAppendingPathComponent:versionUUID];
+
+    if(![manager createSymbolicLinkAtPath:linkPath  withDestinationPath:appSrcPath error:&error])
+    {
+        NSLog(@"Create symbol link file: %@ failed, error info: %@!", linkPath, [error localizedDescription]);
+        return NO;
+    }
+    return YES;
 }
 
 @end
