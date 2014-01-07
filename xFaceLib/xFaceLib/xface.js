@@ -1,5 +1,5 @@
 // Platform: ios
-// 3.4.0-dev-28ca000
+// 3.3.0-dev-80644fd
 /*
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements.  See the NOTICE file
@@ -19,7 +19,7 @@
  under the License.
 */
 ;(function() {
-var CORDOVA_JS_BUILD_LABEL = '3.4.0-dev-28ca000';
+var CORDOVA_JS_BUILD_LABEL = '3.3.0-dev-80644fd';
 // file: src/scripts/require.js
 
 /*jshint -W079 */
