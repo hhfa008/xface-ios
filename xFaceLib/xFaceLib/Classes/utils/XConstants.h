@@ -74,8 +74,6 @@
 #define TAG_APP_PACKAGE                          @"app_package"
 #define TAG_PREFERENCE                           @"preference"
 #define ENGINE_VERSION                           @"EngineVersion"
-#define ENGINE_BUILD                             @"EngineBuild"
-#define SECURITY_ADDRESS_PROP_NAME               @"SecurityAddress"
 
 // notification name
 #define XAPPLICATION_DID_FINISH_INSTALL_NOTIFICATION     @"XApplicationDidFinishInstallNotification"

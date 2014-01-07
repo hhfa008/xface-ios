@@ -54,8 +54,6 @@
     <preference name="PaginationMode" value="unpaginated" /> <!-- unpaginated, leftToRight, topToBottom, bottomToTop, rightToLeft -->
 
     <preference name="EngineVersion" value="3.2.x" />
-    <preference name="EngineBuild" value="12345" />
-    <preference name="SecurityAddress" value="" />
 
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage"/>
