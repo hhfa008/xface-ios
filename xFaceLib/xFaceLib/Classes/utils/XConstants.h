@@ -89,8 +89,6 @@
 
 #define SYSTEM_VERSION_NOT_LOWER_THAN(X) ([[[UIDevice currentDevice] systemVersion] compare:X options:NSNumericSearch] != NSOrderedAscending)
 
-#define IPHONE5_MAIN_SCREEN_BOUNDS_HEIGHT        568
-
 #define WILDCARDS               @"*"
 
 #define kAppVersionUUIDKey      @"kAppVersionUUIDKey"

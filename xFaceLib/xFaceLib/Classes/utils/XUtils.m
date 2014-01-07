@@ -33,7 +33,6 @@
 #import "XUtils_Privates.h"
 #import "XAppXMLParser.h"
 #import "XAppXMLParserFactory.h"
-#import "UIDevice+Additions.h"
 #import "XRuntime.h"
 #import "XSystemConfigInfo.h"
 #import "XAppInfo.h"

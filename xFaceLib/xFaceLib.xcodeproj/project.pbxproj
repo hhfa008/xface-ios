@@ -227,9 +227,6 @@
 		C8DF698B17EE9FCB008B0CAF /* NSString+XStartParams.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68A217EE9FCB008B0CAF /* NSString+XStartParams.m */; };
 		C8DF698C17EE9FCB008B0CAF /* XLogRedirct_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68A417EE9FCB008B0CAF /* XLogRedirct_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF698D17EE9FCB008B0CAF /* XUtils_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68A517EE9FCB008B0CAF /* XUtils_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF698E17EE9FCB008B0CAF /* UIDevice+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68A617EE9FCB008B0CAF /* UIDevice+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF698F17EE9FCB008B0CAF /* UIDevice+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68A717EE9FCB008B0CAF /* UIDevice+Additions.m */; };
-		C8DF699017EE9FCB008B0CAF /* UIDevice+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68A717EE9FCB008B0CAF /* UIDevice+Additions.m */; };
 		C8DF699417EE9FCB008B0CAF /* XAPElement.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68AA17EE9FCB008B0CAF /* XAPElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF699517EE9FCB008B0CAF /* XAPElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68AB17EE9FCB008B0CAF /* XAPElement.m */; };
 		C8DF699617EE9FCB008B0CAF /* XAPElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68AB17EE9FCB008B0CAF /* XAPElement.m */; };
@@ -478,8 +475,6 @@
 		C8DF68A217EE9FCB008B0CAF /* NSString+XStartParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XStartParams.m"; sourceTree = "<group>"; };
 		C8DF68A417EE9FCB008B0CAF /* XLogRedirct_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLogRedirct_Privates.h; sourceTree = "<group>"; };
 		C8DF68A517EE9FCB008B0CAF /* XUtils_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XUtils_Privates.h; sourceTree = "<group>"; };
-		C8DF68A617EE9FCB008B0CAF /* UIDevice+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Additions.h"; sourceTree = "<group>"; };
-		C8DF68A717EE9FCB008B0CAF /* UIDevice+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Additions.m"; sourceTree = "<group>"; };
 		C8DF68AA17EE9FCB008B0CAF /* XAPElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAPElement.h; sourceTree = "<group>"; };
 		C8DF68AB17EE9FCB008B0CAF /* XAPElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAPElement.m; sourceTree = "<group>"; };
 		C8DF68AC17EE9FCB008B0CAF /* XApplicationPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XApplicationPersistence.h; sourceTree = "<group>"; };
@@ -912,8 +907,6 @@
 				C8DF68A017EE9FCB008B0CAF /* NSObject+JSONSerialization.m */,
 				C8DF68A117EE9FCB008B0CAF /* NSString+XStartParams.h */,
 				C8DF68A217EE9FCB008B0CAF /* NSString+XStartParams.m */,
-				C8DF68A617EE9FCB008B0CAF /* UIDevice+Additions.h */,
-				C8DF68A717EE9FCB008B0CAF /* UIDevice+Additions.m */,
 				C8DF68AA17EE9FCB008B0CAF /* XAPElement.h */,
 				C8DF68AB17EE9FCB008B0CAF /* XAPElement.m */,
 				C8DF68AC17EE9FCB008B0CAF /* XApplicationPersistence.h */,
@@ -969,7 +962,6 @@
 				C8DF697D17EE9FCB008B0CAF /* md5.h in Headers */,
 				C8DF692C17EE9FCB008B0CAF /* XExtensionResult_Privates.h in Headers */,
 				C8A15F5F17EEA50600FB3E68 /* APDocument.h in Headers */,
-				C8DF698E17EE9FCB008B0CAF /* UIDevice+Additions.h in Headers */,
 				C8DF693117EE9FCB008B0CAF /* XRuntime_Privates.h in Headers */,
 				C8DF694617EE9FCB008B0CAF /* XCommandQueue.h in Headers */,
 				C8DF697A17EE9FCB008B0CAF /* APDocument+XAPDocument.h in Headers */,
@@ -1231,7 +1223,6 @@
 				C8A15F7217EEA50600FB3E68 /* iToast.m in Sources */,
 				C8DF696F17EE9FCB008B0CAF /* XViewController.m in Sources */,
 				C8DF68E217EE9FCB008B0CAF /* XOnlineResourceInfo.m in Sources */,
-				C8DF698F17EE9FCB008B0CAF /* UIDevice+Additions.m in Sources */,
 				C8DF695017EE9FCB008B0CAF /* XLightweightSystemBootstrap.m in Sources */,
 				C8DF69BA17EE9FCB008B0CAF /* XSecurityFileOperator.m in Sources */,
 				C8DF68FF17EE9FCB008B0CAF /* XAppManagement.m in Sources */,
@@ -1306,7 +1297,6 @@
 				C8DF699617EE9FCB008B0CAF /* XAPElement.m in Sources */,
 				C8DF68E617EE9FCB008B0CAF /* XOnlineResourceIterator.m in Sources */,
 				C8DF68D417EE9FCB008B0CAF /* XDefaultSecurityPolicy.m in Sources */,
-				C8DF699017EE9FCB008B0CAF /* UIDevice+Additions.m in Sources */,
 				C8A15F7F17EEA50600FB3E68 /* unzip.c in Sources */,
 				C8A15F5E17EEA50600FB3E68 /* APAttribute.m in Sources */,
 				C8DF69AB17EE9FCB008B0CAF /* XFileUtils.m in Sources */,
