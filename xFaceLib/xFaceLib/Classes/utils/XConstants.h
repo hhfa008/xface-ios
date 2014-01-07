@@ -86,9 +86,6 @@
 #define DOCUMENT_EVENT_NOTIFICATION                      @"DocumentEventNotification"
 
 
-
-#define SYSTEM_VERSION_NOT_LOWER_THAN(X) ([[[UIDevice currentDevice] systemVersion] compare:X options:NSNumericSearch] != NSOrderedAscending)
-
 #define WILDCARDS               @"*"
 
 #define kAppVersionUUIDKey      @"kAppVersionUUIDKey"
