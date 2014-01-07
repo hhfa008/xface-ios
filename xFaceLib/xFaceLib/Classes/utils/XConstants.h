@@ -39,11 +39,8 @@
 #define DEFAULT_APP_START_PAGE                   @"index.html"
 #define XFACE_JS_FILE_NAME                       @"xface.js"
 #define XFACE_DATA_PLIST_NAME                    @"data.plist"
-#define APPLICATION_KEY                          @"app"
-#define JS_CALLBACK_KEY                          @"callback"
 #define APP_WORKSPACE_FOLDER                     @"workspace"
 #define JS_CORE_FOLDER                           @"js_core"
-#define SPLASH_FILE_NAME                         @"xface_logo"
 #define APP_DATA_DIR_FOLDER                      @"data"
 #define APP_TYPE_XAPP                            @"xapp"
 #define APP_TYPE_NAPP                            @"napp"
@@ -53,8 +50,6 @@
 #define ENCRYPE_CODE_PACKAGE_NAME                @"jscore.zip"    //加密代码包的包名
 #define APP_DATA_KEY_FOR_START_PARAMS            @"start_params"  //启动参数在xapp通讯数据中的key
 #define NATIVE_APP_CUSTOM_URL_PARAMS_SEPERATOR   @"://"           //custom url中scheme与params之间的分隔符
-
-#define EXTENSION_LOCAL_STORAGE_NAME             @"LocalStorage"
 
 // xFace.app下相关目录及资源命名
 #define APP_DATA_PACKAGE_NAME_UNDER_WORKSPACE    @"workspace.zip"
@@ -82,13 +77,7 @@
 #define ENGINE_BUILD                             @"EngineBuild"
 #define SECURITY_ADDRESS_PROP_NAME               @"SecurityAddress"
 
-// info.plist中定义的常量
-#define UI_ORIENTAIONS_TAG                       @"UISupportedInterfaceOrientations"
-#define UI_LAUNCH_IMAGE_FILE_KEY                 @"UILaunchImageFile"
-
 // notification name
-#define WEBVIEW_DID_FINISH_LOAD_NOTIFICATION             @"WebViewDidFinishLoadNotification"
-#define WEBVIEW_DID_START_LOAD_NOTIFICATION              @"WebViewDidStartLoadNotification"
 #define XAPPLICATION_DID_FINISH_INSTALL_NOTIFICATION     @"XApplicationDidFinishInstallNotification"
 #define XAPPLICATION_CLOSE_NOTIFICATION                  @"XApplicationCloseNotification"
 #define XAPPLICATION_SEND_MESSAGE_NOTIFICATION           @"XApplicationSendMessageNotification"
