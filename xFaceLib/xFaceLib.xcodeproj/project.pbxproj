@@ -192,9 +192,9 @@
 		C8DF696817EE9FCB008B0CAF /* XUIApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF688917EE9FCB008B0CAF /* XUIApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF696917EE9FCB008B0CAF /* XUIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF688A17EE9FCB008B0CAF /* XUIApplication.m */; };
 		C8DF696A17EE9FCB008B0CAF /* XUIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF688A17EE9FCB008B0CAF /* XUIApplication.m */; };
-		C8DF696B17EE9FCB008B0CAF /* XVersionLableFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF688B17EE9FCB008B0CAF /* XVersionLableFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF696C17EE9FCB008B0CAF /* XVersionLableFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF688C17EE9FCB008B0CAF /* XVersionLableFactory.m */; };
-		C8DF696D17EE9FCB008B0CAF /* XVersionLableFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF688C17EE9FCB008B0CAF /* XVersionLableFactory.m */; };
+		C8DF696B17EE9FCB008B0CAF /* XVersionLabelFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF688B17EE9FCB008B0CAF /* XVersionLabelFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C8DF696C17EE9FCB008B0CAF /* XVersionLabelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF688C17EE9FCB008B0CAF /* XVersionLabelFactory.m */; };
+		C8DF696D17EE9FCB008B0CAF /* XVersionLabelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF688C17EE9FCB008B0CAF /* XVersionLabelFactory.m */; };
 		C8DF696E17EE9FCB008B0CAF /* XViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF688D17EE9FCB008B0CAF /* XViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF696F17EE9FCB008B0CAF /* XViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF688E17EE9FCB008B0CAF /* XViewController.m */; };
 		C8DF697017EE9FCB008B0CAF /* XViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF688E17EE9FCB008B0CAF /* XViewController.m */; };
@@ -451,8 +451,8 @@
 		C8DF688817EE9FCB008B0CAF /* XSystemWorkspaceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSystemWorkspaceFactory.m; sourceTree = "<group>"; };
 		C8DF688917EE9FCB008B0CAF /* XUIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XUIApplication.h; sourceTree = "<group>"; };
 		C8DF688A17EE9FCB008B0CAF /* XUIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XUIApplication.m; sourceTree = "<group>"; };
-		C8DF688B17EE9FCB008B0CAF /* XVersionLableFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XVersionLableFactory.h; sourceTree = "<group>"; };
-		C8DF688C17EE9FCB008B0CAF /* XVersionLableFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XVersionLableFactory.m; sourceTree = "<group>"; };
+		C8DF688B17EE9FCB008B0CAF /* XVersionLabelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XVersionLabelFactory.h; sourceTree = "<group>"; };
+		C8DF688C17EE9FCB008B0CAF /* XVersionLabelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XVersionLabelFactory.m; sourceTree = "<group>"; };
 		C8DF688D17EE9FCB008B0CAF /* XViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XViewController.h; sourceTree = "<group>"; };
 		C8DF688E17EE9FCB008B0CAF /* XViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XViewController.m; sourceTree = "<group>"; };
 		C8DF688F17EE9FCB008B0CAF /* XWebApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWebApplication.h; sourceTree = "<group>"; };
@@ -856,8 +856,8 @@
 				C8DF688817EE9FCB008B0CAF /* XSystemWorkspaceFactory.m */,
 				C8DF688917EE9FCB008B0CAF /* XUIApplication.h */,
 				C8DF688A17EE9FCB008B0CAF /* XUIApplication.m */,
-				C8DF688B17EE9FCB008B0CAF /* XVersionLableFactory.h */,
-				C8DF688C17EE9FCB008B0CAF /* XVersionLableFactory.m */,
+				C8DF688B17EE9FCB008B0CAF /* XVersionLabelFactory.h */,
+				C8DF688C17EE9FCB008B0CAF /* XVersionLabelFactory.m */,
 				C8DF688D17EE9FCB008B0CAF /* XViewController.h */,
 				C8DF688E17EE9FCB008B0CAF /* XViewController.m */,
 				C8DF688F17EE9FCB008B0CAF /* XWebApplication.h */,
@@ -1014,7 +1014,7 @@
 				C8DF690E17EE9FCB008B0CAF /* XInstallListener.h in Headers */,
 				C8DF693217EE9FCB008B0CAF /* XWebApplication_Privates.h in Headers */,
 				C8DF698917EE9FCB008B0CAF /* NSString+XStartParams.h in Headers */,
-				C8DF696B17EE9FCB008B0CAF /* XVersionLableFactory.h in Headers */,
+				C8DF696B17EE9FCB008B0CAF /* XVersionLabelFactory.h in Headers */,
 				C8DF699B17EE9FCB008B0CAF /* XCipher.h in Headers */,
 				C8DF68E417EE9FCB008B0CAF /* XOnlineResourceIterator.h in Headers */,
 				C8DF68EC17EE9FCB008B0CAF /* XSecurityResourceFilter.h in Headers */,
@@ -1198,7 +1198,7 @@
 				C8DF68D017EE9FCB008B0CAF /* XAppRunningMode.m in Sources */,
 				C8DF68EA17EE9FCB008B0CAF /* XSecurityPolicyFactory.m in Sources */,
 				C8DF698A17EE9FCB008B0CAF /* NSString+XStartParams.m in Sources */,
-				C8DF696C17EE9FCB008B0CAF /* XVersionLableFactory.m in Sources */,
+				C8DF696C17EE9FCB008B0CAF /* XVersionLabelFactory.m in Sources */,
 				C8DF694717EE9FCB008B0CAF /* XCommandQueue.m in Sources */,
 				C8DF691617EE9FCB008B0CAF /* XSystemConfigInfo.m in Sources */,
 				C8DF68E517EE9FCB008B0CAF /* XOnlineResourceIterator.m in Sources */,
@@ -1288,7 +1288,7 @@
 				C8DF691117EE9FCB008B0CAF /* XLightweightAppInstaller.m in Sources */,
 				C8DF69AE17EE9FCB008B0CAF /* XHexData.m in Sources */,
 				C8DF699D17EE9FCB008B0CAF /* XCipher.m in Sources */,
-				C8DF696D17EE9FCB008B0CAF /* XVersionLableFactory.m in Sources */,
+				C8DF696D17EE9FCB008B0CAF /* XVersionLabelFactory.m in Sources */,
 				C8DF694E17EE9FCB008B0CAF /* XJavaScriptEvaluator.m in Sources */,
 				C8DF696717EE9FCB008B0CAF /* XSystemWorkspaceFactory.m in Sources */,
 				C8DF699917EE9FCB008B0CAF /* XApplicationPersistence.m in Sources */,

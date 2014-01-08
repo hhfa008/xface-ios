@@ -21,17 +21,17 @@
 */
 
 //
-//  XVersionLableFactory.h
+//  XVersionLabelFactory.h
 //  xFace
 //
 //
 
 #import <UIKit/UIKit.h>
 
-@interface XVersionLableFactory : NSObject
+@interface XVersionLabelFactory : NSObject
 
 /**
-    创建version lable实例
+    创建version label实例
     @param frame, the frame of super view
  */
 + (id) createWithFrame:(CGRect) frame;

@@ -21,14 +21,14 @@
 */
 
 //
-//  XVersionLableFactory.m
+//  XVersionLabelFactory.m
 //  xFace
 //
 //
 
-#import "XVersionLableFactory.h"
+#import "XVersionLabelFactory.h"
 
-@implementation XVersionLableFactory
+@implementation XVersionLabelFactory
 
 + (id) createWithFrame:(CGRect)frame
 {
