@@ -34,6 +34,15 @@
 
 @implementation XAppWebView
 
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.dataDetectorTypes = UIDataDetectorTypeNone;
+    }
+    return self;
+}
+
 #pragma mark XAppView
 
 - (void)loadApp:(NSURL *)url
@@ -41,16 +50,6 @@
     NSURLRequest *req = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:URL_REQUEST_TIMEOUT_INTERVAL];
 
     [self loadRequest:req];
-}
-
-- (void)show
-{
-    self.hidden = NO;
-}
-
-- (void) close
-{
-    [self removeFromSuperview];
 }
 
 @end

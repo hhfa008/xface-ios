@@ -39,14 +39,4 @@
  */
 - (void) loadApp:(NSURL *)url;
 
-/**
-	显示view
- */
-- (void) show;
-
-/**
-	关闭view
- */
-- (void) close;
-
 @end
