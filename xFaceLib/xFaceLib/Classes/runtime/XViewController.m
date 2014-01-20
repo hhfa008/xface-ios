@@ -124,20 +124,4 @@
     [super webViewDidFinishLoad:theWebView];
 }
 
-- (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
-    [super webView:webView didFailLoadWithError:error];
-
-    NSString *urlStr = [[NSURL URLWithString:[error.userInfo objectForKey:@"NSErrorFailingURLStringKey"]] absoluteString];
-    if (![urlStr length] || [urlStr isEqualToString:@"about:blank"]) {
-        return;
-    }
-
-    self.loadFromString = YES;
-
-    NSString *loadErr = [NSString stringWithFormat:@"<br/>Failed to load webpage:<br/>%@<br/>with error:<br/>%@", urlStr, [error localizedDescription]];
-    NSString *html = [NSString stringWithFormat:@"<html><head><meta name='viewport' content='width=device-width, user-scalable=no' /></head><body> %@ </body></html>", loadErr];
-    [self.webView loadHTMLString:html baseURL:nil];
-}
-
 @end
