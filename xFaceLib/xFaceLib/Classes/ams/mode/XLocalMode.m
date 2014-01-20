@@ -61,7 +61,6 @@
 - (NSString*)getSrcPathForApp:(id<XApplication>)app
 {
     NSString *appSrcPath = [[app appInfo] srcPath];
-    NSString *appId = [app getAppId];
     if (![appSrcPath length])
     {
         appSrcPath = [app installedDirectory];
