@@ -34,18 +34,6 @@
 #import "XCommandQueue.h"
 #import "XAppWebView.h"
 
-#define EXTENSION_MAP_INITIAL_CAPACITY                 4
-
-#define URL_SCHEME_XFACE                               @"xface"
-#define URL_SCHEME_TEL                                 @"tel"
-#define URL_SCHEME_ABOUT                               @"about"
-#define URL_SCHEME_DATA                                @"data"
-
-#define XFACE_EXEC_URL                                 @"/!xface_exec"
-#define HTTP_HEADER_FIELD_APP                          @"app"
-#define HTTP_HEADER_FIELD_REQUEST_ID                   @"rc"
-#define HTTP_HEADER_FIELD_CMDS                         @"cmds"
-
 @implementation XViewController
 
 @synthesize ownerApp;
