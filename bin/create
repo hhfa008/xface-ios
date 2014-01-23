@@ -109,8 +109,6 @@ fi
 mkdir -p "$PROJECT_PATH"
 cp -r "$PROJECT_TEMPLATE_DIR/xface3" "$PROJECT_PATH"/xface3
 cp "$XFACELIB_DIR/xface.js" "$PROJECT_PATH/xface3/helloxface/xface.js"
-# todo: don't know why, comment this out temporarily!
-#cp -r "$PROJECT_TEMPLATE_DIR/xface3" "$PROJECT_PATH"/xface3
 if (($USE_CLI)); then
     cp -r "$PROJECT_TEMPLATE_DIR/__CLI__.xcodeproj" "$PROJECT_PATH/$PROJECT_NAME.xcodeproj"
 else
