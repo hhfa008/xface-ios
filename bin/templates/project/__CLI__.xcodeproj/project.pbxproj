@@ -437,6 +437,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cordova/lib/copy-xface3-build-step.sh";
+                        showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
