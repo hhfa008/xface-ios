@@ -1,4 +1,4 @@
-REPOSITORY = 'git@git.polyvi.com:xface-ios.git'
+REPOSITORY = 'git@gitlab.polyvi.com:xface/xface-ios.git'
 REVIEWBOARD_URL = 'http://review.polyvi.com/reviews/'
 GUESS_FIELDS = 'true'
 TRACKING_BRANCH = 'origin/master'
