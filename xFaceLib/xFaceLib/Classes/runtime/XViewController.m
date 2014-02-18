@@ -104,7 +104,7 @@
     params = (nil == params) ? @"null" : [NSString stringWithFormat:@"'%@'",params];
     [[self ownerApp] removeDataForKey:APP_DATA_KEY_FOR_START_PARAMS];
 
-    NSString* initPrivateData = [[NSMutableString alloc] initWithFormat:@"try{cordova.require('xFace/privateModule').initPrivateData(['%@','%@', %@]);}catch(e){alert(e);}", [[self ownerApp] getAppId], [[self ownerApp] getWorkspace], params];
+    NSString* initPrivateData = [[NSMutableString alloc] initWithFormat:@"try{cordova.require('xFace/privateModule').initPrivateData(['%@', %@]);}catch(e){alert(e);}", [[self ownerApp] getAppId], params];
     [self.commandDelegate evalJs:initPrivateData];
 
     NSString *nativeReady = [NSString stringWithFormat:@"try{cordova.require('cordova/channel').onNativeReady.fire();}catch(e){window._nativeReady = true;}"];
