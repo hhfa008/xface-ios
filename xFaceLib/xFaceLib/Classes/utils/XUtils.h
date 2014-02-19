@@ -224,4 +224,9 @@
  */
 + (BOOL)isDefaultAppWebView:(UIWebView *)theWebView;
 
+/**
+    根据配置信息获取persistent根路径
+ */
++ (NSString *)persistentRoot;
+
 @end

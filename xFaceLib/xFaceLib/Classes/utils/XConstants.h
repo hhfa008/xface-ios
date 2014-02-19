@@ -74,6 +74,7 @@
 #define TAG_APP_PACKAGE                          @"app_package"
 #define TAG_PREFERENCE                           @"preference"
 #define ENGINE_VERSION                           @"EngineVersion"
+#define PERSISTENT_FILE_LOCATION                 @"iosPersistentFileLocation"
 
 // notification name
 #define XAPPLICATION_DID_FINISH_INSTALL_NOTIFICATION     @"XApplicationDidFinishInstallNotification"

@@ -390,4 +390,37 @@ static XUtils* sSelPerformer = nil;
     return ret;
 }
 
++ (NSString *)persistentRoot
+{
+    NSString *persistentRoot = nil;
+    NSString *location = [[XUtils getPreferenceForKey:PERSISTENT_FILE_LOCATION] lowercaseString];
+    if (location == nil) {
+        // Compatibilty by default if the config preference is not set
+        location = @"compatibility";
+    }
+
+    if ([location isEqualToString:@"library"]) {
+        // Get the Library directory path
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+        persistentRoot = [paths objectAtIndex:0];
+    } else if ([location isEqualToString:@"compatibility"]) {
+        /*
+         *  Fall-back to compatibility mode -- this is the logic implemented in
+         *  earlier versions of xface, and should be maintained here so
+         *  that apps which were originally deployed with older versions of xface
+         *  can continue to provide access to files stored under those
+         *  versions.
+         */
+        // Get the Documents directory path
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        persistentRoot = [paths objectAtIndex:0];
+    } else {
+        NSAssert(false,
+                 @"Persistent file location configuration error: Please set iosPersistentFileLocation in config.xml to one of \"library\" (for new applications) or \"compatibility\" (for compatibility with previous versions)");
+    }
+
+    // 路径形如：<Applilcation_Home>/Documents或者<Applilcation_Home>/Library
+    return persistentRoot;
+}
+
 @end
