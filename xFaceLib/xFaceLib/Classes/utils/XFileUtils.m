@@ -34,31 +34,6 @@
 
 @implementation XFileUtils
 
-+ (NSDictionary *)getEntry:(NSString *)path usingWorkspace:(NSString*)workSpace isDir:(BOOL)isDir
-{
-    NSMutableDictionary* dirEntry = [NSMutableDictionary dictionaryWithCapacity:4];
-
-    [dirEntry setObject:[NSNumber numberWithBool: !isDir]  forKey:@"isFile"];
-    [dirEntry setObject:[NSNumber numberWithBool: isDir]  forKey:@"isDirectory"];
-
-    NSString* lastPart = nil;
-    if ([path isEqualToString:workSpace])
-    {
-        lastPart = FILE_SEPARATOR;
-        path = FILE_SEPARATOR;
-    }
-    else
-    {
-        NSUInteger worhSpaceLen = [workSpace length];
-        path = [path substringFromIndex:worhSpaceLen];
-        lastPart = [path lastPathComponent];
-    }
-    [dirEntry setObject: path forKey:@"fullPath"];
-    [dirEntry setObject: lastPart forKey:@"name"];
-
-    return dirEntry;
-}
-
 + (NSMutableDictionary*) createFileTransferError:(int)code andSource:(NSString*)source andTarget:(NSString*)target
 {
     NSMutableDictionary* result = [NSMutableDictionary dictionaryWithCapacity:3];
