@@ -423,4 +423,34 @@ static XUtils* sSelPerformer = nil;
     return persistentRoot;
 }
 
+//TODO:可以考虑定义一个专门用于处理路径的工具类
++ (BOOL) isAbsolute:(NSString*)path
+{
+    //如果以"/"或"file://"开头,则处理为绝对路径
+    if ([path hasPrefix:@"/"])
+    {
+        return YES;
+    }
+    NSURL* newUri = [NSURL URLWithString:path];
+    return [newUri isFileURL];
+}
+
++ (NSString*) getAbsolutePath:(NSString*)path
+{
+    if ([path hasPrefix:@"/"])
+    {
+        return [path stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    }
+    else
+    {
+        //仅处理file协议
+        NSURL* newUri = [NSURL URLWithString:path];
+        if ([newUri isFileURL])
+        {
+            return [newUri path];
+        }
+        return nil;
+    }
+}
+
 @end
