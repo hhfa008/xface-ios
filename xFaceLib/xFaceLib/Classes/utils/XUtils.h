@@ -212,9 +212,9 @@
 + (NSString *)buildWorkspaceAppSrcPath:(NSString *)appId;
 
 /**
-    拷贝xface.js,cordova_plugins.js,plugins目录到<Application_Home>/Documents/xface3/js_core下，以解决扩展js文件路径无法正确组装的问题
+    拷贝xface.js,cordova_plugins.js,plugins目录到<Application_Home>/Library/xface3/js_core下，以解决扩展js文件路径无法正确组装的问题
     源目录：<Application_Home>/xFace.app/xface3/defaultAppId/
-    目的目录：<Applilcation_Home>/Documents/xface3/js_core
+    目的目录：<Applilcation_Home>/Library/xface3/js_core
     @returns 拷贝成功返回YES,失败返回NO
  */
 + (BOOL)copyJsCore;
