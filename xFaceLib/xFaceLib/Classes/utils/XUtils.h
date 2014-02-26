@@ -233,7 +233,7 @@
     判断是否为绝对路径
     @returns 如果以"/"开头或为file协议的url，返回YES;否则返回NO
  */
-+ (BOOL) isAbsolute:(NSString*)path;
++ (BOOL) isAbsolute:(NSString *)path;
 
 /**
     获取绝对路径,此路径经过stringByReplacingPercentEscapesUsingEncoding:处理
@@ -241,6 +241,6 @@
              如果path是file协议的url,则返回url的path部分
              其他情况返回nil
  */
-+ (NSString*) getAbsolutePath:(NSString*)path;
++ (NSString*) getAbsolutePath:(NSString *)path;
 
 @end

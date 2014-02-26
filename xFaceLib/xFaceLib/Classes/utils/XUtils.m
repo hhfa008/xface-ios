@@ -424,18 +424,24 @@ static XUtils* sSelPerformer = nil;
 }
 
 //TODO:可以考虑定义一个专门用于处理路径的工具类
-+ (BOOL) isAbsolute:(NSString*)path
++ (BOOL) isAbsolute:(NSString *)path
 {
-    //如果以"/"或"file://"开头,则处理为绝对路径
+    //如果以"/"开头或为file协议URL,则处理为绝对路径
     if ([path hasPrefix:@"/"])
     {
         return YES;
     }
-    NSURL* newUri = [NSURL URLWithString:path];
+
+    NSURL *newUri = [NSURL URLWithString:path];
+    if (!newUri && [path hasPrefix:@"file://"])
+    {
+        path = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        newUri = [NSURL URLWithString:path];
+    }
     return [newUri isFileURL];
 }
 
-+ (NSString*) getAbsolutePath:(NSString*)path
++ (NSString*) getAbsolutePath:(NSString *)path
 {
     if ([path hasPrefix:@"/"])
     {
@@ -443,8 +449,13 @@ static XUtils* sSelPerformer = nil;
     }
     else
     {
-        //仅处理file协议
+        //仅处理file协议URL
         NSURL* newUri = [NSURL URLWithString:path];
+        if (!newUri && [path hasPrefix:@"file://"])
+        {
+            path = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            newUri = [NSURL URLWithString:path];
+        }
         if ([newUri isFileURL])
         {
             return [newUri path];
