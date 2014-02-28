@@ -349,31 +349,34 @@ static XUtils* sSelPerformer = nil;
 
 + (BOOL)copyJsCore
 {
-    //TODO:如果支持将扩展js代码合并到xface.js，则此方法可以移除
     //拷贝xface.js,cordova_plugins.js,plugins目录到<Application_Home>/Library/xface3/js_core下
+    //同时支持离散以及单文件方式
     BOOL ret = YES;
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString *libraryPath = [[paths objectAtIndex:0] stringByAppendingFormat:@"%@%@%@", FILE_SEPARATOR, XFACE_WORKSPACE_FOLDER, FILE_SEPARATOR];
+    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *destRoot = [[paths objectAtIndex:0] stringByAppendingFormat:@"%@%@%@%@", FILE_SEPARATOR, XFACE_WORKSPACE_FOLDER, FILE_SEPARATOR, JS_CORE_FOLDER];
 
     NSAssert([[[XConfiguration getInstance] preinstallApps] count], @"Can't get js core src!");
     NSString *defaultAppId = [[XConfiguration getInstance] preinstallApps][0];
+    NSString *srcRoot = [XUtils buildPreinstalledAppSrcPath:defaultAppId];
 
-    NSBundle *mainBundle = [NSBundle bundleForClass:[self class]];
-    NSString *preinstalledAppsPath = [mainBundle pathForResource:XFACE_BUNDLE_FOLDER ofType:nil inDirectory:nil];
-
-    //TODO:如果cli调整了文件命名，这里需要做相应地修改
+    //NOTE:文件命名需要与cli对应
     NSArray *jsCoreNames = [[NSArray alloc] initWithObjects:XFACE_JS_FILE_NAME,
                           @"cordova_plugins.js",
                           @"plugins",
                           nil];
     for (NSString *name in jsCoreNames)
     {
-        NSString *src = [preinstalledAppsPath stringByAppendingFormat:@"%@%@%@%@", FILE_SEPARATOR, defaultAppId, FILE_SEPARATOR, name];
-        if ([[NSFileManager defaultManager] fileExistsAtPath:src])
+        NSString *srcPath = [srcRoot stringByAppendingPathComponent:name];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:srcPath])
         {
-            NSString *dest = [libraryPath stringByAppendingFormat:@"%@%@%@", JS_CORE_FOLDER, FILE_SEPARATOR, name];
+            NSString *destPath = [destRoot stringByAppendingPathComponent:name];
 
-            ret &= [XFileUtils copyItemAtPath:src toPath:dest error:nil];
+            ret &= [XFileUtils copyItemAtPath:srcPath toPath:destPath error:nil];
+        }
+        else if ([name isEqualToString:XFACE_JS_FILE_NAME])
+        {
+            ALog("Failed to copy file %@ from %@ to %@!", name, srcRoot, destRoot);
+            return NO;
         }
     }
 

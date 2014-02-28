@@ -46,7 +46,6 @@
 - (void)startLoading
 {
     //xface.js路径为：<Applilcation_Home>/Library/xface3/js_core/xface.js
-    //TODO:如果支持将扩展js代码合并到xface.js，则此处返回的是工程中内置的xface.js资源
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSString *libraryPath = [[paths objectAtIndex:0] stringByAppendingFormat:@"%@%@%@", FILE_SEPARATOR, XFACE_WORKSPACE_FOLDER, FILE_SEPARATOR];
     NSString *srcJsPath = [libraryPath stringByAppendingFormat:@"%@%@%@", JS_CORE_FOLDER, FILE_SEPARATOR, XFACE_JS_FILE_NAME];
@@ -66,8 +65,6 @@
         [[self client] URLProtocol:self didLoadData:data];
     }
     [[self client] URLProtocolDidFinishLoading:self];
-
-
 }
 
 - (void)stopLoading
