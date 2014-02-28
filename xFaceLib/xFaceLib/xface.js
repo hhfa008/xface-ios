@@ -1,5 +1,5 @@
 // Platform: ios
-// 3.3.0-dev-c20f7f2
+// 3.3.0-dev-ec63723
 /*
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements.  See the NOTICE file
@@ -19,7 +19,7 @@
  under the License.
 */
 ;(function() {
-var CORDOVA_JS_BUILD_LABEL = '3.3.0-dev-c20f7f2';
+var CORDOVA_JS_BUILD_LABEL = '3.3.0-dev-ec63723';
 // file: src/scripts/require.js
 
 /*jshint -W079 */
@@ -1475,7 +1475,7 @@ function findCordovaPath() {
                     index = path.lastIndexOf('/', index);
                     path = path.substring(0, index) + '/Library/xface3/js_core/';
                 }else if(-1 != path.indexOf('Documents')){
-                    path = path.substring(0, path.indexOf('Library')) + 'Library/xface3/js_core/';
+                    path = path.substring(0, path.indexOf('Documents')) + 'Library/xface3/js_core/';
                 }else if(-1 != path.indexOf('Library')){
                     path = path.substring(0, path.indexOf('Library')) + 'Library/xface3/js_core/';
                 }
