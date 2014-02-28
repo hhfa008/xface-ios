@@ -39,15 +39,6 @@ typedef int XFileTransferError;
 @interface XFileUtils : NSObject
 
 /**
-    获得代表指定路径(目录或文件)的信息
-    @param path 指定路径
-    @param workSpace 该应用的工作空间
-    @param isDir 是否为目录
-    @returns 存储了路径文件系统信息的数据
- */
-+ (NSDictionary *) getEntry: (NSString *)path usingWorkspace:(NSString*)workSpace isDir: (BOOL) isDir;
-
-/**
     产生FileTransfer错误信息对象.
     @param code 错误码,XFileTransferError中的一种（FILE_NOT_FOUND_ERR ,INVALID_URL_ERR,CONNECTION_ERR）
     @param source 源路径

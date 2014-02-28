@@ -349,31 +349,34 @@ static XUtils* sSelPerformer = nil;
 
 + (BOOL)copyJsCore
 {
-    //TODO:如果支持将扩展js代码合并到xface.js，则此方法可以移除
-    //拷贝xface.js,cordova_plugins.js,plugins目录到<Application_Home>/Documents/xface3/js_core下
+    //拷贝xface.js,cordova_plugins.js,plugins目录到<Application_Home>/Library/xface3/js_core下
+    //同时支持离散以及单文件方式
     BOOL ret = YES;
-    NSString *systemWorkspace = [[XConfiguration getInstance] systemWorkspace];
-    systemWorkspace = [systemWorkspace stringByReplacingOccurrencesOfString:XFACE_PLAYER_WORKSPACE withString:XFACE_WORKSPACE_FOLDER];
+    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *destRoot = [[paths objectAtIndex:0] stringByAppendingFormat:@"%@%@%@%@", FILE_SEPARATOR, XFACE_WORKSPACE_FOLDER, FILE_SEPARATOR, JS_CORE_FOLDER];
 
     NSAssert([[[XConfiguration getInstance] preinstallApps] count], @"Can't get js core src!");
     NSString *defaultAppId = [[XConfiguration getInstance] preinstallApps][0];
+    NSString *srcRoot = [XUtils buildPreinstalledAppSrcPath:defaultAppId];
 
-    NSBundle *mainBundle = [NSBundle bundleForClass:[self class]];
-    NSString *preinstalledAppsPath = [mainBundle pathForResource:XFACE_BUNDLE_FOLDER ofType:nil inDirectory:nil];
-
-    //TODO:如果cli调整了文件命名，这里需要做相应地修改
+    //NOTE:文件命名需要与cli对应
     NSArray *jsCoreNames = [[NSArray alloc] initWithObjects:XFACE_JS_FILE_NAME,
                           @"cordova_plugins.js",
                           @"plugins",
                           nil];
     for (NSString *name in jsCoreNames)
     {
-        NSString *src = [preinstalledAppsPath stringByAppendingFormat:@"%@%@%@%@", FILE_SEPARATOR, defaultAppId, FILE_SEPARATOR, name];
-        if ([[NSFileManager defaultManager] fileExistsAtPath:src])
+        NSString *srcPath = [srcRoot stringByAppendingPathComponent:name];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:srcPath])
         {
-            NSString *dest = [systemWorkspace stringByAppendingFormat:@"%@%@%@", JS_CORE_FOLDER, FILE_SEPARATOR, name];
+            NSString *destPath = [destRoot stringByAppendingPathComponent:name];
 
-            ret &= [XFileUtils copyItemAtPath:src toPath:dest error:nil];
+            ret &= [XFileUtils copyItemAtPath:srcPath toPath:destPath error:nil];
+        }
+        else if ([name isEqualToString:XFACE_JS_FILE_NAME])
+        {
+            ALog("Failed to copy file %@ from %@ to %@!", name, srcRoot, destRoot);
+            return NO;
         }
     }
 
@@ -388,6 +391,80 @@ static XUtils* sSelPerformer = nil;
 
     BOOL ret = (theWebView == viewController.webView);
     return ret;
+}
+
++ (NSString *)persistentRoot
+{
+    NSString *persistentRoot = nil;
+    NSString *location = [[XUtils getPreferenceForKey:PERSISTENT_FILE_LOCATION] lowercaseString];
+    if (location == nil) {
+        // Compatibilty by default if the config preference is not set
+        location = @"compatibility";
+    }
+
+    if ([location isEqualToString:@"library"]) {
+        // Get the Library directory path
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+        persistentRoot = [paths objectAtIndex:0];
+    } else if ([location isEqualToString:@"compatibility"]) {
+        /*
+         *  Fall-back to compatibility mode -- this is the logic implemented in
+         *  earlier versions of xface, and should be maintained here so
+         *  that apps which were originally deployed with older versions of xface
+         *  can continue to provide access to files stored under those
+         *  versions.
+         */
+        // Get the Documents directory path
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        persistentRoot = [paths objectAtIndex:0];
+    } else {
+        NSAssert(false,
+                 @"Persistent file location configuration error: Please set iosPersistentFileLocation in config.xml to one of \"library\" (for new applications) or \"compatibility\" (for compatibility with previous versions)");
+    }
+
+    // 路径形如：<Applilcation_Home>/Documents或者<Applilcation_Home>/Library
+    return persistentRoot;
+}
+
+//TODO:可以考虑定义一个专门用于处理路径的工具类
++ (BOOL) isAbsolute:(NSString *)path
+{
+    //如果以"/"开头或为file协议URL,则处理为绝对路径
+    if ([path hasPrefix:@"/"])
+    {
+        return YES;
+    }
+
+    NSURL *newUri = [NSURL URLWithString:path];
+    if (!newUri && [path hasPrefix:@"file://"])
+    {
+        path = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        newUri = [NSURL URLWithString:path];
+    }
+    return [newUri isFileURL];
+}
+
++ (NSString*) getAbsolutePath:(NSString *)path
+{
+    if ([path hasPrefix:@"/"])
+    {
+        return [path stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    }
+    else
+    {
+        //仅处理file协议URL
+        NSURL* newUri = [NSURL URLWithString:path];
+        if (!newUri && [path hasPrefix:@"file://"])
+        {
+            path = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            newUri = [NSURL URLWithString:path];
+        }
+        if ([newUri isFileURL])
+        {
+            return [newUri path];
+        }
+        return nil;
+    }
 }
 
 @end

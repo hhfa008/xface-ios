@@ -212,9 +212,9 @@
 + (NSString *)buildWorkspaceAppSrcPath:(NSString *)appId;
 
 /**
-    拷贝xface.js,cordova_plugins.js,plugins目录到<Application_Home>/Documents/xface3/js_core下，以解决扩展js文件路径无法正确组装的问题
+    拷贝xface.js,cordova_plugins.js,plugins目录到<Application_Home>/Library/xface3/js_core下，以解决扩展js文件路径无法正确组装的问题
     源目录：<Application_Home>/xFace.app/xface3/defaultAppId/
-    目的目录：<Applilcation_Home>/Documents/xface3/js_core
+    目的目录：<Applilcation_Home>/Library/xface3/js_core
     @returns 拷贝成功返回YES,失败返回NO
  */
 + (BOOL)copyJsCore;
@@ -223,5 +223,24 @@
     判断给定参数是否为defaultApp web view
  */
 + (BOOL)isDefaultAppWebView:(UIWebView *)theWebView;
+
+/**
+    根据配置信息获取persistent根路径
+ */
++ (NSString *)persistentRoot;
+
+/**
+    判断是否为绝对路径
+    @returns 如果以"/"开头或为file协议的url，返回YES;否则返回NO
+ */
++ (BOOL) isAbsolute:(NSString *)path;
+
+/**
+    获取绝对路径,此路径经过stringByReplacingPercentEscapesUsingEncoding:处理
+    @returns 如果path以"/"开头，则直接返回path;
+             如果path是file协议的url,则返回url的path部分
+             其他情况返回nil
+ */
++ (NSString*) getAbsolutePath:(NSString *)path;
 
 @end

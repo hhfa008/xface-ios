@@ -34,11 +34,10 @@
 
 + (NSString *)create
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentDirectory = [paths objectAtIndex:0];
+    NSString *persistentRoot = [XUtils persistentRoot];
 
-    // 系统工作空间路径形如：<Applilcation_Home>/Documents/xface3/
-    return [documentDirectory stringByAppendingFormat:@"%@%@%@", FILE_SEPARATOR, XFACE_WORKSPACE_FOLDER, FILE_SEPARATOR];
+    // 系统工作空间路径形如：<Applilcation_Home>/Documents/xface3/或者<Applilcation_Home>/Library/xface3/
+    return [persistentRoot stringByAppendingFormat:@"%@%@%@", FILE_SEPARATOR, XFACE_WORKSPACE_FOLDER, FILE_SEPARATOR];
 }
 
 @end
