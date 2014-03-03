@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
@@ -20,7 +19,7 @@
 #
 
 #
-# Returns the VERSION of CordovaLib used.
+# Returns the VERSION of xFace used.
 # Note: it does not work if the --shared option was used to create the project.
 #
 
@@ -29,12 +28,12 @@ set -e
 CORDOVA_PATH=$( cd "$( dirname "$0" )" && pwd -P)
 PROJECT_PATH="$(dirname "$CORDOVA_PATH")"
 
-VERSION_FILE_PATH="$PROJECT_PATH/cordova-ios/CordovaLib/VERSION"
-VERSION=$(<"$VERSION_FILE_PATH")
+VERSIONX_FILE_PATH="$PROJECT_PATH/xFaceLib/xFaceLib/VERSIONX"
+VERSIONX=$(<"$VERSIONX_FILE_PATH")
 
-if [ -f "$VERSION_FILE_PATH" ]; then
-  echo $VERSION
+if [ -f "$VERSIONX_FILE_PATH" ]; then
+  echo $VERSIONX
 else
-  echo "The file \"$VERSION_FILE_PATH\" does not exist."
+  echo "The file \"$VERSIONX_FILE_PATH\" does not exist."
   exit 1
 fi
