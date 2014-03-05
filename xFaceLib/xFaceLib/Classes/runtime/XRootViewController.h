@@ -9,10 +9,6 @@
 
 extern NSString* const kClientNotification;
 
-@class XRuntime;
-
 @interface XRootViewController : XViewController
-
-@property (strong, nonatomic) XRuntime *runtime;
 
 @end

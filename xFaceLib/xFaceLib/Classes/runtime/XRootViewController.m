@@ -10,6 +10,12 @@
 
 NSString* const kClientNotification = @"kClientNotification";
 
+@interface XRootViewController()
+
+@property (strong, nonatomic) XRuntime *runtime;
+
+@end
+
 @implementation XRootViewController
 
 - (void)viewWillAppear:(BOOL)animated
