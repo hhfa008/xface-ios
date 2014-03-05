@@ -8,6 +8,8 @@
 #import "XRootViewController.h"
 #import "XRuntime.h"
 
+NSString* const kClientNotification = @"kClientNotification";
+
 @implementation XRootViewController
 
 - (void)viewWillAppear:(BOOL)animated

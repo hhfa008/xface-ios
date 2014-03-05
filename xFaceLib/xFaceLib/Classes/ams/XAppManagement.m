@@ -52,6 +52,8 @@
                     event, arg];
 
 
+extern NSString* const kClientNotification;
+
 @implementation XAppManagement
 
 @synthesize amsDelegate;
@@ -78,6 +80,9 @@
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(xAppSendMessage:)
                                                      name:XAPPLICATION_SEND_MESSAGE_NOTIFICATION object:nil];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(xClientNotification:)
+                                                     name:kClientNotification object:nil];
     }
     return self;
 }
@@ -299,6 +304,21 @@
     NSString *msgId  = [[notification userInfo] objectForKey:@"msgId"];
     id<XApplication> app  = [notification object];
     [self handleAppEvent:app event:kAppEventMessage msg:msgId];
+}
+
+- (void) xClientNotification:(NSNotification*)notification
+{
+    NSString *msg  = [[notification userInfo] objectForKey:@"msg"];
+    NSString* arg = msg.length > 0 ?
+    [NSString stringWithFormat:@", '%@'", msg] : @"";
+
+    NSString *jsString = jsForFireAppEvent(@"client", arg);
+
+    [[self activeApps] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+     {
+         id<XApplication> targetApp = obj;
+         [targetApp.jsEvaluator evalJs:jsString];
+     }];
 }
 
 @end
