@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C832C42517E97F0F00D3A35A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C91A17E857390009C73A /* libCordova.a */; };
+		C89DC67318C57FBC00D53D55 /* XRootViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C89DC67218C57FBC00D53D55 /* XRootViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C89DC67518C57FC500D53D55 /* XRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C89DC67418C57FC500D53D55 /* XRootViewController.m */; };
 		C8A15F5C17EEA50600FB3E68 /* APAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A15F3717EEA50600FB3E68 /* APAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8A15F5D17EEA50600FB3E68 /* APAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F3817EEA50600FB3E68 /* APAttribute.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C8A15F5E17EEA50600FB3E68 /* APAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F3817EEA50600FB3E68 /* APAttribute.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -316,6 +318,8 @@
 		C8944C2017E947510070A849 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C8944C2217E9475B0070A849 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		C8944C2417E947600070A849 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C89DC67218C57FBC00D53D55 /* XRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRootViewController.h; sourceTree = "<group>"; };
+		C89DC67418C57FC500D53D55 /* XRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRootViewController.m; sourceTree = "<group>"; };
 		C8A15F3717EEA50600FB3E68 /* APAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAttribute.h; sourceTree = "<group>"; };
 		C8A15F3817EEA50600FB3E68 /* APAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAttribute.m; sourceTree = "<group>"; };
 		C8A15F3917EEA50600FB3E68 /* APDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APDocument.h; sourceTree = "<group>"; };
@@ -821,6 +825,8 @@
 			isa = PBXGroup;
 			children = (
 				C8DF685A17EE9FCB008B0CAF /* private */,
+				C89DC67418C57FC500D53D55 /* XRootViewController.m */,
+				C89DC67218C57FBC00D53D55 /* XRootViewController.h */,
 				C8AD111E184F325A00CC45CA /* CDVLocalStorage+XLocalStorage.m */,
 				C8DF685617EE9FCB008B0CAF /* CDVPlugin+XPlugin.h */,
 				C8DF685717EE9FCB008B0CAF /* CDVPlugin+XPlugin.m */,
@@ -957,6 +963,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C89DC67318C57FBC00D53D55 /* XRootViewController.h in Headers */,
 				C8DF69AF17EE9FCB008B0CAF /* XILog.h in Headers */,
 				C8DF691517EE9FCB008B0CAF /* XSystemConfigInfo.h in Headers */,
 				C8DF697D17EE9FCB008B0CAF /* md5.h in Headers */,
@@ -1247,6 +1254,7 @@
 				C8DF68D917EE9FCB008B0CAF /* XLocalMode.m in Sources */,
 				C8AD111F184F325A00CC45CA /* CDVLocalStorage+XLocalStorage.m in Sources */,
 				C8DF696617EE9FCB008B0CAF /* XSystemWorkspaceFactory.m in Sources */,
+				C89DC67518C57FC500D53D55 /* XRootViewController.m in Sources */,
 				C8DF695917EE9FCB008B0CAF /* XResourceURLProtocol.m in Sources */,
 				C8DF691317EE9FCB008B0CAF /* XConfiguration.m in Sources */,
 				C8A15F8517EEA50600FB3E68 /* ZipArchive.mm in Sources */,

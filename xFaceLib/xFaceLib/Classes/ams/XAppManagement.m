@@ -158,8 +158,6 @@
         // FIXME:对于active app,是否应该bringToTop?
         if (![app isActive])
         {
-            [[self activeApps] push:app];
-
             if ([params.startPage length])
             {
                 [[app appInfo] setEntry:params.startPage];
@@ -191,7 +189,6 @@
     }
 
     [[self amsDelegate] closeApp:app];
-    [[self activeApps] removeObject:app];
 }
 
 - (BOOL) startDefaultAppWithParams:(NSString *)params
@@ -252,6 +249,8 @@
     }
     else if([kAppEventStart isEqualToString:event])
     {
+        [[self activeApps] push:app];
+
         if (!isDefaultApp)
         {
             [[defaultApp jsEvaluator] evalJs:jsString];
@@ -259,6 +258,7 @@
     }
     else if([kAppEventClose isEqualToString:event])
     {
+        [[self activeApps] removeObject:app];
         [[defaultApp jsEvaluator] evalJs:jsString];
     }
     else
@@ -290,13 +290,6 @@
 {
     id<XApplication> app  = [notification object];
     NSString *appId = [app getAppId];
-
-    // 由于平台自身的特点，不允许通过js端关闭默认应用
-    BOOL isDefaultApp = [self isDefaultApp:appId];
-    if (isDefaultApp)
-    {
-        return;
-    }
 
     [self closeApp:appId];
 }
