@@ -30,12 +30,9 @@
 
 #import <Cordova/CDVPlugin.h>
 
-#import <xFace/XRuntime.h>
-#import <xFace/XViewController.h>
-
 @implementation AppDelegate
 
-@synthesize window, viewController, runtime;
+@synthesize window, viewController;
 
 - (id)init
 {
@@ -76,11 +73,9 @@
     self.window.autoresizesSubviews = YES;
 
 #if __has_feature(objc_arc)
-        self.runtime = [[XRuntime alloc] init];
-        self.runtime.window = self.window;
-        self.viewController = [self.runtime viewController];
+        self.viewController = [[XRootViewController alloc] init];
 #else
-        self.viewController = [[[MainViewController alloc] init] autorelease];
+        self.viewController = [[[XRootViewController alloc] init] autorelease];
 #endif
 
     // Set your app's start page by setting the <content src='foo.html' /> tag in config.xml.
