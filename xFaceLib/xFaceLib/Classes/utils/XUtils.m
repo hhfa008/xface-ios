@@ -39,6 +39,10 @@
 #import "iToast.h"
 #import "XFileUtils.h"
 #import "XViewController.h"
+#import "XRootViewController.h"
+#import "XAppWebView.h"
+
+#import <Cordova/CDVWebViewDelegate.h>
 
 #define APP_VERSION_FOUR_SEQUENCE (4)
 #define BACKSLASH       @"\\"
@@ -383,13 +387,36 @@ static XUtils* sSelPerformer = nil;
     return ret;
 }
 
++ (UIViewController *)topViewController
+{
+    return [XUtils topViewControllerWithRootViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+}
+
++ (UIViewController *)topViewControllerWithRootViewController:(UIViewController *)rootVC
+{
+    if ([rootVC isKindOfClass:[UITabBarController class]]) {
+        UITabBarController *tabBarController = (UITabBarController*)rootVC;
+        return [self topViewControllerWithRootViewController:tabBarController.selectedViewController];
+    } else if ([rootVC isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = (UINavigationController*)rootVC;
+        return [self topViewControllerWithRootViewController:navigationController.visibleViewController];
+    } else if (rootVC.presentedViewController) {
+        UIViewController *presentedViewController = rootVC.presentedViewController;
+        return [self topViewControllerWithRootViewController:presentedViewController];
+    } else {
+        return rootVC;
+    }
+}
+
 + (BOOL)isDefaultAppWebView:(UIWebView *)theWebView
 {
-    id<UIApplicationDelegate> appDelegate = [UIApplication sharedApplication].delegate;
-    XRuntime *runtime = [appDelegate performSelector:@selector(runtime)];
-    XViewController *viewController = [runtime performSelector:@selector(viewController)];
+    NSAssert([theWebView isKindOfClass:[XAppWebView class]], nil);
+    NSAssert([[theWebView delegate] isKindOfClass:[CDVWebViewDelegate class]], nil);
 
-    BOOL ret = (theWebView == viewController.webView);
+    CDVWebViewDelegate *delegate = (CDVWebViewDelegate *)[theWebView delegate];
+    id obj = [delegate valueForKey:@"_delegate"];
+
+    BOOL ret = ([obj isKindOfClass:[XRootViewController class]]);
     return ret;
 }
 

@@ -220,6 +220,16 @@
 + (BOOL)copyJsCore;
 
 /**
+    获取top viewController
+ */
++ (UIViewController *)topViewController;
+
+/**
+    获取rootViewController下的top viewController
+ */
++ (UIViewController *)topViewControllerWithRootViewController:(UIViewController*)rootViewController;
+
+/**
     判断给定参数是否为defaultApp web view
  */
 + (BOOL)isDefaultAppWebView:(UIWebView *)theWebView;
