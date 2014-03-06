@@ -31,6 +31,7 @@
 #import "XAPElement.h"
 #import "XAppInfo.h"
 #import "XAppXMLTagDefine.h"
+#import "XConstants.h"
 
 @implementation XAppXMLParser
 
@@ -82,12 +83,28 @@
     self.appInfo.prefRemotePkg  = [self valueForPreference:PREFERENCE_REMOTE_PKG];
     self.appInfo.appleId  = [self valueForPreference:PREFERENCE_APPLE_ID];
     self.appInfo.engineVersion  = [self valueForPreference:PREFERENCE_ENGINE];
+
+    [self parseAccessTag];
 }
 
 -(NSString*) valueForPreference:(NSString*)name
 {
     APElement *prefElem = [[self.doc rootElement] elementNamed:TAG_PREFERENCE attribute:ATTR_NAME withValue:name];
     return [prefElem valueForAttributeNamed:ATTR_VALUE];
+}
+
+- (void) parseAccessTag
+{
+    NSMutableArray *accessElems = [[self.doc rootElement] childElements:TAG_ACCESS];
+    for (APElement *elem in accessElems) {
+        [self.appInfo.whitelistHosts addObject:[elem valueForAttributeNamed:ATTR_ORIGIN]];
+    }
+
+    if (!accessElems.count) {
+        //FIXME:没有access标签的情况，本应禁止访问external resources，但是考虑到兼容以前的xapp,此处暂时调整为允许访问任意网络资源.
+        [self.appInfo.whitelistHosts addObject:WILDCARDS];
+    }
+    return;
 }
 
 @end

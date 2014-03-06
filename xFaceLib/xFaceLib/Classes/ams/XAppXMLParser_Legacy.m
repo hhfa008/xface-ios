@@ -33,6 +33,7 @@
 #import "XAppXMLTagDefine.h"
 #import "XAPElement.h"
 #import "XAppXMLParser_Legacy_Privates.h"
+#import "XConstants.h"
 
 @implementation XAppXMLParser_Legacy
 
@@ -98,13 +99,15 @@
 -(void) parseAccessTag
 {
     NSMutableArray *accessElems = [[self getAppTagElement] childElements:TAG_ACCESS];
-    NSMutableArray *whitelistHosts = [[NSMutableArray alloc] initWithCapacity:[accessElems count]];
-    for (APElement *elem in accessElems)
-    {
-        //FIXME:目前仅支持origin属性
-        [whitelistHosts addObject:[elem valueForAttributeNamed:ATTR_ORIGIN]];
+    for (APElement *elem in accessElems) {
+        [self.appInfo.whitelistHosts addObject:[elem valueForAttributeNamed:ATTR_ORIGIN]];
     }
-    [self.appInfo setWhitelistHosts:whitelistHosts];
+
+    if (!accessElems.count) {
+        //FIXME:没有access标签的情况，本应禁止访问external resources，但是考虑到兼容以前的xapp,此处暂时调整为允许访问任意网络资源.
+        [self.appInfo.whitelistHosts addObject:WILDCARDS];
+    }
+    return;
 }
 
 -(APElement*) getAppTagElement

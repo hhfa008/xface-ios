@@ -53,6 +53,18 @@
 @synthesize whitelistHosts = _whitelistHosts;
 @synthesize engineVersion;
 
+- (id)init
+{
+    self = [super init];
+    if (self != nil) {
+        self.whitelistHosts = [[NSMutableArray alloc] initWithCapacity:10];
+        [self.whitelistHosts addObject:@"file:///*"];
+        [self.whitelistHosts addObject:@"content:///*"];
+        [self.whitelistHosts addObject:@"data:///*"];
+    }
+    return self;
+}
+
 -(NSString *) srcPath
 {
     //Fix bug 3072:http://zentao.polyvi.com/bug-view-3072.html
@@ -66,21 +78,6 @@
         appSrcPath = [XUtils buildWorkspaceAppSrcPath:[self appId]];
     }
     return appSrcPath;
-}
-
--(NSMutableArray *) whitelistHosts
-{
-    if (nil == _whitelistHosts)
-    {
-        _whitelistHosts = [[NSMutableArray alloc] initWithCapacity:1];
-    }
-    if (![_whitelistHosts count])
-    {
-        // FIXME:没有access标签的情况，本应禁止访问external resources，但是考虑到兼容以前的xapp,此处暂时调整为允许访问任意网络资源.
-        // 待打包系统同步更新后，需要按照规范处理
-        [_whitelistHosts addObject:WILDCARDS];
-    }
-    return _whitelistHosts;
 }
 
 @end
