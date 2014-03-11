@@ -74,7 +74,7 @@
     NSMutableData *data = [NSMutableData dataWithLength:fileUncompressedSize];
 
     // 读取当前文件数据
-    int bytes = unzReadCurrentFile(_unzFile, [data mutableBytes], [data length]);
+    int bytes = unzReadCurrentFile(_unzFile, [data mutableBytes], (unsigned)[data length]);
     if (bytes < 0)
     {
         ALog(@"Error in reading '%@' in zip", fileNameInZip);

@@ -80,7 +80,7 @@ static NSArray* com_polyvi_xface_ConfigPreferences;
 
 - (void)parser:(NSXMLParser*)parser parseErrorOccurred:(NSError*)parseError
 {
-    NSAssert(NO, @"config.xml parse error line %d col %d", [parser lineNumber], [parser columnNumber]);
+    NSAssert(NO, @"config.xml parse error line %ld col %ld", (long)[parser lineNumber], (long)[parser columnNumber]);
 }
 
 @end
