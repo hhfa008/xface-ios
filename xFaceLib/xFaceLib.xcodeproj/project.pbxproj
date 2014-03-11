@@ -145,12 +145,9 @@
 		C8DF692817EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF685917EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.m */; };
 		C8DF692917EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF685917EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.m */; };
 		C8DF692B17EE9FCB008B0CAF /* XConfiguration_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF685C17EE9FCB008B0CAF /* XConfiguration_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF692C17EE9FCB008B0CAF /* XExtensionResult_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF685D17EE9FCB008B0CAF /* XExtensionResult_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF692D17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF685E17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF692E17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF685F17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693117EE9FCB008B0CAF /* XRuntime_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686217EE9FCB008B0CAF /* XRuntime_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693217EE9FCB008B0CAF /* XWebApplication_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686317EE9FCB008B0CAF /* XWebApplication_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF693317EE9FCB008B0CAF /* XWhitelist_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686417EE9FCB008B0CAF /* XWhitelist_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693417EE9FCB008B0CAF /* XAmsDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686517EE9FCB008B0CAF /* XAmsDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693517EE9FCB008B0CAF /* XAppInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686617EE9FCB008B0CAF /* XAppInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693617EE9FCB008B0CAF /* XAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF686717EE9FCB008B0CAF /* XAppInfo.m */; };
@@ -419,12 +416,9 @@
 		C8DF685817EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDVURLProtocol+XURLProtocol.h"; sourceTree = "<group>"; };
 		C8DF685917EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDVURLProtocol+XURLProtocol.m"; sourceTree = "<group>"; };
 		C8DF685C17EE9FCB008B0CAF /* XConfiguration_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XConfiguration_Privates.h; sourceTree = "<group>"; };
-		C8DF685D17EE9FCB008B0CAF /* XExtensionResult_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XExtensionResult_Privates.h; sourceTree = "<group>"; };
-		C8DF685E17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJavaScriptEvaluator_Privates.h; sourceTree = "<group>"; };
 		C8DF685F17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLightweightSystemBootstrap_Privates.h; sourceTree = "<group>"; };
 		C8DF686217EE9FCB008B0CAF /* XRuntime_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRuntime_Privates.h; sourceTree = "<group>"; };
 		C8DF686317EE9FCB008B0CAF /* XWebApplication_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWebApplication_Privates.h; sourceTree = "<group>"; };
-		C8DF686417EE9FCB008B0CAF /* XWhitelist_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWhitelist_Privates.h; sourceTree = "<group>"; };
 		C8DF686517EE9FCB008B0CAF /* XAmsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAmsDelegate.h; sourceTree = "<group>"; };
 		C8DF686617EE9FCB008B0CAF /* XAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAppInfo.h; sourceTree = "<group>"; };
 		C8DF686717EE9FCB008B0CAF /* XAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAppInfo.m; sourceTree = "<group>"; };
@@ -876,12 +870,9 @@
 			isa = PBXGroup;
 			children = (
 				C8DF685C17EE9FCB008B0CAF /* XConfiguration_Privates.h */,
-				C8DF685D17EE9FCB008B0CAF /* XExtensionResult_Privates.h */,
-				C8DF685E17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h */,
 				C8DF685F17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h */,
 				C8DF686217EE9FCB008B0CAF /* XRuntime_Privates.h */,
 				C8DF686317EE9FCB008B0CAF /* XWebApplication_Privates.h */,
-				C8DF686417EE9FCB008B0CAF /* XWhitelist_Privates.h */,
 			);
 			path = private;
 			sourceTree = "<group>";
@@ -967,7 +958,6 @@
 				C8DF69AF17EE9FCB008B0CAF /* XILog.h in Headers */,
 				C8DF691517EE9FCB008B0CAF /* XSystemConfigInfo.h in Headers */,
 				C8DF697D17EE9FCB008B0CAF /* md5.h in Headers */,
-				C8DF692C17EE9FCB008B0CAF /* XExtensionResult_Privates.h in Headers */,
 				C8A15F5F17EEA50600FB3E68 /* APDocument.h in Headers */,
 				C8DF693117EE9FCB008B0CAF /* XRuntime_Privates.h in Headers */,
 				C8DF694617EE9FCB008B0CAF /* XCommandQueue.h in Headers */,
@@ -989,7 +979,6 @@
 				C8DF694F17EE9FCB008B0CAF /* XLightweightSystemBootstrap.h in Headers */,
 				C8DF694C17EE9FCB008B0CAF /* XJavaScriptEvaluator.h in Headers */,
 				C8DF698317EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.h in Headers */,
-				C8DF692D17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h in Headers */,
 				C8DF68F417EE9FCB008B0CAF /* XAppXMLParserFactory_Privates.h in Headers */,
 				C8DF692417EE9FCB008B0CAF /* CDVPlugin+XPlugin.h in Headers */,
 				C8DF68ED17EE9FCB008B0CAF /* XSecurityResourceFilterFactory.h in Headers */,
@@ -997,7 +986,6 @@
 				C8DF692B17EE9FCB008B0CAF /* XConfiguration_Privates.h in Headers */,
 				C8A15F6217EEA50600FB3E68 /* APElement.h in Headers */,
 				C8DF68E917EE9FCB008B0CAF /* XSecurityPolicyFactory.h in Headers */,
-				C8DF693317EE9FCB008B0CAF /* XWhitelist_Privates.h in Headers */,
 				C8DF68CE17EE9FCB008B0CAF /* XOnlineMode_Privates.h in Headers */,
 				C8DF696217EE9FCB008B0CAF /* XSystemBootstrapFactory.h in Headers */,
 				C8DF697417EE9FCB008B0CAF /* XCredentialManager.h in Headers */,
