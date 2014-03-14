@@ -26,9 +26,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
-
-#import <Cordova/CDVPlugin.h>
+#import <xFace/XRootViewController.h>
 
 @implementation AppDelegate
 
@@ -45,11 +43,7 @@
 
     int cacheSizeMemory = 8 * 1024 * 1024; // 8MB
     int cacheSizeDisk = 32 * 1024 * 1024; // 32MB
-#if __has_feature(objc_arc)
-        NSURLCache* sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:cacheSizeMemory diskCapacity:cacheSizeDisk diskPath:@"nsurlcache"];
-#else
-        NSURLCache* sharedCache = [[[NSURLCache alloc] initWithMemoryCapacity:cacheSizeMemory diskCapacity:cacheSizeDisk diskPath:@"nsurlcache"] autorelease];
-#endif
+    NSURLCache* sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:cacheSizeMemory diskCapacity:cacheSizeDisk diskPath:@"nsurlcache"];
     [NSURLCache setSharedURLCache:sharedCache];
 
     self = [super init];
@@ -64,26 +58,10 @@
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
-
-#if __has_feature(objc_arc)
-        self.window = [[UIWindow alloc] initWithFrame:screenBounds];
-#else
-        self.window = [[[UIWindow alloc] initWithFrame:screenBounds] autorelease];
-#endif
+    self.window = [[UIWindow alloc] initWithFrame:screenBounds];
     self.window.autoresizesSubviews = YES;
 
-#if __has_feature(objc_arc)
-        self.viewController = [[XRootViewController alloc] init];
-#else
-        self.viewController = [[[XRootViewController alloc] init] autorelease];
-#endif
-
-    // Set your app's start page by setting the <content src='foo.html' /> tag in config.xml.
-    // If necessary, uncomment the line below to override it.
-    // self.viewController.startPage = @"index.html";
-
-    // NOTE: To customize the view's frame size (which defaults to full screen), override
-    // [self.viewController viewWillAppear:] in your view controller.
+    self.viewController = [[XRootViewController alloc] init];
 
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
@@ -95,15 +73,6 @@
 // only valid if __PROJECT_NAME__-Info.plist specifies a protocol to handle
 - (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation
 {
-    if (!url) {
-        return NO;
-    }
-
-    // calls into javascript global function 'handleOpenURL'
-    NSString* jsString = [NSString stringWithFormat:@"handleOpenURL(\"%@\");", url];
-    [self.viewController.webView stringByEvaluatingJavaScriptFromString:jsString];
-
-    // all plugins will get the notification, and their handlers will be called
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:CDVPluginHandleOpenURLNotification object:url]];
 
     return YES;

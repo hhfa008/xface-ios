@@ -94,9 +94,18 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
 
 -(void) handleOpenURL:(NSNotification*)notification
 {
+    // invoke string is passed to your app on launch, this is only valid if you
+    // edit project-Info.plist to add a protocol
+    // a simple tutorial can be found here :
+    // http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+
     NSURL* url = [notification object];
     if ([url isKindOfClass:[NSURL class]])
     {
+        // calls into javascript global function 'handleOpenURL'
+        NSString* jsString = [NSString stringWithFormat:@"handleOpenURL(\"%@\");", url];
+        [self.rootVC.webView stringByEvaluatingJavaScriptFromString:jsString];
+
         NSString *params = nil;
         NSString *urlStr = [url absoluteString];
         NSRange range = [urlStr rangeOfString:NATIVE_APP_CUSTOM_URL_PARAMS_SEPERATOR];
