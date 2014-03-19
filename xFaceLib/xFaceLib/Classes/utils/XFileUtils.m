@@ -220,7 +220,7 @@
 
 + (NSString *)createTemporaryDirectory:(NSString *)parent
 {
-    NSString *tmpDirName = [NSString stringWithFormat: @"%.0f%d%@", [NSDate timeIntervalSinceReferenceDate] * 1000.0, [XUtils generateRandomId], TEMPORARY_NAME];
+    NSString *tmpDirName = [NSString stringWithFormat: @"%.0f%ld%@", [NSDate timeIntervalSinceReferenceDate] * 1000.0, (long)[XUtils generateRandomId], TEMPORARY_NAME];
 
     parent = [parent length] ? parent : NSTemporaryDirectory();
 

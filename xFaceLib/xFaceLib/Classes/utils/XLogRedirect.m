@@ -138,7 +138,7 @@ static XLogRedirect *instance;
         {
             if (self->dataBuf.length > 0 && self->outputStream)
             {
-                int n = [self->outputStream write:[dataBuf bytes] maxLength:dataBuf.length];
+                NSInteger n = [self->outputStream write:[dataBuf bytes] maxLength:dataBuf.length];
                 //如果放送成功，就清除已发送的数据
                 if (n != -1)
                 {

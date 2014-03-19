@@ -31,8 +31,6 @@
 
 @protocol XApplication;
 
-@class CDVWhitelist;
-
 @interface XViewController : CDVViewController
 
 @property (nonatomic, assign) BOOL loadFromString;

@@ -31,15 +31,14 @@
 #import "XApplication.h"
 #import "XConstants.h"
 #import "XAppList.h"
-#import "NSObject+JSONSerialization.h"
 #import "XRuntime_Privates.h"
 #import "XUtils.h"
 #import "XSystemBootstrapFactory.h"
 #import "XSystemEventHandler.h"
 #import "XConfiguration.h"
 #import "XViewController.h"
-#import "NSMutableArray+XStackAdditions.h"
 #import "XAppWebView.h"
+#import "XRootViewController.h"
 
 // TODO:日后需要增加本地化操作
 // 系统初始化失败时，相关的提示信息
@@ -53,20 +52,13 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
 @synthesize systemBootstrap;
 @synthesize sysEventHandler;
 @synthesize bootParams;
-@synthesize viewController;
-@synthesize activeViewControllers;
-@synthesize window;
+@synthesize rootVC;
 
 - (id)init
 {
     self = [super init];
     if (self)
     {
-        self.viewController = [[XViewController alloc] init];
-        self.activeViewControllers = [[NSMutableArray alloc] init];
-
-        [self.activeViewControllers push:self.viewController];
-
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleOpenURL:) name:CDVPluginHandleOpenURLNotification object:nil];
 
         // 加载系统配置信息
@@ -102,9 +94,18 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
 
 -(void) handleOpenURL:(NSNotification*)notification
 {
+    // invoke string is passed to your app on launch, this is only valid if you
+    // edit project-Info.plist to add a protocol
+    // a simple tutorial can be found here :
+    // http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+
     NSURL* url = [notification object];
     if ([url isKindOfClass:[NSURL class]])
     {
+        // calls into javascript global function 'handleOpenURL'
+        NSString* jsString = [NSString stringWithFormat:@"handleOpenURL(\"%@\");", url];
+        [self.rootVC.webView stringByEvaluatingJavaScriptFromString:jsString];
+
         NSString *params = nil;
         NSString *urlStr = [url absoluteString];
         NSRange range = [urlStr rangeOfString:NATIVE_APP_CUSTOM_URL_PARAMS_SEPERATOR];
@@ -159,18 +160,19 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
     BOOL isDefaultApp = [[self appManagement] isDefaultApp:[app getAppId]];
     if (isDefaultApp)
     {
-        NSAssert([[self.viewController webView] conformsToProtocol:@protocol(XAppView)], nil);
-        app.viewController = self.viewController;
-        self.viewController.ownerApp = app;
+        NSAssert([[self.rootVC webView] conformsToProtocol:@protocol(XAppView)], nil);
+        app.viewController = self.rootVC;
+        self.rootVC.ownerApp = app;
     }
     else
     {
-        XViewController *viewCtl = [[XViewController alloc] init];
-        [self.activeViewControllers push:viewCtl];
-        [self.window setRootViewController:viewCtl];
-        [self.window makeKeyAndVisible];
-        app.viewController = viewCtl;
-        viewCtl.ownerApp = app;
+        XViewController *vc = [[XViewController alloc] init];
+        app.viewController = vc;
+        vc.ownerApp = app;
+
+        //NOTE:如有需求，可以根据配置信息指定transition style
+        UIViewController *topVC = [XUtils topViewController];
+        [topVC presentViewController:vc animated:NO completion:nil];
     }
     [app load];
 
@@ -180,10 +182,32 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
 -(void) closeApp:(id<XApplication>)app
 {
     NSAssert([app isActive], nil);
-    [self.activeViewControllers removeObject:[app viewController]];
-    [self.window setRootViewController:[self.activeViewControllers lastObject]];
-    [self.window makeKeyAndVisible];
-    [self.appManagement handleAppEvent:app event:kAppEventClose msg:nil];
+    NSString *appId = [app getAppId];
+    BOOL isDefaultApp = [self.appManagement isDefaultApp:appId];
+    if (isDefaultApp)
+    {
+        //如果是库模式则关闭xFace
+        [self tryCloseXFace:app];
+    }
+    else
+    {
+        XViewController *vc = [app viewController];
+        [vc dismissViewControllerAnimated:NO completion:^{
+            [self.appManagement handleAppEvent:app event:kAppEventClose msg:nil];
+        }];
+    }
+}
+
+-(void) tryCloseXFace:(id<XApplication>) app
+{
+    if ([app.viewController navigationController])
+    {
+        [app.viewController.navigationController popViewControllerAnimated:NO];
+    }
+    else if ([app.viewController presentingViewController])
+    {
+        [app.viewController dismissViewControllerAnimated:NO completion:nil];
+    }
 }
 
 @end

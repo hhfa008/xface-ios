@@ -30,16 +30,14 @@
 #import "XAmsDelegate.h"
 #import "XSystemBootstrap.h"
 
-@class XViewController;
+@class XRootViewController;
 
 @interface XRuntime : NSObject <XAmsDelegate, XSystemBootstrapDelegate>
 
 /**
     与default app关联的应用视图控制器
  */
-@property (strong, nonatomic) XViewController *viewController;
-
-@property (nonatomic, strong) IBOutlet UIWindow* window;
+@property (weak, nonatomic) XRootViewController *rootVC;
 
 /**
     处理启动参数

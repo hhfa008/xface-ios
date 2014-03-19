@@ -34,7 +34,7 @@
 {
     const char *cStr = [self UTF8String];
     unsigned char result[16];
-    CC_MD5( cStr, strlen(cStr), result );
+    CC_MD5( cStr, (CC_LONG)strlen(cStr), result );
     return [NSString stringWithMd5:result];
 }
 
@@ -56,7 +56,7 @@
 - (NSString*)md5
 {
     unsigned char result[16];
-    CC_MD5( self.bytes, self.length, result );
+    CC_MD5( self.bytes, (CC_LONG)self.length, result );
     return [NSString stringWithMd5:result];
 }
 

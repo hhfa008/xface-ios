@@ -37,9 +37,11 @@ APP=build/$PROJECT_NAME.app
 CONFIGURATION=Debug
 EMULATOR=1
 DEVICE=0
+LIB_MODE=0
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --debug) ;;
+        --lib) LIB_MODE=1;;
         --release) CONFIGURATION=Release;;
         --device) EMULATOR=0;;
         --emulator) ;;
@@ -48,7 +50,9 @@ while [[ $# -gt 0 ]]; do
     shift
 done
 
-if (( $EMULATOR )); then
+if (( $LIB_MODE )); then
+    exec node "$PROJECT_PATH/xfaceSdk/scripts/build-lib.js" $EMULATOR
+elif (( $EMULATOR )); then
     exec xcodebuild clean -project "$PROJECT_NAME.xcodeproj" -arch i386 -target "$PROJECT_NAME" -configuration $CONFIGURATION -sdk iphonesimulator build VALID_ARCHS="i386" CONFIGURATION_BUILD_DIR="$PROJECT_PATH/build/emulator"
 else
     exec xcodebuild clean -xcconfig "$CORDOVA_PATH/build.xcconfig" -project "$PROJECT_NAME.xcodeproj" ARCHS="armv7 armv7s" -target "$PROJECT_NAME" -configuration $CONFIGURATION -sdk iphoneos build VALID_ARCHS="armv7 armv7s" CONFIGURATION_BUILD_DIR="$PROJECT_PATH/build/device"

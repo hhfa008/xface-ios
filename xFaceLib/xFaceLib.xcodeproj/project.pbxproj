@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C832C42517E97F0F00D3A35A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A2C91A17E857390009C73A /* libCordova.a */; };
+		C89DC67318C57FBC00D53D55 /* XRootViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C89DC67218C57FBC00D53D55 /* XRootViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C89DC67518C57FC500D53D55 /* XRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C89DC67418C57FC500D53D55 /* XRootViewController.m */; };
 		C8A15F5C17EEA50600FB3E68 /* APAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A15F3717EEA50600FB3E68 /* APAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8A15F5D17EEA50600FB3E68 /* APAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F3817EEA50600FB3E68 /* APAttribute.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C8A15F5E17EEA50600FB3E68 /* APAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A15F3817EEA50600FB3E68 /* APAttribute.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -143,12 +145,9 @@
 		C8DF692817EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF685917EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.m */; };
 		C8DF692917EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF685917EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.m */; };
 		C8DF692B17EE9FCB008B0CAF /* XConfiguration_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF685C17EE9FCB008B0CAF /* XConfiguration_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF692C17EE9FCB008B0CAF /* XExtensionResult_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF685D17EE9FCB008B0CAF /* XExtensionResult_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF692D17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF685E17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF692E17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF685F17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693117EE9FCB008B0CAF /* XRuntime_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686217EE9FCB008B0CAF /* XRuntime_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693217EE9FCB008B0CAF /* XWebApplication_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686317EE9FCB008B0CAF /* XWebApplication_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF693317EE9FCB008B0CAF /* XWhitelist_Privates.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686417EE9FCB008B0CAF /* XWhitelist_Privates.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693417EE9FCB008B0CAF /* XAmsDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686517EE9FCB008B0CAF /* XAmsDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693517EE9FCB008B0CAF /* XAppInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF686617EE9FCB008B0CAF /* XAppInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF693617EE9FCB008B0CAF /* XAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF686717EE9FCB008B0CAF /* XAppInfo.m */; };
@@ -316,6 +315,8 @@
 		C8944C2017E947510070A849 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C8944C2217E9475B0070A849 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		C8944C2417E947600070A849 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C89DC67218C57FBC00D53D55 /* XRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRootViewController.h; sourceTree = "<group>"; };
+		C89DC67418C57FC500D53D55 /* XRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRootViewController.m; sourceTree = "<group>"; };
 		C8A15F3717EEA50600FB3E68 /* APAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAttribute.h; sourceTree = "<group>"; };
 		C8A15F3817EEA50600FB3E68 /* APAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAttribute.m; sourceTree = "<group>"; };
 		C8A15F3917EEA50600FB3E68 /* APDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APDocument.h; sourceTree = "<group>"; };
@@ -415,12 +416,9 @@
 		C8DF685817EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDVURLProtocol+XURLProtocol.h"; sourceTree = "<group>"; };
 		C8DF685917EE9FCB008B0CAF /* CDVURLProtocol+XURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDVURLProtocol+XURLProtocol.m"; sourceTree = "<group>"; };
 		C8DF685C17EE9FCB008B0CAF /* XConfiguration_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XConfiguration_Privates.h; sourceTree = "<group>"; };
-		C8DF685D17EE9FCB008B0CAF /* XExtensionResult_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XExtensionResult_Privates.h; sourceTree = "<group>"; };
-		C8DF685E17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJavaScriptEvaluator_Privates.h; sourceTree = "<group>"; };
 		C8DF685F17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLightweightSystemBootstrap_Privates.h; sourceTree = "<group>"; };
 		C8DF686217EE9FCB008B0CAF /* XRuntime_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRuntime_Privates.h; sourceTree = "<group>"; };
 		C8DF686317EE9FCB008B0CAF /* XWebApplication_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWebApplication_Privates.h; sourceTree = "<group>"; };
-		C8DF686417EE9FCB008B0CAF /* XWhitelist_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWhitelist_Privates.h; sourceTree = "<group>"; };
 		C8DF686517EE9FCB008B0CAF /* XAmsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAmsDelegate.h; sourceTree = "<group>"; };
 		C8DF686617EE9FCB008B0CAF /* XAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAppInfo.h; sourceTree = "<group>"; };
 		C8DF686717EE9FCB008B0CAF /* XAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAppInfo.m; sourceTree = "<group>"; };
@@ -821,6 +819,8 @@
 			isa = PBXGroup;
 			children = (
 				C8DF685A17EE9FCB008B0CAF /* private */,
+				C89DC67418C57FC500D53D55 /* XRootViewController.m */,
+				C89DC67218C57FBC00D53D55 /* XRootViewController.h */,
 				C8AD111E184F325A00CC45CA /* CDVLocalStorage+XLocalStorage.m */,
 				C8DF685617EE9FCB008B0CAF /* CDVPlugin+XPlugin.h */,
 				C8DF685717EE9FCB008B0CAF /* CDVPlugin+XPlugin.m */,
@@ -870,12 +870,9 @@
 			isa = PBXGroup;
 			children = (
 				C8DF685C17EE9FCB008B0CAF /* XConfiguration_Privates.h */,
-				C8DF685D17EE9FCB008B0CAF /* XExtensionResult_Privates.h */,
-				C8DF685E17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h */,
 				C8DF685F17EE9FCB008B0CAF /* XLightweightSystemBootstrap_Privates.h */,
 				C8DF686217EE9FCB008B0CAF /* XRuntime_Privates.h */,
 				C8DF686317EE9FCB008B0CAF /* XWebApplication_Privates.h */,
-				C8DF686417EE9FCB008B0CAF /* XWhitelist_Privates.h */,
 			);
 			path = private;
 			sourceTree = "<group>";
@@ -957,10 +954,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C89DC67318C57FBC00D53D55 /* XRootViewController.h in Headers */,
 				C8DF69AF17EE9FCB008B0CAF /* XILog.h in Headers */,
 				C8DF691517EE9FCB008B0CAF /* XSystemConfigInfo.h in Headers */,
 				C8DF697D17EE9FCB008B0CAF /* md5.h in Headers */,
-				C8DF692C17EE9FCB008B0CAF /* XExtensionResult_Privates.h in Headers */,
 				C8A15F5F17EEA50600FB3E68 /* APDocument.h in Headers */,
 				C8DF693117EE9FCB008B0CAF /* XRuntime_Privates.h in Headers */,
 				C8DF694617EE9FCB008B0CAF /* XCommandQueue.h in Headers */,
@@ -982,7 +979,6 @@
 				C8DF694F17EE9FCB008B0CAF /* XLightweightSystemBootstrap.h in Headers */,
 				C8DF694C17EE9FCB008B0CAF /* XJavaScriptEvaluator.h in Headers */,
 				C8DF698317EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.h in Headers */,
-				C8DF692D17EE9FCB008B0CAF /* XJavaScriptEvaluator_Privates.h in Headers */,
 				C8DF68F417EE9FCB008B0CAF /* XAppXMLParserFactory_Privates.h in Headers */,
 				C8DF692417EE9FCB008B0CAF /* CDVPlugin+XPlugin.h in Headers */,
 				C8DF68ED17EE9FCB008B0CAF /* XSecurityResourceFilterFactory.h in Headers */,
@@ -990,7 +986,6 @@
 				C8DF692B17EE9FCB008B0CAF /* XConfiguration_Privates.h in Headers */,
 				C8A15F6217EEA50600FB3E68 /* APElement.h in Headers */,
 				C8DF68E917EE9FCB008B0CAF /* XSecurityPolicyFactory.h in Headers */,
-				C8DF693317EE9FCB008B0CAF /* XWhitelist_Privates.h in Headers */,
 				C8DF68CE17EE9FCB008B0CAF /* XOnlineMode_Privates.h in Headers */,
 				C8DF696217EE9FCB008B0CAF /* XSystemBootstrapFactory.h in Headers */,
 				C8DF697417EE9FCB008B0CAF /* XCredentialManager.h in Headers */,
@@ -1247,6 +1242,7 @@
 				C8DF68D917EE9FCB008B0CAF /* XLocalMode.m in Sources */,
 				C8AD111F184F325A00CC45CA /* CDVLocalStorage+XLocalStorage.m in Sources */,
 				C8DF696617EE9FCB008B0CAF /* XSystemWorkspaceFactory.m in Sources */,
+				C89DC67518C57FC500D53D55 /* XRootViewController.m in Sources */,
 				C8DF695917EE9FCB008B0CAF /* XResourceURLProtocol.m in Sources */,
 				C8DF691317EE9FCB008B0CAF /* XConfiguration.m in Sources */,
 				C8A15F8517EEA50600FB3E68 /* ZipArchive.mm in Sources */,
@@ -1364,6 +1360,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"ARCHS[sdk=iphoneos*]" = armv7;
+				"ARCHS[sdk=iphoneos6.*]" = (
+					armv7,
+					armv7s,
+				);
+				"ARCHS[sdk=iphoneos7.*]" = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				"ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1384,9 +1387,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "i386 armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -1394,6 +1398,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"ARCHS[sdk=iphoneos*]" = armv7;
+				"ARCHS[sdk=iphoneos6.*]" = (
+					armv7,
+					armv7s,
+				);
+				"ARCHS[sdk=iphoneos7.*]" = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				"ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1407,9 +1418,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "i386 armv7 armv7s arm64";
 			};
 			name = Release;
 		};
