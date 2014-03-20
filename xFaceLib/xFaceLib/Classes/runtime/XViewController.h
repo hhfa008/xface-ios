@@ -27,7 +27,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Cordova/CDVViewController.h>
+#import "Cordova/CDVViewController.h"
 
 @protocol XApplication;
 
