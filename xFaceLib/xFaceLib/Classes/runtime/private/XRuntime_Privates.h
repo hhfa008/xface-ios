@@ -52,11 +52,6 @@
 @property (strong, nonatomic) XSystemEventHandler *sysEventHandler;
 
 /**
-    启动参数
- */
-@property (strong, readwrite, nonatomic) NSString *bootParams;
-
-/**
     显示错误提示框
     @param error error具体信息
  */

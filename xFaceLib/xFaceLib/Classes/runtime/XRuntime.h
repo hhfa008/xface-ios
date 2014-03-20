@@ -39,9 +39,4 @@
  */
 @property (weak, nonatomic) XRootViewController *rootVC;
 
-/**
-    处理启动参数
- */
--(void) handleOpenURL:(NSString *)url;
-
 @end
