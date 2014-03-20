@@ -169,11 +169,11 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
 {
     if ([app.viewController navigationController])
     {
-        [app.viewController.navigationController popViewControllerAnimated:NO];
+        [app.viewController.navigationController popViewControllerAnimated:YES];
     }
     else if ([app.viewController presentingViewController])
     {
-        [app.viewController dismissViewControllerAnimated:NO completion:nil];
+        [app.viewController dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
