@@ -36,7 +36,7 @@
 /**
     启动参数
  */
-@property (strong, readonly, nonatomic) NSString *bootParams;
+@property (strong, nonatomic) NSString *bootParams;
 
 /*
     Tells the delegate that the work environment has been prepared.

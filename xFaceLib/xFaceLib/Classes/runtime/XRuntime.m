@@ -59,8 +59,6 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
     self = [super init];
     if (self)
     {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleOpenURL:) name:CDVPluginHandleOpenURLNotification object:nil];
-
         // 加载系统配置信息
         BOOL ret = [[XConfiguration getInstance] loadConfiguration];
         if (ret)
@@ -78,11 +76,6 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
     return self;
 }
 
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 /**
   进行runtime的初始化操作，然后启动应用
  */
@@ -90,32 +83,6 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
 {
     self.systemBootstrap = [XSystemBootstrapFactory createWithDelegate:self];
     [self.systemBootstrap prepareWorkEnvironment];
-}
-
--(void) handleOpenURL:(NSNotification*)notification
-{
-    // invoke string is passed to your app on launch, this is only valid if you
-    // edit project-Info.plist to add a protocol
-    // a simple tutorial can be found here :
-    // http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
-
-    NSURL* url = [notification object];
-    if ([url isKindOfClass:[NSURL class]])
-    {
-        // calls into javascript global function 'handleOpenURL'
-        NSString* jsString = [NSString stringWithFormat:@"handleOpenURL(\"%@\");", url];
-        [self.rootVC.webView stringByEvaluatingJavaScriptFromString:jsString];
-
-        NSString *params = nil;
-        NSString *urlStr = [url absoluteString];
-        NSRange range = [urlStr rangeOfString:NATIVE_APP_CUSTOM_URL_PARAMS_SEPERATOR];
-        if(NSNotFound != range.location)
-        {
-            params = [urlStr substringFromIndex:(range.location + range.length)];
-        }
-
-        [self setBootParams:params];
-    }
 }
 
 #pragma mark XSystemBootstrapDelegate
