@@ -75,6 +75,7 @@
 #define TAG_PREFERENCE                           @"preference"
 #define ENGINE_VERSION                           @"EngineVersion"
 #define PERSISTENT_FILE_LOCATION                 @"iosPersistentFileLocation"
+#define LIB_RUNNING_MODE                         @"LibRunningMode"
 
 // notification name
 #define XAPPLICATION_DID_FINISH_INSTALL_NOTIFICATION     @"XApplicationDidFinishInstallNotification"

@@ -167,13 +167,21 @@ static NSString * const SYSTEM_INITIALIZE_FAILED_ALERT_BUTTON_TITLE = @"OK";
 
 -(void) tryCloseXFace:(id<XApplication>) app
 {
-    if ([app.viewController navigationController])
+    NSAssert(app.viewController == self.rootVC, nil);
+
+    if ([self.rootVC navigationController] || [self.rootVC presentingViewController])
     {
-        [app.viewController.navigationController popViewControllerAnimated:YES];
+        app.viewController = nil;
+        self.rootVC.ownerApp = nil;
     }
-    else if ([app.viewController presentingViewController])
+
+    if ([self.rootVC navigationController])
     {
-        [app.viewController dismissViewControllerAnimated:YES completion:nil];
+        [self.rootVC.navigationController popViewControllerAnimated:YES];
+    }
+    else if ([self.rootVC presentingViewController])
+    {
+        [self.rootVC dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
