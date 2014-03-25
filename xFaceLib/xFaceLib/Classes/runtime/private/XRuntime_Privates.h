@@ -37,11 +37,6 @@
 @interface XRuntime ()
 
 /**
-	应用管理器.
- */
-@property (strong, nonatomic) XAppManagement *appManagement;
-
-/**
 	负责资源部署，安装预置应用, 启动系统等.
  */
 @property (strong, nonatomic) id <XSystemBootstrap> systemBootstrap;

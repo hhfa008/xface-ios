@@ -39,4 +39,9 @@
  */
 @property (weak, nonatomic) XRootViewController *rootVC;
 
+/**
+    应用管理器.
+ */
+@property (strong, nonatomic) XAppManagement *appManagement;
+
 @end

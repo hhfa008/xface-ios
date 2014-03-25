@@ -8,6 +8,8 @@
 #import "XRootViewController.h"
 #import "XRuntime.h"
 #import "XConstants.h"
+#import "XUtils.h"
+#import "XAppManagement.h"
 
 NSString* const kClientNotification = @"kClientNotification";
 
@@ -20,11 +22,15 @@ NSString* const kClientNotification = @"kClientNotification";
 
 @implementation XRootViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.runtime = [[XRuntime alloc] init];
+    self.runtime.rootVC = self;
+}
+
 - (void) handleOpenURL:(NSNotification*)notification
 {
-    // invoke string is passed to your app on launch,
-    // a simple tutorial can be found here :
-    // http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
     if ([[notification object] isKindOfClass:[NSURL class]]){
         NSString *params = nil;
         NSString *urlStr = [[notification object] absoluteString];
@@ -37,29 +43,38 @@ NSString* const kClientNotification = @"kClientNotification";
         self.startParams = [notification object];
     }
 
-    if (self.startParams.length) {
-        // calls into javascript global function 'handleOpenURL'
-        NSURL *url = [notification object];
-        NSString *jsString = [NSString stringWithFormat:@"handleOpenURL(\"%@\");", url];
-        [self.webView stringByEvaluatingJavaScriptFromString:jsString];
+    //TODO:测试通过Custom URL启动xFace app的情况
+    self.runtime.bootParams = self.startParams;
+    if ([self isOptimizedLibRunningMode]) {
+        [self.runtime.appManagement startDefaultAppWithParams:self.startParams];
     }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if(!self.runtime)
-    {
-        self.runtime = [[XRuntime alloc] init];
-        self.runtime.rootVC = self;
-        if (self.startParams.length) {
-            self.runtime.bootParams = self.startParams;
+    [super viewWillAppear:animated];
+
+    if (![self isOptimizedLibRunningMode]) {
+        if(!self.runtime) {
+            self.runtime = [[XRuntime alloc] init];
+            self.runtime.rootVC = self;
         }
     }
-    [super viewWillAppear:animated];
+
+    if (self.startParams.length) {
+        self.runtime.bootParams = self.startParams;
+        self.startParams = nil;
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated // Called after the view was dismissed, covered or otherwise hidden. Default does nothing
 {
+    [super viewDidDisappear:animated];
+
+    if ([self isOptimizedLibRunningMode]) {
+        return;
+    }
+
     //在库模式下，如果是rootViewController被dismissed，就销毁runtime
     UIWindow* window =[UIApplication sharedApplication].delegate.window;
 
@@ -70,10 +85,23 @@ NSString* const kClientNotification = @"kClientNotification";
         //如果presentedViewController为nil，说明rootViewController被dismiss,则销毁runtime
         if (!self.presentedViewController)
         {
-            self.runtime =nil;
+            self.runtime = nil;
         }
     }
-    [super viewDidDisappear:animated];
+}
+
+- (BOOL)isOptimizedLibRunningMode
+{
+    //LibRunningMode取值如下：
+    //1) normal: 兼容xFace v3.1, 在库模式下，runtime可以被创建多次，每次退出xFace时销毁runtime；
+    //2) optimized: runtime只被创建一次，且在XRootViewController的view已经加载的情况下，可以通过postNotification启动xFace默认应用
+
+    //注意：
+    //1）只有添加xface-extra-lib插件时才需配置LibRunningMode，非库模式下无需配置此项，即xFace按照normal的方式启动
+    //2）LibRunningMode的取值应根据第三方集成xFaceLib的使用场景决定.具体请参考xFace库模式使用手册
+    NSString *libRunningMode = [[XUtils getPreferenceForKey:LIB_RUNNING_MODE] lowercaseString];
+    BOOL ret = [libRunningMode isEqualToString:@"optimized"] ? YES : NO;
+    return ret;
 }
 
 @end

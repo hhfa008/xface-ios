@@ -48,6 +48,7 @@ static NSArray* com_polyvi_xface_ConfigPreferences;
     com_polyvi_xface_ConfigPreferences = [[NSArray alloc] initWithObjects:
                                             ENGINE_VERSION,
                                             PERSISTENT_FILE_LOCATION,
+                                            LIB_RUNNING_MODE,
                                             nil];
 }
 
