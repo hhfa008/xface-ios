@@ -49,6 +49,7 @@ static NSArray* com_polyvi_xface_ConfigPreferences;
                                             ENGINE_VERSION,
                                             PERSISTENT_FILE_LOCATION,
                                             LIB_RUNNING_MODE,
+                                            CUSTOM_LAUNCH_IMAGE_FILE,
                                             nil];
 }
 
