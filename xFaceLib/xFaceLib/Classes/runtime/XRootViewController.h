@@ -8,6 +8,7 @@
 #import "XViewController.h"
 
 extern NSString* const kClientNotification;
+extern NSString* const kLaunchNotification;
 
 @interface XRootViewController : XViewController
 

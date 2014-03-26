@@ -29,27 +29,6 @@ NSString* const kClientNotification = @"kClientNotification";
     self.runtime.rootVC = self;
 }
 
-- (void) handleOpenURL:(NSNotification*)notification
-{
-    if ([[notification object] isKindOfClass:[NSURL class]]){
-        NSString *params = nil;
-        NSString *urlStr = [[notification object] absoluteString];
-        NSRange range = [urlStr rangeOfString:NATIVE_APP_CUSTOM_URL_PARAMS_SEPERATOR];
-        if(NSNotFound != range.location){
-            params = [urlStr substringFromIndex:(range.location + range.length)];
-        }
-        self.startParams = params;
-    } else if ([[notification object] isKindOfClass:[NSString class]]) {
-        self.startParams = [notification object];
-    }
-
-    //TODO:测试通过Custom URL启动xFace app的情况
-    self.runtime.bootParams = self.startParams;
-    if ([XUtils isOptimizedLibRunningMode]) {
-        [self.runtime.appManagement startDefaultAppWithParams:self.startParams];
-    }
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -87,6 +66,42 @@ NSString* const kClientNotification = @"kClientNotification";
         {
             self.runtime = nil;
         }
+    }
+}
+
+- (void) handleOpenURL:(NSNotification*)notification
+{
+    //TODO:测试通过Custom URL启动xFace app的情况
+    if ([[notification object] isKindOfClass:[NSURL class]]){
+        NSString *params = nil;
+        NSString *urlStr = [[notification object] absoluteString];
+        NSRange range = [urlStr rangeOfString:NATIVE_APP_CUSTOM_URL_PARAMS_SEPERATOR];
+        if(NSNotFound != range.location){
+            params = [urlStr substringFromIndex:(range.location + range.length)];
+        }
+        self.startParams = params;
+    } else if ([[notification object] isKindOfClass:[NSString class]]) {
+        self.startParams = [notification object];
+    }
+}
+
+- (void) handleLaunchNotification:(NSNotification*)notification
+{
+    if ([[notification object] isKindOfClass:[NSURL class]]){
+        NSString *params = nil;
+        NSString *urlStr = [[notification object] absoluteString];
+        NSRange range = [urlStr rangeOfString:NATIVE_APP_CUSTOM_URL_PARAMS_SEPERATOR];
+        if(NSNotFound != range.location){
+            params = [urlStr substringFromIndex:(range.location + range.length)];
+        }
+        self.startParams = params;
+    } else if ([[notification object] isKindOfClass:[NSString class]]) {
+        self.startParams = [notification object];
+    }
+
+    self.runtime.bootParams = self.startParams;
+    if ([XUtils isOptimizedLibRunningMode]) {
+        [self.runtime.appManagement startDefaultAppWithParams:self.startParams];
     }
 }
 

@@ -34,28 +34,47 @@
 #import "XCommandQueue.h"
 #import "XAppWebView.h"
 
+NSString* const kLaunchNotification = @"kLaunchNotification";
+
+@interface XViewController ()
+
+@property (readwrite, assign) BOOL xinitialized;
+
+@end
+
 @implementation XViewController
 
 @synthesize ownerApp;
 @synthesize loadFromString;
 
+- (void)__xinit
+{
+    if ((self != nil) && !self.xinitialized) {
+        _commandQueue = [[XCommandQueue alloc] initWithViewController:self];
+        _commandDelegate = [[XJavaScriptEvaluator alloc] initWithViewController:self];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLaunchNotification:) name:kLaunchNotification object:nil];
+        self.xinitialized = YES;
+    }
+}
+
 - (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        _commandQueue = [[XCommandQueue alloc] initWithViewController:self];
-        _commandDelegate = [[XJavaScriptEvaluator alloc] initWithViewController:self];
-    }
+    [self __xinit];
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder*)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    [self __xinit];
     return self;
 }
 
 - (id)init
 {
     self = [super init];
-    if (self) {
-        _commandQueue = [[XCommandQueue alloc] initWithViewController:self];
-        _commandDelegate = [[XJavaScriptEvaluator alloc] initWithViewController:self];
-    }
+    [self __xinit];
     return self;
 }
 
@@ -111,6 +130,13 @@
     [self.commandDelegate evalJs:nativeReady];
 
     [super webViewDidFinishLoad:theWebView];
+}
+
+#pragma mark handleNotification
+
+- (void) handleLaunchNotification:(NSNotification*)notification
+{
+    // override this if you need to do any launch-related stuff
 }
 
 @end
