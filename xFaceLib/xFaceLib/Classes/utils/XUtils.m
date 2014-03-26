@@ -453,6 +453,20 @@ static XUtils* sSelPerformer = nil;
     return persistentRoot;
 }
 
++ (BOOL)isOptimizedLibRunningMode
+{
+    //LibRunningMode取值如下：
+    //1) normal: 兼容xFace v3.1, 在库模式下，runtime可以被创建多次，每次退出xFace时销毁runtime；
+    //2) optimized: runtime只被创建一次，且在XRootViewController的view已经加载的情况下，可以通过postNotification启动xFace默认应用
+
+    //注意：
+    //1）只有添加xface-extra-lib插件时才需配置LibRunningMode，非库模式下无需配置此项，即xFace按照normal的方式启动
+    //2）LibRunningMode的取值应根据第三方集成xFaceLib的使用场景决定.具体请参考xFace库模式使用手册
+    NSString *libRunningMode = [[XUtils getPreferenceForKey:LIB_RUNNING_MODE] lowercaseString];
+    BOOL ret = [libRunningMode isEqualToString:@"optimized"] ? YES : NO;
+    return ret;
+}
+
 //TODO:可以考虑定义一个专门用于处理路径的工具类
 + (BOOL) isAbsolute:(NSString *)path
 {

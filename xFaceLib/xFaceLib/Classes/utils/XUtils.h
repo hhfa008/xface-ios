@@ -240,6 +240,11 @@
 + (NSString *)persistentRoot;
 
 /**
+    判断当前是否为Optimized lib运行模式
+ */
++ (BOOL)isOptimizedLibRunningMode;
+
+/**
     判断是否为绝对路径
     @returns 如果以"/"开头或为file协议的url，返回YES;否则返回NO
  */
