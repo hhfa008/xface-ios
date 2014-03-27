@@ -218,9 +218,6 @@
 		C8DF698317EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF689D17EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF698417EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF689E17EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.m */; };
 		C8DF698517EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF689E17EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.m */; };
-		C8DF698617EE9FCB008B0CAF /* NSObject+JSONSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF689F17EE9FCB008B0CAF /* NSObject+JSONSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8DF698717EE9FCB008B0CAF /* NSObject+JSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68A017EE9FCB008B0CAF /* NSObject+JSONSerialization.m */; };
-		C8DF698817EE9FCB008B0CAF /* NSObject+JSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68A017EE9FCB008B0CAF /* NSObject+JSONSerialization.m */; };
 		C8DF698917EE9FCB008B0CAF /* NSString+XStartParams.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DF68A117EE9FCB008B0CAF /* NSString+XStartParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF698A17EE9FCB008B0CAF /* NSString+XStartParams.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68A217EE9FCB008B0CAF /* NSString+XStartParams.m */; };
 		C8DF698B17EE9FCB008B0CAF /* NSString+XStartParams.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DF68A217EE9FCB008B0CAF /* NSString+XStartParams.m */; };
@@ -467,8 +464,6 @@
 		C8DF689C17EE9FCB008B0CAF /* NSData+Encoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encoding.m"; sourceTree = "<group>"; };
 		C8DF689D17EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+XStackAdditions.h"; sourceTree = "<group>"; };
 		C8DF689E17EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+XStackAdditions.m"; sourceTree = "<group>"; };
-		C8DF689F17EE9FCB008B0CAF /* NSObject+JSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSONSerialization.h"; sourceTree = "<group>"; };
-		C8DF68A017EE9FCB008B0CAF /* NSObject+JSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSONSerialization.m"; sourceTree = "<group>"; };
 		C8DF68A117EE9FCB008B0CAF /* NSString+XStartParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XStartParams.h"; sourceTree = "<group>"; };
 		C8DF68A217EE9FCB008B0CAF /* NSString+XStartParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XStartParams.m"; sourceTree = "<group>"; };
 		C8DF68A417EE9FCB008B0CAF /* XLogRedirct_Privates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLogRedirct_Privates.h; sourceTree = "<group>"; };
@@ -900,8 +895,6 @@
 				C8DF689C17EE9FCB008B0CAF /* NSData+Encoding.m */,
 				C8DF689D17EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.h */,
 				C8DF689E17EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.m */,
-				C8DF689F17EE9FCB008B0CAF /* NSObject+JSONSerialization.h */,
-				C8DF68A017EE9FCB008B0CAF /* NSObject+JSONSerialization.m */,
 				C8DF68A117EE9FCB008B0CAF /* NSString+XStartParams.h */,
 				C8DF68A217EE9FCB008B0CAF /* NSString+XStartParams.m */,
 				C8DF68AA17EE9FCB008B0CAF /* XAPElement.h */,
@@ -997,7 +990,6 @@
 				C8DF68DB17EE9FCB008B0CAF /* XLocalResourceIterator.h in Headers */,
 				C8DF69A517EE9FCB008B0CAF /* XFileOperator.h in Headers */,
 				C8DF69A917EE9FCB008B0CAF /* XFileUtils.h in Headers */,
-				C8DF698617EE9FCB008B0CAF /* NSObject+JSONSerialization.h in Headers */,
 				C8DF693417EE9FCB008B0CAF /* XAmsDelegate.h in Headers */,
 				C8DF68E117EE9FCB008B0CAF /* XOnlineResourceInfo.h in Headers */,
 				C8DF690417EE9FCB008B0CAF /* XAppXMLParser.h in Headers */,
@@ -1236,7 +1228,6 @@
 				C8DF698117EE9FCB008B0CAF /* NSData+Encoding.m in Sources */,
 				C8DF68F817EE9FCB008B0CAF /* XAppInstaller.m in Sources */,
 				C8DF698417EE9FCB008B0CAF /* NSMutableArray+XStackAdditions.m in Sources */,
-				C8DF698717EE9FCB008B0CAF /* NSObject+JSONSerialization.m in Sources */,
 				C8A15F8117EEA50600FB3E68 /* zip.c in Sources */,
 				C8DF68FC17EE9FCB008B0CAF /* XAppInstallListener.m in Sources */,
 				C8DF68D917EE9FCB008B0CAF /* XLocalMode.m in Sources */,
@@ -1257,7 +1248,6 @@
 				C8DF69B217EE9FCB008B0CAF /* XLog.m in Sources */,
 				C8DF694517EE9FCB008B0CAF /* XAppWebView.m in Sources */,
 				C8DF68D717EE9FCB008B0CAF /* XDefaultSecurityResourceFilter.m in Sources */,
-				C8DF698817EE9FCB008B0CAF /* NSObject+JSONSerialization.m in Sources */,
 				C8DF691717EE9FCB008B0CAF /* XSystemConfigInfo.m in Sources */,
 				C8DF690617EE9FCB008B0CAF /* XAppXMLParser.m in Sources */,
 				C8DF691B17EE9FCB008B0CAF /* XSystemEventHandler.m in Sources */,
