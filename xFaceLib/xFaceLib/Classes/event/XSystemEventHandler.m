@@ -27,15 +27,11 @@
 //
 
 #import <MediaPlayer/MPMusicPlayerController.h>
+#import "XSystemEventHandler_Privates.h"
 #import "XSystemEventHandler.h"
 #import "XAppManagement.h"
-#import "XApplication.h"
 #import "XFileUtils.h"
-#import "NSObject+JSONSerialization.h"
 #import "XConstants.h"
-#import "XSystemEventHandler_Privates.h"
-#import "XJavaScriptEvaluator.h"
-#import "XAppList.h"
 
 @implementation XSystemEventHandler
 
