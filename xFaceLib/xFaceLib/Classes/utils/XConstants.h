@@ -77,6 +77,9 @@
 #define PERSISTENT_FILE_LOCATION                 @"iosPersistentFileLocation"
 #define LIB_RUNNING_MODE                         @"LibRunningMode"
 #define CUSTOM_LAUNCH_IMAGE_FILE                 @"CustomLaunchImageFile"
+#define UMENG_APP_KEY                            @"UmengAppKey"
+#define UMENG_REPORT_POLICY                      @"UmengReportPolicy"
+#define UMENG_CHANNEL                            @"UmengChannel"
 
 // notification name
 #define XAPPLICATION_DID_FINISH_INSTALL_NOTIFICATION     @"XApplicationDidFinishInstallNotification"
