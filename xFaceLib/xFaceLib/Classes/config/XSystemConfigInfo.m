@@ -50,6 +50,9 @@ static NSArray* com_polyvi_xface_ConfigPreferences;
                                             PERSISTENT_FILE_LOCATION,
                                             LIB_RUNNING_MODE,
                                             CUSTOM_LAUNCH_IMAGE_FILE,
+                                            UMENG_APP_KEY,
+                                            UMENG_REPORT_POLICY,
+                                            UMENG_CHANNEL,
                                             nil];
 }
 
