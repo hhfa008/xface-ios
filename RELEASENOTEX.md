@@ -19,3 +19,30 @@
  *  Squashed 'cordova-ios/' changes from 285ee28..42e1b4c
  *  Sync Cordova commit 285ee289e1: CB-5794 iOS build script: recognize --emulator vs --device
  *  Update JS snapshot to version 3.3.0-dev (via xsrc)
+
+
+## 3.2.0 (Thu Apr 03 2014)
+
+
+ *  Update JS snapshot to version 3.2.0 (via xsrc)
+ *  Define Umeng-related preferences.
+ *  Removed unneeded NSObject+JSONSerialization,use CDVJSON instead.
+ *  Define LaunchNotification which is supposed to be posted by 3rd party.
+ *  Support "CustomLaunchImageFile" preference which is supposed to be used by extra-lib plugin.
+ *  Move isOptimizedLibRunningMode: to XUtils.
+ *  Support optimized LibRunningMode to speed up the startup of web app when embedding xFaceLib into 3rd party.
+ *  Calls javascript global function 'handleOpenURL' in app delegate
+ *  Animated when dismissing root vc.
+ *  Get XRootViewController be in charge of retrieving start params.
+ *  Update the way of importing CDVViewController to avoid compiler warning when using xFaceLib in 3rd party.
+ *  Update JS snapshot to version 3.3.0-dev (via xsrc)
+ *  Define Umeng-related preferences.
+ *  Removed unneeded NSObject+JSONSerialization,use CDVJSON instead.
+ *  Define LaunchNotification which is supposed to be posted by 3rd party.
+ *  Support "CustomLaunchImageFile" preference which is supposed to be used by extra-lib plugin.
+ *  Move isOptimizedLibRunningMode: to XUtils.
+ *  Support optimized LibRunningMode to speed up the startup of web app when embedding xFaceLib into 3rd party.
+ *  Calls javascript global function 'handleOpenURL' in app delegate
+ *  Animated when dismissing root vc.
+ *  Get XRootViewController be in charge of retrieving start params.
+ *  Update the way of importing CDVViewController to avoid compiler warning when using xFaceLib in 3rd party.
