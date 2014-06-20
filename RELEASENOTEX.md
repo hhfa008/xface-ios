@@ -19,3 +19,11 @@
  *  Squashed 'cordova-ios/' changes from 285ee28..42e1b4c
  *  Sync Cordova commit 285ee289e1: CB-5794 iOS build script: recognize --emulator vs --device
  *  Update JS snapshot to version 3.3.0-dev (via xsrc)
+
+
+## 3.3.0 (Fri Jun 20 2014)
+
+
+ *  Update JS snapshot to version 3.3.0 (via xsrc)
+ *  Update JS snapshot to version 3.4.0-dev (via xsrc)
+ *  Set VERSION to 3.4.0-dev (via xsrc)
